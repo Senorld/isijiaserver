@@ -5,7 +5,7 @@
   Time: 3:44 PM
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="isijia.MemberOrder" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title></title>
@@ -16,6 +16,7 @@
 <table border="1">
     <tr>
         <td>Select</td>
+        <td>Status</td>
         <td>Name</td>
         <td>Price</td>
         <td>Description</td>
@@ -26,6 +27,7 @@
         <g:each in="${foodList}">
             <tr>
                 <td><input type="checkbox" value="${it.id}" name="foodId"/></td>
+                <td>${it.status}</td>
                 <td>${it.name}</td>
                 <td>${it.price}</td>
                 <td>${it.descrption}</td>
@@ -55,7 +57,7 @@
 <h1>Order List</h1>
 <g:link action="retrieveList" controller="memberOrder">Retrieve Order List</g:link>
 
-<h1>Retrieve Your List</h1>
+<h1>Retrieve Your Order List</h1>
 <g:link action="retrieveListByUser" controller="memberOrder">Retrieve Order List</g:link>
 
 </body>

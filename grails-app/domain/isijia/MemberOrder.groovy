@@ -1,13 +1,13 @@
 package isijia
 
 public enum OrderStatus{
-    OPEN, PENDING, SUCCESS, REJECT, CLOSE
+    PENDING, SUCCESS, REJECT, CLOSE
 }
 
 class MemberOrder {
 
     static hasMany = [menu: Menu]
-    OrderStatus status = OrderStatus.OPEN
+    OrderStatus status = OrderStatus.PENDING
     Date createdDate = new Date()
     Date lastChangDate = new Date()
     Member user

@@ -46,4 +46,16 @@ class MemberOrderController {
 
         render(view: "/test/reviewOrder", model: [foodList: foodList, totalPrice: totalPrice])
     }
+
+    def retrieveOrderByChef(long chefId){
+        def result = memberOrderService.retrieveOrderByChef(chefId)
+
+        render(view: "/test/orderList", model: [orderList: result])
+    }
+
+    def updateStatus(long orderId, String status){
+        def result = memberOrderService.updateStatus(orderId, status)
+
+        render result
+    }
 }

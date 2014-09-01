@@ -35,6 +35,7 @@ class Member {
         birthday nullable: true
         profile nullable: true
         zipCode nullable: true
+
 	}
 
 	static mapping = {

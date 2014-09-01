@@ -16,6 +16,9 @@
 <h1>Your order List</h1>
 <table border="1">
     <tr>
+        <sec:ifAllGranted roles="ROLE_CHEF">
+            <td>Change Status</td>
+        </sec:ifAllGranted>
         <td>Order Id</td>
         <td>Food List Name</td>
         <td>Total Price</td>
@@ -26,6 +29,15 @@
         <g:each in="${orderList}">
             <g:set var="totalPrice" value="${0}"/>
             <tr>
+                <sec:ifAllGranted roles="ROLE_CHEF">
+                    <g:form controller="memberOrder" action="updateStatus">
+                    <td>
+                        <g:select from="${['PENDING', 'SUCCESS', 'REJECT', 'CLOSE']}" name="status" value="${it.status}" />
+                        <g:submitButton name="update" value="Update" />
+                        <input type="hidden" value="${it.id}" name="orderId" />
+                    </td>
+                    </g:form>
+                </sec:ifAllGranted>
                 <td>${it.id}</td>
                 <td>
                     <g:each in="${it.menu}" var="food">

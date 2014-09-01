@@ -41,4 +41,31 @@ class MemberOrderService {
 
         return food
     }
+
+    def retrieveOrderByChef(long chefId, String status = "PENDING"){
+        def chef = Member.get(chefId)
+
+        if(!MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
+            log.error("Error on retrieveFoodByChef, The chef is not chef")
+            return null
+        }
+
+        def chefMenu = Menu.findAllByChef(chef)
+        def orderList = MemberOrder.all.findAll{it.menu.containsAll(chefMenu)}
+
+        return orderList
+    }
+
+    def updateStatus(long orderId, String status){
+        def updateStatus = status as OrderStatus
+
+        def order = MemberOrder.get(orderId)
+        if(!order){
+            return [success: false, message: "Cannot find the Order"]
+        }
+
+        order.status = updateStatus
+
+        return [success: true]
+    }
 }
