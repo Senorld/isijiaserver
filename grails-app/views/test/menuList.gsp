@@ -21,8 +21,10 @@
         <td>Description</td>
         <td>High Light</td>
         <td>Chef Name</td>
+        <td>Rate</td>
         <td>Image</td>
-    </tr> b
+
+    </tr>
 
     <g:each in="${menuList}">
         <tr>
@@ -32,6 +34,7 @@
             <td>${it.descrption}</td>
             <td>${it.highLight == 0 ? "FALSE" : "TRUE"}</td>
             <td>${it.chef.name}</td>
+            <td>${it.rate}</td>
             <g:if test="${it.image}">
                 <td>
                     <a href="/isijia/${it.image}">
