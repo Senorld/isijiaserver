@@ -1,9 +1,7 @@
 isijia Server
 ============
 
-<h1>API</h1>
-
-* Register, Retrieve User List
+* <h2>Register, Retrieve User List</h2>
     - Test URL: (http://isijia.com/)
     
     - Register URL: (http://isijia.com/register/member)
@@ -14,11 +12,11 @@ isijia Server
     - Retrieve Chef List URL: (http://isijia.com/chef)
 
 
-* Login
+* <h2>Login</h2>
     - Login URL: (http://isijia.com/login/auth)
 
 
-* Order
+* <h2>Order</h2>
     - Member Order Test URL: (http://isijia.com/memberOrder)
     
     - Review Order URL: (http://isijia.com/memberOrder/reviewOrder)
@@ -39,7 +37,7 @@ isijia Server
         
         
         
-* Menu
+* <h2>Menu</h2>
     - Create Menu(Need to login as Chef), URL: (http://isijia.com/menu/createFood)
         * Parameter: name, price, description, status(PENDING, SUCCESS, CLOSE, REJECT), closeDate, highLight(true, false)
         
