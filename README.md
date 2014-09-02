@@ -1,7 +1,7 @@
 isijia Server
 ============
 
-<h1>API<h2>
+<h1>API</h1>
 
 * Register, Retrieve User List
     - Test URL: (http://isijia.com/)
