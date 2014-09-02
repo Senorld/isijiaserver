@@ -12,9 +12,4 @@ class ChefController {
         render(view: "/test/chefList", model: [chefList: chef])
     }
 
-    def retrieveFoodByChef(long chefId){
-        def result = chefService.retrieveFoodByChef(chefId)
-
-        render(view: "/test/menuList", model: [menuList: result])
-    }
 }

@@ -6,14 +6,10 @@ import grails.plugin.springsecurity.annotation.Secured
 class MenuController {
     def springSecurityService
     def menuService
+    def chefService
 
     def index() {
         render(view: '/test/menu')
-    }
-
-    def retrieveList(){
-        def menu = Menu.findAll()
-        render(view: '/test/menuList', model: [menuList: menu])
     }
 
     @Secured(['ROLE_CHEF'])
@@ -44,5 +40,16 @@ class MenuController {
         }
 
         render result
+    }
+
+    def retrieveList(){
+        def menu = Menu.findAll()
+        render(view: '/test/menuList', model: [menuList: menu])
+    }
+
+    def retrieveFoodByChef(long chefId){
+        def result = chefService.retrieveFoodByChef(chefId)
+
+        render(view: "/test/menuList", model: [menuList: result])
     }
 }
