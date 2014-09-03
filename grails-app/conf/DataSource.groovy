@@ -15,7 +15,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://senorldroll.com:3306/isijiac_prod?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://senorldroll.com:3306/isijiac_test?useUnicode=yes&characterEncoding=UTF-8"
             username = "isijiac"
             password = "wykWYK1994"
         }
@@ -23,7 +23,7 @@ environments {
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://senorldroll.com:3306/isijiac_prod?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://senorldroll.com:3306/isijiac_test?useUnicode=yes&characterEncoding=UTF-8"
             username = "isijiac"
             password = "wykWYK1994"
         }

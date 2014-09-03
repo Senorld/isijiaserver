@@ -42,6 +42,10 @@ class MenuController {
         render result
     }
 
+    def foodSearch(String keyWord){
+
+    }
+
     def retrieveList(){
         def menu = Menu.findAll()
         render(view: '/test/menuList', model: [menuList: menu])

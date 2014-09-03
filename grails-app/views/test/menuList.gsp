@@ -37,8 +37,8 @@
             <td>${it.rate}</td>
             <g:if test="${it.image}">
                 <td>
-                    <a href="/isijia/${it.image}">
-                        <img height="200" src="/isijia/${it.image}"/>
+                    <a href="/${it.image}">
+                        <img height="200" src="/${it.image}"/>
                     </a>
 
                 </td>

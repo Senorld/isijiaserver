@@ -13,7 +13,7 @@
 
 <body>
 <h1>Create New Food</h1>
-<g:form controller="menu" action="createFood" method="POST" enctype="multipart/form-data" useToken="true">
+<g:form controller="menu" action="createFood" method="POST" enctype="multipart/form-data" useToken="true" accept-charset="UTF-8">
     <input type="text" placeholder="Food Name" name="name"/>
     <br/>
     <input type="number" placeholder="Price" name="price"/>
