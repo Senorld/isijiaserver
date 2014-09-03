@@ -4,7 +4,6 @@
   Date: 2014/9/3
   Time: 0:05
 --%>
-asfsaf
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>
 <html>

@@ -155,16 +155,6 @@ body {
     height: 150px;
 }
 
-.round_photo{
-    width:60px;
-    height:60px;
-    border:2px solid #ddddde;
-    -moz-border-radius: 59px;
-    -webkit-border-radius: 59px;
-    border-radius:59px;
-    margin-top: 30px;
-}
-
 .chiefs .rmxc{
     float: left;
     font-size: 15px;
@@ -185,6 +175,21 @@ body {
     display: inline-block;
 }
 
+.chiefs .chief-avatar-block .chief-avatar .round_photo, .round_photo_big{
+    width:60px;
+    height:60px;
+    border:2px solid #ddddde;
+    -moz-border-radius: 59px;
+    -webkit-border-radius: 59px;
+    border-radius:59px;
+    margin-top: 40px;
+}
+
+                                                 .round_photo_big{
+                                                     width: 80px;
+                                                     height: 80px;
+                                                 }
+
 .chief-avatar .avatar-name{
     max-width: 60px;
     display: block;
@@ -193,6 +198,8 @@ body {
     margin-top: -5px;
     text-align: center;
 }
+
+
 
 .hot-chief-dishes{
     background: #FFFFFF;
