@@ -78,7 +78,7 @@
 
             <div class="pure-control-group">
                 <label for="address2">地址2</label>
-                <input id="address2" name="address2" type="email" placeholder="Address2">
+                <input id="address2" name="address2" type="text" placeholder="Address2">
             </div>
 
             <div class="pure-control-group">
@@ -88,12 +88,67 @@
 
             <div class="pure-control-group">
                 <label for="stats">州</label>
-                <input id="stats" name="stats" type="text" placeholder="Stats">
+                <select id="stats" name="stats">
+                        <option value="NY">New York</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                </select>
             </div>
 
             <div class="pure-control-group">
                 <label for="birthday">生日</label>
-                <input id="birthday" name="birthday" type="text" placeholder="Birthday">
+                <!-- <input id="birthday" name="birthday" type="text" placeholder="Birthday"> -->
+                <select id="days" name="birthday_d"></select>
+                <select id="months" name="birthday_m"></select>
+                <select id="years" name="birthday_y"></select>
             </div>
 
             <div class="pure-control-group">
@@ -107,11 +162,53 @@
 
             <div class="pure-controls" style="margin-left:230px;">
 
-                <g:submitButton name="registerButton" type="submit" class="pure-button pure-button-primary" style="display:inline-block;">提交</g:submitButton>
+                <g:submitButton name="注册" type="submit" class="pure-button pure-button-primary" style="display:inline-block;">提交</g:submitButton>
             </div>
         </fieldset>
     </g:form>
 </div>
 </div>
 </body>
+
+<script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}"></script>
+<script>
+    $(function() {
+
+    for (i = new Date().getFullYear(); i > 1900; i--)
+    {
+    $('#years').append($('<option />').val(i).html(i));
+}
+
+for (i = 1; i < 13; i++)
+{
+$('#months').append($('<option />').val(i).html(i));
+}
+updateNumberOfDays();
+
+$('#years, #months').change(function(){
+
+updateNumberOfDays();
+
+});
+
+});
+
+function updateNumberOfDays(){
+$('#days').html('');
+month=$('#months').val();
+year=$('#years').val();
+days=daysInMonth(month, year);
+
+for(i=1; i < days+1 ; i++){
+$('#days').append($('<option />').val(i).html(i));
+}
+
+}
+
+function daysInMonth(month, year) {
+return new Date(year, month, 0).getDate();
+}
+
+</script>
+
 </html>

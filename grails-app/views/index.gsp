@@ -25,7 +25,7 @@
             <div class="header-left">
                 <ul>
                     <li style="margin-left:0px;" class="pure-menu-selected"><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
+                    <li><a href="register">注册</a></li>
                 </ul>
             </div>
             <div class="header-right">
@@ -50,7 +50,7 @@
         <div class="title-right">
             <div class="button-block">
                 <button class="button-login pure-button">登陆</button>
-                <button class="button-register pure-button">注册</button>
+                <button class="button-register pure-button" onclick="window.location.href='register'">注册</button>
             </div>
         </div>
         <div class="title-main">
