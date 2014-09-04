@@ -40,5 +40,11 @@
 <h1>Menu List</h1>
 <g:link action="retrieveList" controller="menu">Retrieve Menu List</g:link>
 
+<h1>Search Menu</h1>
+<g:form controller="menu" action="foodSearch" method="POST" enctype="multipart/form-data" useToken="true" accept-charset="UTF-8">
+    <label for="keyWord">Search: </label>
+    <input type="text" name="keyWord" id="keyWord" />
+</g:form>
+
 </body>
 </html>

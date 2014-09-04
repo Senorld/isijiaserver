@@ -46,4 +46,9 @@ isijia Server
     - Retrieve Menu By Chef URL: (http://isijia.com/menu/retrieveFoodByChef)
         * Parameter: chefId
         
+    - Search Food URL: (http://localhost:8080/isijia/menu/foodSearch)
+        * Parameter: keyWord
+        
+    - Test (http://isijia.com/menu/)
+        
     

@@ -43,7 +43,9 @@ class MenuController {
     }
 
     def foodSearch(String keyWord){
+        def result = menuService.searchFood(keyWord)
 
+        render(view: "/test/menuList", model: [menuList: result])
     }
 
     def retrieveList(){

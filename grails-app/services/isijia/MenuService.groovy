@@ -40,4 +40,14 @@ class MenuService {
 
         return [success: true]
     }
+
+    def searchFood(String keyWorld){
+        if(!keyWorld){
+            return [success: false, message: "Please enter key world."]
+        }
+
+        def foodList = Menu.findAllByNameLikeOrDescrptionLike("%$keyWorld%", "%$keyWorld%")
+
+        return foodList
+    }
 }
