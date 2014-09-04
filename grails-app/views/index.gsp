@@ -13,8 +13,8 @@
 
     <title>Home</title>
 
-    <link rel="stylesheet" href="css/pure.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'pure.css')}">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'index.css')}">
 </head>
 
 <body>
@@ -369,7 +369,7 @@
 </div>
 </body>
 
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $(".round_photo").click(function(){
