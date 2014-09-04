@@ -19,61 +19,10 @@
 
 <body>
 <div class="content">
-<div class="header">
-    <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-        <div class="container">
-            <div class="header-left">
-                <ul>
-                    <li style="margin-left:0px;" class="pure-menu-selected"><a href="#">登陆</a></li>
-                    <li><a href="register">注册</a></li>
-                </ul>
-            </div>
-            <div class="header-right">
-                <ul>
-                    <li style="margin-left:0px"><a href="#">我的订单</a></li>
-                    <li><a href="#">我的小厨</a></li>
-                    <li><a href="#">最近浏览</a></li>
-                    <li><a href="#">购物车</a></li>
-                    <li><a href="#">联系客服</a></li>
-                    <li><a href="#">更多</a></li>
-                </ul>
-            </div>
+<g:render template="template/nav_template" />
 
-        </div>
-    </div>
-</div>
 <div class="content">
-    <div class="title">
-        <div class="title-left">
-            <img src="images/logo.png" alt="logo">
-        </div>
-        <div class="title-right">
-            <div class="button-block">
-                <button class="button-login pure-button">登陆</button>
-                <button class="button-register pure-button" onclick="window.location.href='register'">注册</button>
-            </div>
-        </div>
-        <div class="title-main">
-            <div class="search-bar">
-                <form class="pure-form">
-                    <input type="text" placeholder="请输入菜名">
-                    <button type="submit" class="pure-button">搜索</button>
-                </form>
-            </div>
-            <div class="pure-menu pure-menu-horizontal pure-menu-open search-tags">
-                <ul>
-                    <li style="margin-left:0px;"><a href="#">水饺</a></li>
-                    <li><a href="#">火锅</a></li>
-                    <li><a href="#">红烧肉</a></li>
-                    <li><a href="#">中餐</a></li>
-                    <li><a href="#">鱼香肉丝</a></li>
-                    <li><a href="#">小笼包</a></li>
-                    <li><a href="#">脆皮鸭</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
+    <g:render template="template/search_template" />
 </div>
 <div class="content">
     <div class="ad-banner">
@@ -306,67 +255,8 @@
         </div>
     </div>
 </div>
-<div class="clear"></div>
-<div class="footer">
-    <div class="foot-bar"></div>
-    <div class="foot-content-wrapper">
-        <div class="foot-content">
-            <div class="foot-content-block">
-                <div class="foot-content-block-txt">
-                    <div class="pure-menu pure-menu-open" style="border:none">
-                        <ul>
-                            <li style="margin-left:0px;"><a href="#">获取更新</a></li>
-                            <li><a href="#">邮件订阅</a></li>
-                            <li><a href="#">RSS订阅</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="foot-content-block">
-                <div class="foot-content-block-txt">
-                    <div class="pure-menu pure-menu-open" style="border:none">
-                        <ul>
-                            <li style="margin-left:0px;"><a href="#">获取更新</a></li>
-                            <li><a href="#">邮件订阅</a></li>
-                            <li><a href="#">RSS订阅</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="foot-content-block">
-                <div class="foot-content-block-txt">
-                    <div class="pure-menu pure-menu-open" style="border:none">
-                        <ul>
-                            <li style="margin-left:0px;"><a href="#">获取更新</a></li>
-                            <li><a href="#">邮件订阅</a></li>
-                            <li><a href="#">RSS订阅</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="foot-content-block">
-                <div class="foot-content-block-txt">
-                    <div class="pure-menu pure-menu-open" style="border:none">
-                        <ul>
-                            <li style="margin-left:0px;"><a href="#">获取更新</a></li>
-                            <li><a href="#">邮件订阅</a></li>
-                            <li><a href="#">RSS订阅</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="foot-copyright">
-        Copyright&copy;isijia.com &nbsp&nbsp&nbsp&nbsp 爱生活&nbsp爱私家
-    </div>
 </div>
-
-</div>
+<g:render template="/template/foot_template" />
 </body>
 
 <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}"></script>

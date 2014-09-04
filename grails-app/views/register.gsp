@@ -19,29 +19,7 @@
 
 <body>
 <div class="content">
-<div class="header">
-    <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-        <div class="container">
-            <div class="header-left">
-                <ul>
-                    <li style="margin-left:0px;" class="pure-menu-selected"><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
-                </ul>
-            </div>
-            <div class="header-right">
-                <ul>
-                    <li style="margin-left:0px"><a href="#">我的订单</a></li>
-                    <li><a href="#">我的小厨</a></li>
-                    <li><a href="#">最近浏览</a></li>
-                    <li><a href="#">购物车</a></li>
-                    <li><a href="#">联系客服</a></li>
-                    <li><a href="#">更多</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</div>
+    <g:render template="/template/nav_template" />
 <div class="login" style="margin-top: 100px; margin-left: 200px;">
     <g:form class="pure-form pure-form-aligned" controller="register" action="member">
         <fieldset>
@@ -168,6 +146,7 @@
     </g:form>
 </div>
 </div>
+<g:render template="/template/foot_template" />
 </body>
 
 <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}"></script>
