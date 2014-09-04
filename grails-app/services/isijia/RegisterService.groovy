@@ -22,7 +22,7 @@ class RegisterService {
             return [success: false, message: "Your email already registered, please login."]
         }
 
-        def date = utilService.convertStringToDate(birthdayString)
+        def date = birthdayString ? utilService.convertStringToDate(birthdayString) : null
 
         def registered = new Member(email: email, password: password, name: name, phoneNumber: phoneNumber, zipCode: zipCode, address1: address1, address2: address2, city: city, state: state, birthday: date).save(failOnError: true)
 

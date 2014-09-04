@@ -43,16 +43,21 @@
     </div>
 </div>
 <div class="login" style="margin-top: 100px; margin-left: 200px;">
-    <form class="pure-form pure-form-aligned">
+    <g:form class="pure-form pure-form-aligned" controller="register" action="member">
         <fieldset>
             <div class="pure-control-group">
                 <label for="name">用户名</label>
-                <input id="name" type="text" placeholder="Username">
+                <input id="name" name="name" type="text" placeholder="Username">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="email">邮箱地址</label>
+                <input id="email" name="email" type="email" placeholder="Email Address">
             </div>
 
             <div class="pure-control-group">
                 <label for="password">密码</label>
-                <input id="password" type="password" placeholder="Password">
+                <input id="password" name="password" type="password" placeholder="Password">
             </div>
 
             <div class="pure-control-group">
@@ -60,56 +65,52 @@
                 <input id="password_repeat" type="password" placeholder="Password">
             </div>
 
-            <div class="pure-control-group">
-                <label for="email">邮箱地址</label>
-                <input id="email" type="email" placeholder="Email Address">
-            </div>
 
             <div class="pure-control-group">
                 <label for="phone">电话</label>
-                <input id="phone" type="text" placeholder="Phone">
+                <input id="phone" name="phone" type="text" placeholder="Phone">
             </div>
 
             <div class="pure-control-group">
                 <label for="address1">地址1</label>
-                <input id="address1" type="text" placeholder="Address1">
+                <input id="address1" name="address1" type="text" placeholder="Address1">
             </div>
 
             <div class="pure-control-group">
                 <label for="address2">地址2</label>
-                <input id="address2" type="email" placeholder="Address2">
+                <input id="address2" name="address2" type="email" placeholder="Address2">
             </div>
 
             <div class="pure-control-group">
                 <label for="city">城市</label>
-                <input id="city" type="text" placeholder="City">
+                <input id="city" name="city" type="text" placeholder="City">
             </div>
 
             <div class="pure-control-group">
                 <label for="stats">州</label>
-                <input id="stats" type="text" placeholder="Stats">
+                <input id="stats" name="stats" type="text" placeholder="Stats">
             </div>
 
             <div class="pure-control-group">
                 <label for="birthday">生日</label>
-                <input id="birthday" type="text" placeholder="Birthday">
+                <input id="birthday" name="birthday" type="text" placeholder="Birthday">
             </div>
 
             <div class="pure-control-group">
-                <label for="rle">角色</label>
-                <select id="role">
-                    <option value="user">用户</option>
-                    <option value="chef">厨师</option>
+                <label for="role">角色</label>
+                <select id="role" name="role">
+                    <option value="ROLE_USER">用户</option>
+                    <option value="ROLE_CHEF">厨师</option>
                 </select>
             </div>
 
 
             <div class="pure-controls" style="margin-left:230px;">
 
-                <button type="submit" class="pure-button pure-button-primary" style="display:inline-block;">提交</button>
+                <g:submitButton name="registerButton" type="submit" class="pure-button pure-button-primary" style="display:inline-block;">提交</g:submitButton>
             </div>
         </fieldset>
-    </form>
+    </g:form>
 </div>
 </div>
 </body>

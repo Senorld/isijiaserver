@@ -5,7 +5,7 @@ isijia Server
     - Test URL: (http://isijia.com/)
     
     - Register URL: (http://isijia.com/register/member)
-        * Parameters: Email, Password, Name, Phone Number, Address1, Address2, City, Stats, Birthday, Role(User, Chef)
+        * Parameters: Email, Password, Name, Phone Number, Address1, Address2, City, Stats, Birthday, Role(ROLE_USER, ROLE_CHEF)
     
     - Retrieve User List URL: (http://isijia.com/user/retrieveList)
     
