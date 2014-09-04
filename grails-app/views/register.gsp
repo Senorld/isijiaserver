@@ -65,6 +65,45 @@
                 <input id="email" type="email" placeholder="Email Address">
             </div>
 
+            <div class="pure-control-group">
+                <label for="phone">电话</label>
+                <input id="phone" type="text" placeholder="Phone">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="address1">地址1</label>
+                <input id="address1" type="text" placeholder="Address1">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="address2">地址2</label>
+                <input id="address2" type="email" placeholder="Address2">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="city">城市</label>
+                <input id="city" type="text" placeholder="City">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="stats">州</label>
+                <input id="stats" type="text" placeholder="Stats">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="birthday">生日</label>
+                <input id="birthday" type="text" placeholder="Birthday">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="rle">角色</label>
+                <select id="role">
+                    <option value="user">用户</option>
+                    <option value="chef">厨师</option>
+                </select>
+            </div>
+
+
             <div class="pure-controls" style="margin-left:230px;">
 
                 <button type="submit" class="pure-button pure-button-primary" style="display:inline-block;">提交</button>
