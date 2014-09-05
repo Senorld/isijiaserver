@@ -11,7 +11,7 @@ class ChefFeed {
 
     static constraints = {
         chef nullable: false
-        order nullable: false
+        order nullable: true
         user nullable: false
         message nullable: false
     }

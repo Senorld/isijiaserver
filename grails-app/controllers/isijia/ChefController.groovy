@@ -12,4 +12,16 @@ class ChefController {
         render(view: "/test/chefList", model: [chefList: chef])
     }
 
+    def postFeed(String message, int chefId, int rate){
+        def result = chefService.postFeed(message, chefId, rate)
+
+        render(view: "/test/chefList")
+    }
+
+    def retrieveFeedListByChef(long chefId){
+        def result = chefService.retrieveFeed(chefId)
+
+        render(view: "/test/chefFeed")
+    }
+
 }
