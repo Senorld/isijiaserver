@@ -9,7 +9,7 @@ class MenuController {
     def chefService
 
     def index() {
-        render(view: 'dish_detail')
+        render(view: '/dish_detail')
     }
 
     @Secured(['ROLE_CHEF'])
