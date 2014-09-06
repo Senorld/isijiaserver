@@ -1,3 +1,4 @@
+<div class="content">
 <div class="title">
     <div class="title-left">
         <img src="images/logo.png" alt="logo">
@@ -28,4 +29,5 @@
         </div>
     </div>
 
+</div>
 </div>
