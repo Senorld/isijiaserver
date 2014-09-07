@@ -2,7 +2,7 @@ package isijia
 
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_USER', 'ROLE_CHEF'])
+@Secured(['permitAll'])
 class MenuController {
     def springSecurityService
     def menuService
@@ -40,6 +40,12 @@ class MenuController {
         }
 
         render result
+    }
+
+    def dishDetail(long foodId){
+        def menu = Menu.get(foodId)
+
+        render(view: "dish_detail", model: [dishDetail: menu])
     }
 
     def foodSearch(String keyWord){
