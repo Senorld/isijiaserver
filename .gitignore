@@ -30,4 +30,4 @@
 /target
 .idea/*
 classes/*
-web-app/images/*
+#web-app/images/*

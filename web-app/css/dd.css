@@ -1,0 +1,200 @@
+.dd{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.dd-left{
+    float: left;
+    margin-right:-270px;
+    width: 690px;
+}
+
+.dd-right{
+    position: relative;
+    float: right;
+    width: 270px;
+}
+
+    .dd-intro{
+        #border: 1px solid #D8D8D8;
+        #border-bottom: none;
+        #border-radius: 2px;
+        #-moz-box-shadow:    0px 1px 2px 0px rgba(0,0,0,0.10);
+        #box-shadow:         0px 1px 2px 0px rgba(0,0,0,0.10);
+        background: #FFFFFF;
+    }
+
+    .dd-intro .dd-buy{
+        display: inline-block;
+    }
+
+                .dd-buy .dd-pic{
+                    display: inline-block;
+                    float: left;
+                    width: 380px;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                }
+
+                .dd-buy .dd-other{
+                    display: inline-block;
+                    float: right;
+                    width: 280px;
+                }
+
+                          .dd-other .dd-name{
+                              margin-top: 30px;
+                              display: inline-block;
+                          }
+                          
+                                      .dd-name1{
+                                          display: inline-block;
+                                          font-size: 25px;
+                                          color: #85141A;
+
+                                      }
+
+                                      .dd-dish-type{
+                                          display: inline-block;
+                                          font-size: 12px;
+                                          color: #FFFFFF;
+                                          background-color: #C20000;
+                                          margin-left: 20px;
+                                      }
+
+                                      .dd-short-intro{
+                                            margin-top: 10px;
+                                            margin-right: 20px;
+                                            font-size: 12px;
+                                            color: #7D7D7D;
+                                      }
+
+                                      .dd-price{
+                                          margin-right: 20px;
+                                          margin-left: -5px;
+                                          margin-top: 10px;
+                                          background: #FDF8D8;
+                                          padding-top: 10px;
+                                          padding-bottom: 10px;
+                                      }
+
+                                                .dd-price-wrap{
+                                                    display: inline-block;
+                                                    margin-left: 10px;
+                                                    margin-top: 10px;
+                                                }
+
+                                                .dd-price-money{
+                                                    display: inline-block;
+                                                    font-size: 30px;
+                                                    color: #85141A;
+                                                }
+
+                                                .dd-price-rate{
+                                                    margin-left: 10px;
+                                                    margin-top: 10px;
+                                                    font-size: 15px;
+                                                    color: #7D7D7D;
+                                                }
+
+                                       .dd-buy-button{
+                                           margin-top: 40px;
+                                           margin-left: -5px;
+                                       }
+
+                                       .dd-buy-button .cart-button{
+                                           background: rgb(245,166,35);
+                                           color: white;
+                                       }
+
+                                       .dd-buy-button .wish-button{
+                                           background:  rgb(133,182,75);
+                                           color: white;
+                                       }
+
+                                       .dd-share{
+                                            background: #E3F5CD;
+                                            margin-left: -5px;
+                                            margin-right: 20px;
+                                            margin-top: 20px;
+                                            padding: 5px 10px;
+                                       }
+    .dd-intro .dd-txt{
+        margin: 30px 10px;
+    }
+
+                .dd-txt .dd-avatar{
+                    text-align: center;
+                    margin-left: 300px;
+                    display: inline-block;
+                }
+
+                        .dd-avatar-img{
+                            display: inline-block;
+                        }
+
+                        .round_photo{
+                            width:60px;
+                            height:60px;
+                            border:2px solid #ddddde;
+                            -moz-border-radius: 59px;
+                            -webkit-border-radius: 59px;
+                            border-radius:59px;
+                            margin-top: 40px;
+                        }
+
+                        .dd-avatar .dd-avatar-name{
+                            #display: inline-block;
+                            #margin-top: 10px;
+                            margin-left: 10px;
+                            height: 60px;
+                            font-size: 18px;
+                            color: #929292;
+                        }
+
+                .dd-txt .dd-txt-info{
+                     margin-left: 15px;
+                     font-size: 14px;
+                     color: #4A4A4A;
+                     width: 620px;
+                 }
+
+    .dd-chef-other{
+        #border: 1px solid #D8D8D8;
+        #border-top: none;
+        #border-radius: 2px;
+        #-moz-box-shadow:    0px 1px 2px 0px rgba(0,0,0,0.10);
+        #box-shadow:         0px 1px 2px 0px rgba(0,0,0,0.10);
+        background: #FFFFFF;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: -29px;
+    }
+
+                .dd-chef-other-name{
+                    margin-top: 20px;
+                    text-align: center;
+                    color: #929292;
+                }
+
+                .dd-chef-other-pics{
+                    display: inline-block;
+                    margin-left: 80px;
+                    margin-top: 30px;
+                }
+
+                        .dd-chef-other-item{
+                            width: 21%;
+                            display: inline-block;
+                            text-align: center;
+                        }
+
+                                .dd-chef-other-pic{
+                                    width: 90%;
+                                    display: inline-block;
+                                }
+
+                                .dd-chef-other-pic-title{
+                                    margin-top: 5px;
+                                    color: #85141A;
+                                }
