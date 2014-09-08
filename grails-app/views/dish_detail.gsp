@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>注册</title>
+    <title>鱼香肉丝(甜甜圈不辣)</title>
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'pure.css')}">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'index.css')}">

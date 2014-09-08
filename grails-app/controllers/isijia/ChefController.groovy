@@ -9,7 +9,8 @@ class ChefController {
         def role = Role.findByAuthority("ROLE_CHEF")
         def chef = MemberRole.findAllByRole(role).member
 
-        render(view: "/test/chefList", model: [chefList: chef])
+        //render(view: "/test/chefList", model: [chefList: chef])
+        render(view: "/chef", model: [chefList: chef])
     }
 
     def postFeed(String message, int chefId, int rate){

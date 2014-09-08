@@ -1,0 +1,25 @@
+.chef{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+    .chef-info{
+        margin-bottom: 20px;
+    }
+
+    .chef-menu li{
+        width: 100px;
+        text-align: center;
+    }
+    .chef-menu li a{
+        background-color: #D8D8D8;
+        color: #FFF;
+    }
+
+    .chef-menu .pure-menu-selected a{
+        background-color: #85B64B;
+        color: #FFF;
+    }
+
+
+
