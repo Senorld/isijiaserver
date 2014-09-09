@@ -75,85 +75,69 @@
                      </div>
                 </div>
             </div>
+            <g:if test="${relatedDish.size() > 0}">
+
+
             <div class="dd-chef-other">
                  <div class="dd-chef-other-name">
                         ${dishDetail.chef.name}的其他菜谱
                  </div>
-                 <div class="dd-chef-other-pics">
+            <div class="dd-chef-other-pics">
+                <g:each in="${relatedDish}" var="dish">
+
                         <div class="dd-chef-other-item">
                             <div class="dd-chef-other-pic">
-                                <img src="${resource(dir:'images', file: 'yxrs1.png')}" class="pure-img" />
+                                <img src="${resource(dir:'images/dish/' + dish.chef.id, file: dish.image)}" class="pure-img" />
                             </div>
                             <div class="dd-chef-other-pic-title">
-                                鱼香肉丝
+                                ${dish.name}
                             </div>
                         </div>
-                         <div class="dd-chef-other-item">
-                             <div class="dd-chef-other-pic">
-                                 <img src="${resource(dir:'images', file: 'yxrs2.png')}" class="pure-img" />
-                             </div>
-                             <div class="dd-chef-other-pic-title">
-                                 鱼香肉丝
-                             </div>
-                         </div>
-                         <div class="dd-chef-other-item">
-                             <div class="dd-chef-other-pic">
-                                 <img src="images/yxrs3.png" class="pure-img" />
-                             </div>
-                             <div class="dd-chef-other-pic-title">
-                                 鱼香肉丝
-                             </div>
-                         </div>
-                         <div class="dd-chef-other-item">
-                             <div class="dd-chef-other-pic">
-                                 <img src="images/yxrs4.png" class="pure-img" />
-                             </div>
-                             <div class="dd-chef-other-pic-title">
-                                 鱼香肉丝
-                             </div>
-                         </div>
-                 </div>
+                </g:each>
+            </div>
 
-                <div class="dd-chef-other-name">
-                    喜欢鱼香肉丝的人也喜欢
-                </div>
-                <div class="dd-chef-other-pics" style="margin-top: 15px;">
-                    <div class="dd-chef-other-item">
-                        <div class="dd-chef-other-pic">
-                            <img src="images/yxrs5.png" class="pure-img" />
-                        </div>
-                        <div class="dd-chef-other-pic-title">
-                            鱼香肉丝
-                        </div>
-                    </div>
-                    <div class="dd-chef-other-item">
-                        <div class="dd-chef-other-pic">
-                            <img src="images/yxrs6.png" class="pure-img" />
-                        </div>
-                        <div class="dd-chef-other-pic-title">
-                            鱼香肉丝
-                        </div>
-                    </div>
-                    <div class="dd-chef-other-item">
-                        <div class="dd-chef-other-pic">
-                            <img src="images/yxrs7.png" class="pure-img" />
-                        </div>
-                        <div class="dd-chef-other-pic-title">
-                            鱼香肉丝
-                        </div>
-                    </div>
-                    <div class="dd-chef-other-item">
-                        <div class="dd-chef-other-pic">
-                            <img src="images/yxrs8.png" class="pure-img" />
-                        </div>
-                        <div class="dd-chef-other-pic-title">
-                            鱼香肉丝
-                        </div>
-                    </div>
-                </div>
+                %{--<div class="dd-chef-other-name">--}%
+                    %{--喜欢鱼香肉丝的人也喜欢--}%
+                %{--</div>--}%
+                %{--<div class="dd-chef-other-pics" style="margin-top: 15px;">--}%
+                    %{--<div class="dd-chef-other-item">--}%
+                        %{--<div class="dd-chef-other-pic">--}%
+                            %{--<img src="images/yxrs5.png" class="pure-img" />--}%
+                        %{--</div>--}%
+                        %{--<div class="dd-chef-other-pic-title">--}%
+                            %{--鱼香肉丝--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
+                    %{--<div class="dd-chef-other-item">--}%
+                        %{--<div class="dd-chef-other-pic">--}%
+                            %{--<img src="images/yxrs6.png" class="pure-img" />--}%
+                        %{--</div>--}%
+                        %{--<div class="dd-chef-other-pic-title">--}%
+                            %{--鱼香肉丝--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
+                    %{--<div class="dd-chef-other-item">--}%
+                        %{--<div class="dd-chef-other-pic">--}%
+                            %{--<img src="images/yxrs7.png" class="pure-img" />--}%
+                        %{--</div>--}%
+                        %{--<div class="dd-chef-other-pic-title">--}%
+                            %{--鱼香肉丝--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
+                    %{--<div class="dd-chef-other-item">--}%
+                        %{--<div class="dd-chef-other-pic">--}%
+                            %{--<img src="images/yxrs8.png" class="pure-img" />--}%
+                        %{--</div>--}%
+                        %{--<div class="dd-chef-other-pic-title">--}%
+                            %{--鱼香肉丝--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
+                %{--</div>--}%
 
             </div>
+            </g:if>
         </div>
+
         <div class="dd-right">
             <img src="${resource(dir: 'images', file: 'dd-ad.png')}" class="pure-img">
         </div>

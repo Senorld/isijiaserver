@@ -44,8 +44,12 @@ class MenuController {
 
     def dishDetail(long dishId){
         def dish = Menu.get(dishId)
-
-        render(view: "/dish_detail", model: [dishDetail: dish])
+        def relatedDish = []
+        if(dish){
+            relatedDish = menuService.getRelatedDish(dish.chef, dish)
+        }
+        
+        render(view: "/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish])
     }
 
     def foodSearch(String keyWord){

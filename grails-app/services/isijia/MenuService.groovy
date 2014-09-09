@@ -48,4 +48,10 @@ class MenuService {
 
         return foodList
     }
+
+    def getRelatedDish(Member chef, Menu dish){
+        def relatedDish = Menu.executeQuery('from Menu where chef = ? and id != ? order by ?',[chef, dish.id, "rand()"], [max: 6])
+
+        return relatedDish
+    }
 }
