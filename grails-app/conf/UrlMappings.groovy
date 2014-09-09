@@ -7,6 +7,7 @@ class UrlMappings {
             }
         }
 
+        "/logout"(view:"logout")
         "/"(view:"index")
         "500"(view:'/error')
 	}

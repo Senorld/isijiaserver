@@ -30,4 +30,5 @@
 /target
 .idea/*
 classes/*
+web-app/images/dish/*
 #web-app/images/*

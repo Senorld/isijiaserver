@@ -27,29 +27,29 @@
             <div class="dd-intro">
                 <div class="dd-buy">
                     <div class="dd-pic">
-                        <img src="images/yxrs.png" class="pure-img" />
+                        <img src="${resource(dir:'images/dish/' + dishDetail.chefId, file: dishDetail.image)}" class="pure-img" />
                     </div>
                     <div class="dd-other">
                         <div class="dd-name">
                             <div class="dd-name1">
-                                鱼香肉丝
+                                ${dishDetail.name}
                             </div>
                             <div class="dd-dish-type">
-                                川菜
+                                ${dishDetail.dishOrigin}
                             </div>
                             <div class="dd-short-intro">
-                                简短的介绍，可以简短一点，也不要那么简短，不突破两三行即可。
+                                ${dishDetail.shortDescription}
                             </div>
                         </div>
                         <div class="dd-price">
                             <div class="dd-price-wrap">
                                 价格
                                 <div class="dd-price-money">
-                                $6.99
+                                $${dishDetail.price}
                                 </div>
                             </div>
                             <div class="dd-price-rate">
-                                综合评分 7.5 (86吃过)
+                                综合评分 ${dishDetail.rate}
                             </div>
                         </div>
                         <div class="dd-buy-button">
@@ -64,25 +64,25 @@
                 <div class="dd-txt">
                      <div class="dd-avatar">
                             <div class="dd-avatar-img">
-                                <img src="images/avatar3.jpg" class="pure-img round_photo" />
+                                <img src="${resource(dir:'images', file: 'avatar3.jpg')}" class="pure-img round_photo" />
                             </div>
                             <div class="dd-avatar-name">
-                            甜甜圈不辣
+                            ${dishDetail.chef.name}
                             </div>
                      </div>
                      <div class="dd-txt-info">
-                         鱼香肉丝是一道地道川菜。 主要是用糖和醋来进行调味，以酸甜味为主，可以和黑木耳、笋来进行搭配，做出的菜品色泽极佳。 鱼香是川菜主要传统味型之一。成菜具有鱼香味，但其味并不来自鱼，而是泡红辣椒、葱、姜、蒜、糖、盐、酱油等调味品调制而成。此法源出于四川民间独具特色的烹鱼调味方法，而今已广泛用于川味的熟菜中，具有咸、酸、甜、辣、香、鲜和浓郁的葱、姜、蒜味的特色。
+                         ${dishDetail.description}
                      </div>
                 </div>
             </div>
             <div class="dd-chef-other">
                  <div class="dd-chef-other-name">
-                        小厨甜甜圈不辣的其他菜谱
+                        ${dishDetail.chef.name}的其他菜谱
                  </div>
                  <div class="dd-chef-other-pics">
                         <div class="dd-chef-other-item">
                             <div class="dd-chef-other-pic">
-                                <img src="images/yxrs1.png" class="pure-img" />
+                                <img src="${resource(dir:'images', file: 'yxrs1.png')}" class="pure-img" />
                             </div>
                             <div class="dd-chef-other-pic-title">
                                 鱼香肉丝
@@ -90,7 +90,7 @@
                         </div>
                          <div class="dd-chef-other-item">
                              <div class="dd-chef-other-pic">
-                                 <img src="images/yxrs2.png" class="pure-img" />
+                                 <img src="${resource(dir:'images', file: 'yxrs2.png')}" class="pure-img" />
                              </div>
                              <div class="dd-chef-other-pic-title">
                                  鱼香肉丝
@@ -155,7 +155,7 @@
             </div>
         </div>
         <div class="dd-right">
-            <img src="images/dd-ad.png" class="pure-img">
+            <img src="${resource(dir: 'images', file: 'dd-ad.png')}" class="pure-img">
         </div>
 
     </div>

@@ -30,7 +30,7 @@
                 <td>${it.status}</td>
                 <td>${it.name}</td>
                 <td>${it.price}</td>
-                <td>${it.descrption}</td>
+                <td>${it.description}</td>
                 <td>${it.chef.name}</td>
                 <g:if test="${it.image}">
                     <td>

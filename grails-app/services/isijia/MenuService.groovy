@@ -2,13 +2,11 @@ package isijia
 
 import grails.transaction.Transactional
 
-import java.text.SimpleDateFormat
-
 @Transactional
 class MenuService {
     def springSecurityService
     def utilService
-    def createFood(String name, int price, String description, String status, String closeDate, boolean highLight, String fileName){
+    def createFood(String name, int price, String description, String shortDescription, String status, String closeDate, boolean highLight, String fileName){
         if(!name){
             return [success: false, message: "Please enter food name."]
         }
@@ -32,7 +30,7 @@ class MenuService {
 
         MenuStatus menuStatus = status as MenuStatus
 
-        def food = new Menu(name: name, price: price, descrption: description, status: menuStatus, closeDate: date, highLight: highLight, chef: chef, image: fileName).save(flush: true, failOnError: true)
+        def food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, closeDate: date, highLight: highLight, chef: chef, image: fileName).save(flush: true, failOnError: true)
 
         if(!food){
             return [success: false, message: "Something wrong when store food into database. Please try again later."]
@@ -46,7 +44,7 @@ class MenuService {
             return [success: false, message: "Please enter key world."]
         }
 
-        def foodList = Menu.findAllByNameLikeOrDescrptionLike("%$keyWorld%", "%$keyWorld%")
+        def foodList = Menu.findAllByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%")
 
         return foodList
     }

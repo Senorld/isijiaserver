@@ -18,6 +18,8 @@
     <br/>
     <input type="number" placeholder="Price" name="price"/>
     <br/>
+    <textarea name="shortDescription" placeholder="Short Description"></textarea>
+    <br/>
     <textarea name="description" placeholder="Description"></textarea>
     <br/>
     <label for="closeDate">Close Date</label>

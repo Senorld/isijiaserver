@@ -1,7 +1,7 @@
 package isijia
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_USER', 'ROLE_CHEF'])
+@Secured(['permitAll'])
 class ChefController {
     def chefService
 
@@ -13,6 +13,7 @@ class ChefController {
         render(view: "/chef", model: [chefList: chef])
     }
 
+    @Secured(['ROLE_USER', 'ROLE_CHEF'])
     def postFeed(String message, int chefId, int rate){
         def result = chefService.postFeed(message, chefId, rate)
 

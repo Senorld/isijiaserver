@@ -1,7 +1,7 @@
 <div class="content">
 <div class="title">
     <div class="title-left">
-        <img src="images/logo.png" alt="logo">
+        <img src="${resource(dir: 'images', file: 'logo.png')}" alt="logo">
     </div>
     <div class="title-right">
         <div class="button-block">
