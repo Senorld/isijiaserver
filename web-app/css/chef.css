@@ -5,7 +5,39 @@
 
     .chef-info{
         margin-bottom: 20px;
+        display: inline-block;
     }
+
+        .chef-pic{
+            display: inline-block;
+            #width: 80%;
+        }
+
+        .chef-img{
+            width: 85%;
+        }
+
+        .chef-txt-info{
+            display: inline-block;
+            width: 300px;
+            margin-left: 10px;
+        }
+
+            .chef-name{
+                font-size: 23px;
+                margin-bottom: 10px;
+            }
+
+            .chef-info-other{
+                color: #696969;
+                margin-top: 10px;
+                font-size: 18px;
+            }
+
+            .chef-intro{
+                margin-top: 50px;
+                font-size: 15px;
+            }
 
     .chef-menu li{
         width: 100px;
@@ -16,10 +48,132 @@
         color: #FFF;
     }
 
+    .chef-menu li a:hover{
+        background-color: #85B64B;
+    }
+
     .chef-menu .pure-menu-selected a{
         background-color: #85B64B;
         color: #FFF;
     }
 
 
+.chef-dish{
+    margin-top: 30px;
+}
+    .row-block{
+    width: 982px;
+    }
 
+.chef-dish .lh-img-block{
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 15px;
+}
+
+    .chef-order{
+        margin-top: 20px;
+        border: 1px solid #84B64B;
+    }
+
+        .chef-order-top{
+            background-color: #EFF8E3;
+            display: inline-block;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+            .chef-order-date{
+                display: inline-block;
+                font-size: 14px;
+                color: #2E2E2E;
+                margin-left: 30px;
+                font-weight: 700;
+            }
+
+            .chef-order-number{
+                display: inline-block;
+                font-size: 14px;
+                color: #2E2E2E;
+                margin-left: 50px;
+            }
+
+            .chef-order-user-name{
+                display: inline-block;
+                font-size: 14px;
+                color: #2E2E2E;
+                margin-left: 150px;
+            }
+
+        .chef-order-content{
+            display: inline-block;
+            width: 100%;
+        }
+
+            .chef-order-content-dish{
+                display: inline-block;
+                border-right: 1px solid #84B64B;
+                width: 300px;
+            }
+
+                .chef-order-content-user-pic{
+                    display: inline-block;
+                    margin: 20px 20px;
+                    vertical-align:middle;
+                }
+
+                .round_photo{
+                    width:60px;
+                    height:60px;
+                    border:2px solid #ddddde;
+                    -moz-border-radius: 59px;
+                    -webkit-border-radius: 59px;
+                    border-radius:59px;
+                }
+
+                .chef-order-content-dish-name{
+                    display: inline-block;
+                    vertical-align:middle;
+                }
+
+            .chef-order-content-dish-price{
+                display: inline-block;
+                width: 100px;
+                border-right: 1px solid #84B64B;
+                height: 100px;
+                vertical-align:middle;
+                padding-top: 35px;
+                padding-left: 20px;
+            }
+
+            .chef-order-content-dish-num{
+                display: inline-block;
+                width: 100px;
+                border-right: 1px solid #84B64B;
+                height: 100px;
+                vertical-align:middle;
+                padding-top: 35px;
+                padding-left: 20px;
+            }
+
+            .chef-order-content-dish-money{
+                display: inline-block;
+                width: 100px;
+                border-right: 1px solid #84B64B;
+                height: 100px;
+                vertical-align:middle;
+                padding-top: 35px;
+                padding-left: 20px;
+            }
+
+            .chef-order-content-dish-status{
+                display: inline-block;
+                #width: 100%;
+                #border-left: 1px solid #84B64B;
+                height: 100px;
+                vertical-align:middle;
+                padding-top: 35px;
+                padding-left: 20px;
+            }
