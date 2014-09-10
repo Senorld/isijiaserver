@@ -6,7 +6,7 @@ import grails.transaction.Transactional
 class RegisterService {
     def utilService
 
-    def member(String email, String password, String name, String phoneNumber, String zipCode, String address1, String address2, String city, String state, String birthdayString, String roleString){
+    def member(String email, String password, String name, String phoneNumber, String zipCode, String address1, String address2, String city, String state, String birthdayString, String roleString, String gender, String description){
         if(!email || !password || !name){
             return [success: false, message: "Email, Password, and name are required to register."]
         }
@@ -24,7 +24,9 @@ class RegisterService {
 
         def date = birthdayString ? utilService.convertStringToDate(birthdayString) : null
 
-        def registered = new Member(email: email, password: password, name: name, phoneNumber: phoneNumber, zipCode: zipCode, address1: address1, address2: address2, city: city, state: state, birthday: date).save(failOnError: true)
+        gender = gender ?: "Male"
+
+        def registered = new Member(email: email, password: password, name: name, phoneNumber: phoneNumber, zipCode: zipCode, address1: address1, address2: address2, city: city, state: state, birthday: date, gender: gender, description: description).save(failOnError: true)
 
         if(!registered){
             log.error("Member register error: $registered")

@@ -8,6 +8,10 @@ class ChefService {
 
     def retrieveFoodByChef(long chefId){
         def chef = Member.get(chefId)
+        return retrieveFoodByChef(chef)
+    }
+
+    def retrieveFoodByChef(Member chef){
         if(!MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
             log.error("Error on retrieveFoodByChef, The chef is not chef")
             return null

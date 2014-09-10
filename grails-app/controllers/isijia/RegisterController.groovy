@@ -9,8 +9,8 @@ class RegisterController {
         render(view: "/register")
     }
 
-    def member(String email, String password, String name, String phoneNumber, String zipCode, String address1, String address2, String city, String state, String birthday, String role){
-        def result = registerService.member(email, password, name, phoneNumber, zipCode, address1, address2, city, state, birthday, role)
+    def member(String email, String password, String name, String phoneNumber, String zipCode, String address1, String address2, String city, String state, String birthday, String role, String gender, String description){
+        def result = registerService.member(email, password, name, phoneNumber, zipCode, address1, address2, city, state, birthday, role, gender, description)
 
         render result as JSON
     }

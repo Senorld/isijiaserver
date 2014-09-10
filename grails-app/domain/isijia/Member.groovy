@@ -7,6 +7,8 @@ class Member {
 	String email
 	String password
     String name
+    String gender
+    String description
     String phoneNumber
     String zipCode
     String address1
@@ -15,6 +17,8 @@ class Member {
     String state
     Date birthday
     String profile
+
+    Date joinDate = new Date()
 
 	boolean enabled = true
 	boolean accountExpired
@@ -35,6 +39,8 @@ class Member {
         birthday nullable: true
         profile nullable: true
         zipCode nullable: true
+        description nullable: true
+
 
 	}
 

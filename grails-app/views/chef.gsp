@@ -25,18 +25,17 @@
     <div class="chef">
         <div class="chef-info">
             <div class="chef-pic">
-                <img src="images/avatar1.jpg" class="pure-img chef-img" />
+                <img src="${resource(dir: 'images', file: 'avatar1.jpg')}" class="pure-img chef-img" />
             </div>
             <div class="chef-txt-info">
                 <div class="chef-name">
-                    甜甜圈不辣的餐厅
+                    ${chef.name}的餐厅
                 </div>
                 <div class="chef-info-other">
-                    女  法拉盛   2014-08-07加入
+                    ${chef.gender == "Male" ? "男" : "女"}  ${chef.city}   <g:formatDate date="${chef.joinDate}" format="yyyy/MM/dd"/>加入
                 </div>
                 <div class="chef-intro">
-                    无辣不欢 无肉不欢的小圆球一枚
-                    北京土著大妞儿，大米帝国时差党
+                    ${chef.description}
                 </div>
             </div>
         </div>
@@ -47,94 +46,27 @@
                 <li class="#"><a href="#" id="comment">评价</a></li>
                 <li><a href="#" id="favor">收藏</a></li>
                 <li><a href="#" id="message">留言板</a></li>
-                <li><a href="#" id="order">订单管理</a></li>
-                <li><a href="#" id="settings">设置</a></li>
+                <g:if test="${sec.loggedInUserInfo(field: 'id').toString() == String.valueOf(chef.id)}">
+                    <li><a href="#" id="order">订单管理</a></li>
+                    <li><a href="#" id="settings">设置</a></li>
+                </g:if>
+
             </ul>
         </div>
         <div class="chef-dish">
             <div class="row-block">
-            <div class="lh-img-block">
-                <img src="images/p1.png" class="lh-img">
-                <div class="lh-img-block-txt1">
-                    鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                </div>
-                <div class="lh-img-block-txt2">
-                    桃子季来啦，买了很漂亮很漂亮的桃子！
-                    于是做了这个鲜奶油蜜桃派。
-                </div>
-            </div>
-            <div class="lh-img-block">
-                <img src="images/p1.png" class="lh-img">
-                <div class="lh-img-block-txt1">
-                    鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                </div>
-                <div class="lh-img-block-txt2">
-                    桃子季来啦，买了很漂亮很漂亮的桃子！
-                    于是做了这个鲜奶油蜜桃派。
-                </div>
-            </div>
-            <div class="lh-img-block">
-                <img src="images/p1.png" class="lh-img">
-                <div class="lh-img-block-txt1">
-                    鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                </div>
-                <div class="lh-img-block-txt2">
-                    桃子季来啦，买了很漂亮很漂亮的桃子！
-                    于是做了这个鲜奶油蜜桃派。
-                </div>
-            </div>
-            <div class="lh-img-block">
-                <img src="images/p1.png" class="lh-img">
-                <div class="lh-img-block-txt1">
-                    鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                </div>
-                <div class="lh-img-block-txt2">
-                    桃子季来啦，买了很漂亮很漂亮的桃子！
-                    于是做了这个鲜奶油蜜桃派。
-                </div>
-            </div>
-            <div class="row-block">
-                <div class="lh-img-block">
-                    <img src="images/p1.png" class="lh-img">
-                    <div class="lh-img-block-txt1">
-                        鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
+                <g:each in="${dishList}">
+                    <div class="lh-img-block">
+                        <img src="${resource(dir:'images/dish/' + it.chefId, file: it.image)}" class="lh-img" />
+                        <div class="lh-img-block-txt1">
+                            ${it.name} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${it.price}
+                        </div>
+                        <div class="lh-img-block-txt2">
+                            ${it.shortDescription ?: it.description}
+                        </div>
                     </div>
-                    <div class="lh-img-block-txt2">
-                        桃子季来啦，买了很漂亮很漂亮的桃子！
-                        于是做了这个鲜奶油蜜桃派。
-                    </div>
-                </div>
-                <div class="lh-img-block">
-                    <img src="images/p1.png" class="lh-img">
-                    <div class="lh-img-block-txt1">
-                        鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                    </div>
-                    <div class="lh-img-block-txt2">
-                        桃子季来啦，买了很漂亮很漂亮的桃子！
-                        于是做了这个鲜奶油蜜桃派。
-                    </div>
-                </div>
-                <div class="lh-img-block">
-                    <img src="images/p1.png" class="lh-img">
-                    <div class="lh-img-block-txt1">
-                        鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                    </div>
-                    <div class="lh-img-block-txt2">
-                        桃子季来啦，买了很漂亮很漂亮的桃子！
-                        于是做了这个鲜奶油蜜桃派。
-                    </div>
-                </div>
-                <div class="lh-img-block">
-                    <img src="images/p1.png" class="lh-img">
-                    <div class="lh-img-block-txt1">
-                        鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                    </div>
-                    <div class="lh-img-block-txt2">
-                        桃子季来啦，买了很漂亮很漂亮的桃子！
-                        于是做了这个鲜奶油蜜桃派。
-                    </div>
-                </div>
-            </div>
+                </g:each>
+
         </div>
     </div>
         <div class="chef-order">

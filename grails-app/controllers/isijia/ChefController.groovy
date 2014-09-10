@@ -6,11 +6,20 @@ class ChefController {
     def chefService
 
     def index() {
-        def role = Role.findByAuthority("ROLE_CHEF")
-        def chef = MemberRole.findAllByRole(role).member
+
+        def chef = MemberRole.findAllByRole(chefRole).member
 
         //render(view: "/test/chefList", model: [chefList: chef])
         render(view: "/chef", model: [chefList: chef])
+    }
+
+    def getChefById(long chefId){
+        def chef = Member.get(chefId)
+        if(MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
+            def foodList = chefService.retrieveFoodByChef(chef)
+            render(view: "/chef", model: [chef: chef, dishList: foodList])
+        }
+
     }
 
     @Secured(['ROLE_USER', 'ROLE_CHEF'])
