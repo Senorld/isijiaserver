@@ -17,7 +17,7 @@ class MenuController {
         def result
         try {
             def webrootDir = servletContext.getRealPath("/") //app directory
-            def image = request.getFile("foodImage")
+            def image = params.foodImage
             String fileName = null
             if (image) {
                 def milSecond = System.currentTimeMillis()
