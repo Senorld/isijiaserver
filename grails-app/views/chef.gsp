@@ -56,15 +56,18 @@
         <div class="chef-dish">
             <div class="row-block">
                 <g:each in="${dishList}">
-                    <div class="lh-img-block">
-                        <img src="${resource(dir:'images/dish/' + it.chefId, file: it.image)}" class="lh-img" />
-                        <div class="lh-img-block-txt1">
-                            ${it.name} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${it.price}
+                    <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
+                        <div class="lh-img-block">
+                            <img src="${resource(dir:'images/dish/' + it.chefId, file: it.image)}" class="lh-img" />
+                            <div class="lh-img-block-txt1">
+                                ${it.name} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${it.price}
+                            </div>
+                            <div class="lh-img-block-txt2">
+                                ${it.shortDescription ?: it.description}
+                            </div>
                         </div>
-                        <div class="lh-img-block-txt2">
-                            ${it.shortDescription ?: it.description}
-                        </div>
-                    </div>
+                    </g:link>
+
                 </g:each>
 
         </div>
