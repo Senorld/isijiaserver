@@ -7,10 +7,10 @@ class ChefController {
 
     def index() {
 
-        def chef = MemberRole.findAllByRole(chefRole).member
+        def chef = MemberRole.findAllByRole(Role.findByAuthority("ROLE_CHEF")).member
 
-        //render(view: "/test/chefList", model: [chefList: chef])
-        render(view: "/chef", model: [chefList: chef])
+        render(view: "/test/chefList", model: [chefList: chef])
+        //render(view: "/chef", model: [chefList: chef])
     }
 
     def getChefById(long chefId){
