@@ -1,7 +1,10 @@
 <div class="content">
 <div class="title">
     <div class="title-left">
-        <img src="${resource(dir: 'images', file: 'logo.png')}" alt="logo">
+        <g:link uri="http://isijia.com">
+            <img src="${resource(dir: 'images', file: 'logo.png')}" alt="logo">
+        </g:link>
+
     </div>
     <div class="title-right">
         <div class="button-block">

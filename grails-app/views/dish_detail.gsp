@@ -83,8 +83,9 @@
                         ${dishDetail.chef.name}的其他菜谱
                  </div>
             <div class="dd-chef-other-pics">
-                <g:each in="${relatedDish}" var="dish">
 
+                <g:each in="${relatedDish}" var="dish">
+                    <g:link controller="menu" action="dishDetail" params="[dishId: dish.id]">
                         <div class="dd-chef-other-item">
                             <div class="dd-chef-other-pic">
                                 <img src="${resource(dir:'images/dish/' + dish.chef.id, file: dish.image)}" class="pure-img" />
@@ -93,6 +94,7 @@
                                 ${dish.name}
                             </div>
                         </div>
+                    </g:link>
                 </g:each>
             </div>
 

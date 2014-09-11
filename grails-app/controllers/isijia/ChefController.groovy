@@ -18,8 +18,9 @@ class ChefController {
         if(MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
             def foodList = chefService.retrieveFoodByChef(chef)
             render(view: "/chef", model: [chef: chef, dishList: foodList])
+        }else{
+            render(controller: "home")
         }
-
     }
 
     @Secured(['ROLE_USER', 'ROLE_CHEF'])
