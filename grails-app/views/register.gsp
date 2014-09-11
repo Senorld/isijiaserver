@@ -130,6 +130,14 @@
             </div>
 
             <div class="pure-control-group">
+                <label for="gender">性别</label>
+                <select id="gender" name="gender">
+                    <option value="MALE">男</option>
+                    <option value="FEMALE">女</option>
+                </select>
+            </div>
+
+            <div class="pure-control-group">
                 <label for="role">角色</label>
                 <select id="role" name="role">
                     <option value="ROLE_USER">用户</option>

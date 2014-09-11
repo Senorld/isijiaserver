@@ -8,7 +8,7 @@
     </div>
     <div class="title-right">
         <div class="button-block">
-            <button class="button-login pure-button">登陆</button>
+            <button class="button-login pure-button" onclick="window.location.href='login'">登陆</button>
             <button class="button-register pure-button" onclick="window.location.href='register'">注册</button>
         </div>
     </div>

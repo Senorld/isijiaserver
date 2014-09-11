@@ -48,7 +48,8 @@ class LoginController {
             redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl
         }
         else {
-            redirect action: 'auth', params: params
+            //redirect action: 'auth', params: params
+            render(view: "/login")
         }
     }
 

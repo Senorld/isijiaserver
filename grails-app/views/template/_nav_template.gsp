@@ -10,7 +10,7 @@
         <div class="container">
             <div class="header-left">
                 <ul>
-                    <li style="margin-left:0px;" class="pure-menu-selected"><a href="#">登陆</a></li>
+                    <li style="margin-left:0px;" class="pure-menu-selected"><a href="login">登陆</a></li>
                     <li><a href="register">注册</a></li>
                 </ul>
             </div>
