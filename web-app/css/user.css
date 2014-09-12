@@ -1,0 +1,187 @@
+.chef{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.chef-info{
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.user-pic{
+    display: inline-block;
+    #width: 80%;
+}
+
+.user-img{
+    width: 85%;
+}
+
+.user-txt-info{
+    display: inline-block;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.user-name{
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.user-info-other{
+    color: #696969;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.user-intro{
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+.user-menu li{
+    width: 100px;
+    text-align: center;
+}
+.user-menu li a{
+    background-color: #D8D8D8;
+    color: #FFF;
+}
+
+.user-menu li a:hover{
+    background-color: #85B64B;
+}
+
+.user-menu .pure-menu-selected a{
+    background-color: #85B64B;
+    color: #FFF;
+}
+
+
+.user-dish{
+    margin-top: 30px;
+}
+.row-block{
+    width: 982px;
+}
+
+.user-dish .lh-img-block{
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.lh-img-block-txt1-name{
+    display: inline-block;
+}
+
+.lh-img-block-txt1-price{
+    margin-left:40px;
+    display: inline-block;
+}
+.user-order{
+    margin-top: 20px;
+    border: 1px solid #84B64B;
+}
+
+.user-order-top{
+    background-color: #EFF8E3;
+    display: inline-block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-order-date{
+    display: inline-block;
+    font-size: 14px;
+    color: #2E2E2E;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+.user-order-number{
+    display: inline-block;
+    font-size: 14px;
+    color: #2E2E2E;
+    margin-left: 50px;
+}
+
+.user-order-user-name{
+    display: inline-block;
+    font-size: 14px;
+    color: #2E2E2E;
+    margin-left: 150px;
+}
+
+.user-order-content{
+    display: inline-block;
+    width: 100%;
+}
+
+.user-order-content-dish{
+    display: inline-block;
+    border-right: 1px solid #84B64B;
+    width: 300px;
+}
+
+.user-order-content-user-pic{
+    display: inline-block;
+    margin: 20px 20px;
+    vertical-align:middle;
+}
+
+.round_photo{
+    width:60px;
+    height:60px;
+    border:2px solid #ddddde;
+    -moz-border-radius: 59px;
+    -webkit-border-radius: 59px;
+    border-radius:59px;
+}
+
+.user-order-content-dish-name{
+    display: inline-block;
+    vertical-align:middle;
+}
+
+.user-order-content-dish-price{
+    display: inline-block;
+    width: 100px;
+    border-right: 1px solid #84B64B;
+    height: 100px;
+    vertical-align:middle;
+    padding-top: 35px;
+    padding-left: 20px;
+}
+
+.user-order-content-dish-num{
+    display: inline-block;
+    width: 100px;
+    border-right: 1px solid #84B64B;
+    height: 100px;
+    vertical-align:middle;
+    padding-top: 35px;
+    padding-left: 20px;
+}
+
+.user-order-content-dish-money{
+    display: inline-block;
+    width: 100px;
+    border-right: 1px solid #84B64B;
+    height: 100px;
+    vertical-align:middle;
+    padding-top: 35px;
+    padding-left: 20px;
+}
+
+.user-order-content-dish-status{
+    display: inline-block;
+    #width: 100%;
+    #border-left: 1px solid #84B64B;
+    height: 100px;
+    vertical-align:middle;
+    padding-top: 35px;
+    padding-left: 20px;
+}

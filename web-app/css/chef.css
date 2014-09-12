@@ -72,6 +72,14 @@
     margin-left: 15px;
 }
 
+                            .lh-img-block-txt1-name{
+                                display: inline-block;
+                            }
+
+                            .lh-img-block-txt1-price{
+                                margin-left:40px;
+                                display: inline-block;
+                            }
     .chef-order{
         margin-top: 20px;
         border: 1px solid #84B64B;
