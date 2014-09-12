@@ -18,6 +18,7 @@ class Menu {
     boolean highLight = false
     Member chef
     int rate = 0
+    long visit = 0
 
     static constraints = {
         name nullable: false

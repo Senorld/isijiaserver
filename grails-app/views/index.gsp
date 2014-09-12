@@ -19,8 +19,8 @@
 
 <body>
 <div class="content">
-<g:render template="template/nav_template" />
-    <g:render template="template/search_template" />
+<g:render template="/template/nav_template" />
+    <g:render template="/template/search_template" model="user: user" />
 <div class="content">
     <div class="ad-banner">
         <img class="pure-img" src="images/ad-banner.png">
@@ -159,72 +159,23 @@
                 最近热门
                 <div style="width: auto; height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
                 <div class="row-block">
-                    <div class="lh-img-block">
-                        <img src="images/p1.png" class="lh-img">
-                        <div class="lh-img-block-txt1">
-                            鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                        </div>
-                        <div class="lh-img-block-txt2">
-                            桃子季来啦，买了很漂亮很漂亮的桃子！
-                            于是做了这个鲜奶油蜜桃派。
-                        </div>
-                    </div>
-                    <div class="lh-img-block">
-                        <img src="images/p2.png" class="lh-img">
-                        <div class="lh-img-block-txt1">
-                            鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                        </div>
-                        <div class="lh-img-block-txt2">
-                            桃子季来啦，买了很漂亮很漂亮的桃子！
-                            于是做了这个鲜奶油蜜桃派。
-                        </div>
-                    </div>
-                    <div class="lh-img-block">
-                        <img src="images/p3.png" class="lh-img">
-                        <div class="lh-img-block-txt1">
-                            鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                        </div>
-                        <div class="lh-img-block-txt2">
-                            桃子季来啦，买了很漂亮很漂亮的桃子！
-                            于是做了这个鲜奶油蜜桃派。
-                        </div>
-                    </div>
+                    <g:each in="${hotDishList}">
+                        <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
+                            <div class="lh-img-block">
+                                <img src="${resource(dir:'images/dish/' + it.chef.id, file: it.image)}" class="lh-img" />
+                                <div class="lh-img-block-txt1">
+                                    ${it.name}  $${it.price}
+                                </div>
+                                <div class="lh-img-block-txt2">
+                                    ${it.shortDescription}
+                                </div>
+                            </div>
+                        </g:link>
+                    </g:each>
                 </div>
-                <div class="row-block">
-                    <div class="lh-img-block">
-                        <img src="images/p4.png" class="lh-img">
-                        <div class="lh-img-block-txt1">
-                            鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                        </div>
-                        <div class="lh-img-block-txt2">
-                            桃子季来啦，买了很漂亮很漂亮的桃子！
-                            于是做了这个鲜奶油蜜桃派。
-                        </div>
-                    </div>
-                    <div class="lh-img-block">
-                        <img src="images/p5.png" class="lh-img">
-                        <div class="lh-img-block-txt1">
-                            鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                        </div>
-                        <div class="lh-img-block-txt2">
-                            桃子季来啦，买了很漂亮很漂亮的桃子！
-                            于是做了这个鲜奶油蜜桃派。
-                        </div>
-                    </div>
-                    <div class="lh-img-block">
-                        <img src="images/p6.png" class="lh-img">
-                        <div class="lh-img-block-txt1">
-                            鲜奶油蜜桃派 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $6
-                        </div>
-                        <div class="lh-img-block-txt2">
-                            桃子季来啦，买了很漂亮很漂亮的桃子！
-                            于是做了这个鲜奶油蜜桃派。
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
+
         <div class="mp-right">
             <div class="hot-dishes">
                 <div class="hot-dish-title">

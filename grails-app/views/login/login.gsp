@@ -21,16 +21,17 @@
 <div class="content">
     <g:render template="/template/nav_template" />
     <div class="login" style="margin-top: 100px; margin-left: 200px;">
-        <g:form class="pure-form pure-form-aligned" controller="register" action="member">
+        <form action='${postUrl}' method='POST' id='loginForm' class='pure-form pure-form-aligned' autocomplete='off'>
             <fieldset>
                 <div class="pure-control-group">
+
                     <label for="email">邮箱地址</label>
-                    <input id="email" name="email" type="email" placeholder="Email Address">
+                    <input id="email" name="j_username" type="email" placeholder="Email Address">
                 </div>
 
                 <div class="pure-control-group">
                     <label for="password">密码</label>
-                    <input id="password" name="password" type="password" placeholder="Password">
+                    <input id="password" name="j_password" type="password" placeholder="Password">
                 </div>
 
                 <div class="pure-controls" style="margin-left:230px;">
@@ -38,7 +39,7 @@
                     <g:submitButton name="登陆" type="submit" class="pure-button pure-button-primary" style="display:inline-block;">登陆</g:submitButton>
                 </div>
             </fieldset>
-        </g:form>
+        </form>
     </div>
 </div>
 <g:render template="/template/foot_template" />

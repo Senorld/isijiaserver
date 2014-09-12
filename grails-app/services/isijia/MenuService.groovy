@@ -54,4 +54,12 @@ class MenuService {
 
         return relatedDish
     }
+
+    def hotDish(int limit){
+        limit = limit ?: 6
+
+        def hotDishList = Menu.list([sort: "visit", order: "desc", max: limit])
+
+        return hotDishList
+    }
 }

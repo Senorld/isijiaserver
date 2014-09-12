@@ -7,10 +7,19 @@
 
     </div>
     <div class="title-right">
-        <div class="button-block">
-            <button class="button-login pure-button" onclick="window.location.href='login'">登陆</button>
-            <button class="button-register pure-button" onclick="window.location.href='register'">注册</button>
-        </div>
+        <sec:ifLoggedIn>
+            <div class="button-block">
+                <div>Welcome ${user.name}</div>
+                <div><g:link controller='logout'>Logout</g:link></div>
+            </div>
+        </sec:ifLoggedIn>
+        <sec:ifNotLoggedIn>
+            <div class="button-block">
+                <button class="button-login pure-button" onclick="window.location.href='login'">登陆</button>
+                <button class="button-register pure-button" onclick="window.location.href='register'">注册</button>
+            </div>
+        </sec:ifNotLoggedIn>
+
     </div>
     <div class="title-main">
         <div class="search-bar">

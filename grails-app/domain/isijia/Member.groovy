@@ -17,6 +17,7 @@ class Member {
     String state
     Date birthday
     String profile
+    long visit = 0
 
     Date joinDate = new Date()
 
