@@ -19,8 +19,8 @@
 
 <body>
 <div class="content">
-<g:render template="template/nav_template" />
-    <g:render template="template/search_template" />
+<g:render template="/template/nav_template" />
+    <g:render template="/template/search_template" model="user: user" />
 <div class="content">
     <div class="ad-banner">
         <img class="pure-img" src="images/ad-banner.png">
