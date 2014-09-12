@@ -44,6 +44,7 @@ class MenuController {
 
     def dishDetail(long dishId){
         def dish = Menu.get(dishId)
+        dish.visit++
         def relatedDish = []
         if(dish){
             relatedDish = menuService.getRelatedDish(dish.chef, dish)
@@ -67,5 +68,11 @@ class MenuController {
         def result = chefService.retrieveFoodByChef(chefId)
 
         render(view: "/test/menuList", model: [menuList: result])
+    }
+
+    def hotDish(int limit){
+        def hotDishList = menuService.hotDish(limit)
+
+        render hotDishList
     }
 }

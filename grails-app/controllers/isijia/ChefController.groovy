@@ -15,6 +15,7 @@ class ChefController {
 
     def getChefById(long chefId){
         def chef = Member.get(chefId)
+        chef.visit++
         if(MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
             def foodList = chefService.retrieveFoodByChef(chef)
             render(view: "/chef", model: [chef: chef, dishList: foodList])
