@@ -60,7 +60,8 @@ class MenuController {
 
     def retrieveList(){
         def menu = Menu.findAll()
-        render(view: '/test/menuList', model: [menuList: menu])
+       // render(view: '/test/menuList', model: [menuList: menu])
+        render(view:'/dish_list.gsp')
     }
 
     def retrieveFoodByChef(long chefId){

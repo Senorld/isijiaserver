@@ -560,7 +560,8 @@ table {
  */
 .pure-img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    #height: auto;
     display: block;
 }
 
@@ -1560,7 +1561,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     border-radius: 0;
     padding: 0.8em 1.4em;
     vertical-align: top;
-    height: 1.1em;
+    #height: 1.1em;
 }
 .pure-paginator .pure-button:focus,
 .pure-paginator .pure-button:active {

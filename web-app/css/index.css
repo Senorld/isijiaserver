@@ -12,6 +12,21 @@ body {
     font-family:'Microsoft Yahei', 'Microsoft Jhenghei', STHeiti, PMingLiU, Simsun;
 }
 
+a{
+    text-decoration: none ;
+}
+
+a:visited{
+    color: #4A4A4A;
+}
+
+a:focus{
+    background: none;
+    border: none;
+    color: #aaa;
+}
+
+
 .l-box {
     padding: 1em;
 }
