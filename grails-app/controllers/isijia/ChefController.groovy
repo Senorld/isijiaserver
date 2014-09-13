@@ -4,6 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class ChefController {
     def chefService
+    def springSecurityService
 
     def index() {
 
@@ -16,9 +17,10 @@ class ChefController {
     def getChefById(long chefId){
         def chef = Member.get(chefId)
         chef.visit++
+        def user = springSecurityService.currentUser
         if(MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
             def foodList = chefService.retrieveFoodByChef(chef)
-            render(view: "/chef", model: [chef: chef, dishList: foodList])
+            render(view: "/chef", model: [chef: chef, dishList: foodList, user: user])
         }else{
             render(controller: "home")
         }

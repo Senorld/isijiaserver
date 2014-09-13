@@ -49,8 +49,8 @@ class MenuController {
         if(dish){
             relatedDish = menuService.getRelatedDish(dish.chef, dish)
         }
-        
-        render(view: "/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish])
+        def user = springSecurityService.currentUser
+        render(view: "/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, user: user])
     }
 
     def foodSearch(String keyWord){
@@ -60,15 +60,16 @@ class MenuController {
     }
 
     def retrieveList(){
-        def menu = Menu.findAll()
+        def menu = Menu.list([sort: "visit"])
        // render(view: '/test/menuList', model: [menuList: menu])
-        render(view:'/dish_list.gsp')
+        def user = springSecurityService.currentUser
+        render(view:'/dish_list.gsp', model: [dishList: menu, user: user])
     }
 
     def retrieveFoodByChef(long chefId){
         def result = chefService.retrieveFoodByChef(chefId)
-
-        render(view: "/test/menuList", model: [menuList: result])
+        def user = springSecurityService.currentUser
+        render(view: "/test/menuList", model: [menuList: result, user: user])
     }
 
     def hotDish(int limit){

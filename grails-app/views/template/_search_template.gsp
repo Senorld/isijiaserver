@@ -15,8 +15,8 @@
         </sec:ifLoggedIn>
         <sec:ifNotLoggedIn>
             <div class="button-block">
-                <button class="button-login pure-button" onclick="window.location.href='login'">登陆</button>
-                <button class="button-register pure-button" onclick="window.location.href='register'">注册</button>
+                <g:link class="button-login pure-button" controller="login" action="auth">登陆</g:link>
+                <g:link class="button-register pure-button" controller="register" action="index">注册</g:link>
             </div>
         </sec:ifNotLoggedIn>
 
