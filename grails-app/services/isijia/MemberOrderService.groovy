@@ -42,6 +42,13 @@ class MemberOrderService {
         return food
     }
 
+    def retrieveOrderByUser(Member user, String status = 'PENDING'){
+        def orderList = MemberOrder.findAllByUser(user, [sort: "lastChangDate"])
+        //def orderList = MemberOrder.all.findAll{it.menu.containsAll(chefMenu)}
+
+        return orderList
+    }
+
     def retrieveOrderByChef(long chefId, String status = "PENDING"){
         def chef = Member.get(chefId)
 

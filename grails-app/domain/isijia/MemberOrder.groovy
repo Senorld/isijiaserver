@@ -11,6 +11,7 @@ class MemberOrder {
     Date createdDate = new Date()
     Date lastChangDate = new Date()
     Member user
+    int amount
 
     static constraints = {
         user nullable: false

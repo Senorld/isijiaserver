@@ -29,13 +29,13 @@
             </div>
             <div class="user-txt-info">
                 <div class="user-name">
-                    ${/*user.name*/}的餐厅
+                    ${user.name}的餐厅
                 </div>
                 <div class="user-info-other">
-                    ${/*user.gender == "Male" ? "男" : "女"*/}  ${/*user.city*/}   <g:formatDate date="${/*user.joinDate*/}" format="yyyy/MM/dd"/>加入
+                    ${user.gender == "MALE" ? "男" : "女"}  ${user.city}   <g:formatDate date="${user.joinDate}" format="yyyy/MM/dd"/>加入
                 </div>
                 <div class="user-intro">
-                    ${/*user.description*/}
+                    ${user.description}
                 </div>
             </div>
         </div>
@@ -45,68 +45,50 @@
                 <li class="pure-menu-selected"><a href="#" id="dish">吃过</a></li>
                 <li class="#"><a href="#" id="comment">评价</a></li>
                 <li><a href="#" id="favor">收藏</a></li>
-                <g:if test="${sec.loggedInUserInfo(field: 'id').toString() == String.valueOf(user.id)}">
-                    <li><a href="#" id="settings">订单管理</a></li>
-                    <li><a href="#" id="settings">设置</a></li>
-                </g:if>
+                <li><a href="#" id="settings">订单管理</a></li>
+                <li><a href="#" id="settings">设置</a></li>
 
             </ul>
         </div>
-        <div class="user-dish">
-            <div class="row-block">
-                <g:each in="${dishList}">
-                    <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
-                        <div class="lh-img-block">
-                            <img src="${resource(dir:'images/dish/' + it.userId, file: it.image)}" class="lh-img" />
-                            <div class="lh-img-block-txt1">
-                                <div class="lh-img-block-txt1-name">${it.name}</div> <div class="lh-img-block-txt1-price"> $${it.price}</div>
-                            </div>
-                            <div class="lh-img-block-txt2">
-                                ${it.shortDescription ?: it.description}
-                            </div>
+        <g:each in="${orderList}">
+            <div class="user-order">
+                <div class="user-order-top">
+                    <div class="user-order-date">
+                        <g:formatDate date="${it.createdDate}" format="yyyy-MM-dd"/>
+                    </div>
+                    <div class="user-order-number">
+                        订单号：${it.id}
+                    </div>
+                    <div class="user-order-user-name">
+                        ${it.user}
+                    </div>
+                </div>
+                <div class="user-order-content">
+                    <div class="user-order-content-dish">
+                        <div class="user-order-content-user-pic">
+                            <img src="${resource(dir:'images/dish/' + it.menu.chef.id, file: it.menu.image)}" class="pure-img" />
                         </div>
-                    </g:link>
-
-                </g:each>
-
-            </div>
-        </div>
-        <div class="user-order">
-            <div class="user-order-top">
-                <div class="user-order-date">
-                    2014-08-30
-                </div>
-                <div class="user-order-number">
-                    订单号：7844201408138312
-                </div>
-                <div class="user-order-user-name">
-                    <a href="#">棉微良品</a>
-                </div>
-            </div>
-            <div class="user-order-content">
-                <div class="user-order-content-dish">
-                    <div class="user-order-content-user-pic">
-                        <img src="images/avatar3.jpg" class="pure-img round_photo" />
+                        <div class="user-order-content-dish-name">
+                            ${it.menu.name}
+                        </div>
                     </div>
-                    <div class="user-order-content-dish-name">
-                        鲜奶油蜜桃派
+                    <div class="user-order-content-dish-price">
+                        单价: $${it.menu.price}
+                    </div>
+                    <div class="user-order-content-dish-num">
+                        数量: ${it.amount}
+                    </div>
+                    <div class="user-order-content-dish-money">
+                        金额: $${it.menu.price*it.amount}
+                    </div>
+                    <div class="user-order-content-dish-status">
+                        ${it.status}
                     </div>
                 </div>
-                <div class="user-order-content-dish-price">
-                    单价: $6
-                </div>
-                <div class="user-order-content-dish-num">
-                    数量: 1
-                </div>
-                <div class="user-order-content-dish-money">
-                    金额: $6
-                </div>
-                <div class="user-order-content-dish-status">
-                    买家已付款
-                </div>
-            </div>
 
-        </div>
+            </div>
+        </g:each>
+
     </div>
     <g:render template="/template/foot_template" />
 </body>
