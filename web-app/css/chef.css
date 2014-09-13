@@ -185,3 +185,20 @@
                 padding-top: 35px;
                 padding-left: 20px;
             }
+
+
+.chef-add-dish{
+    margin-top: 30;
+    background: #F4FAF0;
+    width: 100%;
+}
+
+#shortDescription{
+    width: 300px;
+    height: 100px;
+}
+
+#description{
+    width: 300px;
+    height: 100px;
+}

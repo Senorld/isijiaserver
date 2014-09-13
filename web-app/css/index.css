@@ -122,10 +122,22 @@ a:focus{
     color: #aaa;
 }
 
-.button-login , .button-register{
+.button-login , .button-register, .button-logout{
     background: rgb(245,166,35);
     height: 45px;
     width: 80px;
+    color: white;
+}
+
+.display-user-name{
+    display: inline-block;
+}
+
+.button-logout{
+    display: inline-block;
+}
+
+.button-block a:visited{
     color: white;
 }
 

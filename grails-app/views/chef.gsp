@@ -42,18 +42,20 @@
 
         <div class="pure-menu pure-menu-open pure-menu-horizontal chef-menu">
             <ul>
-                <li class="pure-menu-selected"><a href="#" id="dish">菜品</a></li>
-                <li class="#"><a href="#" id="comment">评价</a></li>
-                <li><a href="#" id="favor">收藏</a></li>
-                <li><a href="#" id="message">留言板</a></li>
-                <g:if test="${sec.loggedInUserInfo(field: 'id').toString() == String.valueOf(chef.id)}">
-                    <li><a href="#" id="order">订单管理</a></li>
-                    <li><a href="#" id="settings">设置</a></li>
+                <li class="pure-menu-selected chef-menu-js"><a href="#" id="dish">菜品</a></li>
+                <li class="chef-menu-js"><a href="javascript:void(0)" id="comment">评价</a></li>
+                <li class="chef-menu-js"><a href="javascript:void(0)" id="favor">收藏</a></li>
+                <li class="chef-menu-js"><a href="javascript:void(0)" id="message">留言板</a></li>
+                 <g:if test="${sec.loggedInUserInfo(field: 'id').toString() == String.valueOf(chef.id)}">
+                    <li class="chef-menu-js"><a href="javascript:void(0)" id="add-dish">增加菜品</a></li>
+                    <li class="chef-menu-js"><a href="javascript:void(0)" id="order">订单管理</a></li>
+                    <li class="chef-menu-js"><a href="javascript:void(0)" id="settings">设置</a></li>
                 </g:if>
 
             </ul>
         </div>
-        <div class="chef-dish">
+        <div class="chef-dish" id="dish-tab">
+            abc
             <div class="row-block">
                 <g:each in="${dishList}">
                     <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
@@ -72,7 +74,7 @@
 
         </div>
     </div>
-        <div class="chef-order">
+        <div class="chef-order" id="order-tab" style="display:none;">
             <div class="chef-order-top">
                 <div class="chef-order-date">
                     2014-08-30
@@ -108,7 +110,54 @@
             </div>
 
         </div>
+        <div class="chef-add-dish" id="add-dish-tab" style="display:none">
+            <g:form class="pure-form pure-form-aligned" controller="register" action="member">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="name">菜品名称</label>
+                        <input id="name" name="name" type="text" placeholder="菜品名称">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="price">价格</label>
+                        <input id="price" name="price" type="text" placeholder="价格">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="shortDescription">简介</label>
+                        <textarea id="shortDescription" name="shortDescription" type="text" placeholder=""></textarea>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="description">介绍</label>
+                        <textarea id="description" name="description" type="text" placeholder=""></textarea>
+                    </div>
+
+
+                    <div class="pure-controls" style="margin-left:230px;">
+
+                        <g:submitButton name="增加" type="submit" class="pure-button pure-button-primary" style="display:inline-block;">增加</g:submitButton>
+                    </div>
+                </fieldset>
+            </g:form>
+        </div>
 </div>
 <g:render template="/template/foot_template" />
 </body>
+
+<script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".chef-menu-js").click(function(){
+            var obj = $(".pure-menu-selected");
+            var id = obj.children().attr("id");
+            $("#" + id + "-tab").css("display", "none");
+            obj.removeClass("pure-menu-selected");
+
+            $(this).addClass("pure-menu-selected");
+            id = $(this).children().attr("id");
+            $("#" + id + "-tab").css("display", "");
+        });
+    });
+</script>
 </html>
