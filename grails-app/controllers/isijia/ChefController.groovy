@@ -10,8 +10,15 @@ class ChefController {
 
         def chef = MemberRole.findAllByRole(Role.findByAuthority("ROLE_CHEF")).member
 
-        //render(view: "/test/chefList", model: [chefList: chef])
-        render(view: "/chef_list", model: [chefList: chef])
+        render(view: "/test/chefList", model: [chefList: chef])
+        //render(view: "/chef_list", model: [chefList: chef])
+    }
+
+    def list(){
+        def chef = MemberRole.findAllByRole(Role.findByAuthority("ROLE_CHEF")).member
+        def user = springSecurityService.currentUser
+        
+        render(view: "/chef_list", model: [chefList: chef, user: user])
     }
 
     def getChefById(long chefId){

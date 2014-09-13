@@ -30,54 +30,27 @@
         </div>
     </div>
     <div class="cl-list">
-         <div class="cl-block">
-             <div class="cl-img">
-                 <a href="#"><img src="${resource(dir: 'images', file: 'avatar1.jpg')}" class="pure-img"></a>
-             </div>
-             <div class="cl-content">
-                <div class="cl-name">
-                    <a href="#">甜甜圈不辣</a>
+        <g:each in="${chefList}">
+            <g:link controller="chef" action="getChefById" params="[chefId: it.id]">
+                <div class="cl-block">
+                    <div class="cl-img">
+                        <img src="${resource(dir: 'images', file: 'avatar1.jpg')}" class="pure-img">
+                    </div>
+                    <div class="cl-content">
+                        <div class="cl-name">
+                            ${it.name}
+                        </div>
+                        <div class="cl-chef-info">
+                            <div class="cl-chef-gender">${it.gender == 'MALE' ? "男" : "女"}</div>    <div class="cl-chef-loc">${it.city}</div>     <div class="cl-chef-join-time"><g:formatDate format="yyyy-MM-dd" date="${it.joinDate}"/> 加入</div>
+                        </div>
+                        <div class="cl-chef-intro">
+                            ${it.description}
+                        </div>
+                    </div>
                 </div>
-                 <div class="cl-chef-info">
-                      <div class="cl-chef-gender">女</div>    <div class="cl-chef-loc">法拉盛</div>     <div class="cl-chef-join-time">2014-08-07加入</div>
-                 </div>
-                 <div class="cl-chef-intro">
-                        无辣不欢  无肉不欢的小圆球一枚  北京土著大妞，大米帝国时差党
-                 </div>
-             </div>
-         </div>
-        <div class="cl-block">
-            <div class="cl-img">
-                <a href="#"><img src="${resource(dir: 'images', file: 'avatar2.jpg')}" class="pure-img"></a>
-            </div>
-            <div class="cl-content">
-                <div class="cl-name">
-                    <a href="#">甜甜圈不辣</a>
-                </div>
-                <div class="cl-chef-info">
-                    <div class="cl-chef-gender">女</div>    <div class="cl-chef-loc">法拉盛</div>     <div class="cl-chef-join-time">2014-08-07加入</div>
-                </div>
-                <div class="cl-chef-intro">
-                    无辣不欢  无肉不欢的小圆球一枚  北京土著大妞，大米帝国时差党
-                </div>
-            </div>
-        </div>
-        <div class="cl-block">
-            <div class="cl-img">
-                <a href="#"><img src="${resource(dir: 'images', file: 'avatar3.jpg')}" class="pure-img"></a>
-            </div>
-            <div class="cl-content">
-                <div class="cl-name">
-                    <a href="#">甜甜圈不辣</a>
-                </div>
-                <div class="cl-chef-info">
-                    <div class="cl-chef-gender">女</div>    <div class="cl-chef-loc">法拉盛</div>     <div class="cl-chef-join-time">2014-08-07加入</div>
-                </div>
-                <div class="cl-chef-intro">
-                    无辣不欢  无肉不欢的小圆球一枚  北京土著大妞，大米帝国时差党
-                </div>
-            </div>
-        </div>
+            </g:link>
+
+        </g:each>
         <div class="paginator">
             <ul class="pure-paginator">
                 <li><a class="pure-button prev" href="#">&#171;</a></li>
