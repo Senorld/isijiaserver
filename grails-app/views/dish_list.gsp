@@ -42,122 +42,43 @@
                 </div>
             </div>
             <div class="dl-list">
-                <div class="dl-block">
-                    <div class="dl-img">
-                        <a href="#"><img src="${resource(dir: 'images', file: 'yxrs1.png')}" class="pure-img"></a>
-                    </div>
-                    <div class="dl-content">
-                        <div class="dl-name">
-                            <div class="dl-name1">
-                                <a href="#">鱼香肉丝</a>
+                <g:each in="${dishList}">
+                    <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
+                        <div class="dl-block">
+                            <div class="dl-img">
+                                <img src="${resource(dir:'images/dish/' + it.chef.id, file: it.image)}" class="lh-img pure-img" />
                             </div>
-                            <div class="dl-dish-type">
-                                川菜
-                            </div>
-                        </div>
-                        <div class="dl-intro">
-                            就连在四川的饭馆吃个鱼香肉丝都容易踩雷，成都……
-                        </div>
-                        <div class="dl-rate">
-                            综合评分： <div class="dl-rate-score">7.5</div>  ( 86 吃过 )
-                        </div>
-                        <div class="dl-content-bottom">
-                            <div class="dl-dish-chef">
-                                小厨： <a href="#">甜甜圈不辣</a>
-                            </div>
-                            <div class="dl-dish-price">
-                                 $6
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dl-block">
-                    <div class="dl-img">
-                        <a href="#"><img src="${resource(dir: 'images', file: 'yxrs2.png')}" class="pure-img"></a>
-                    </div>
-                    <div class="dl-content">
-                        <div class="dl-name">
-                            <div class="dl-name1">
-                                <a href="#">鱼香肉丝</a>
-                            </div>
-                            <div class="dl-dish-type">
-                                川菜
+                            <div class="dl-content">
+                                <div class="dl-name">
+                                    <div class="dl-name1">
+                                        ${it.name}
+                                    </div>
+                                    <div class="dl-dish-type">
+                                        川菜 <!-- 不清楚!! -->
+                                    </div>
+                                </div>
+                                <div class="dl-intro">
+                                    ${it.shortDescription}
+                                </div>
+                                <div class="dl-rate">
+                                    综合评分： <div class="dl-rate-score">${it.rate}</div>  ( ${it.visit} 吃过 )
+                                </div>
+                                <div class="dl-content-bottom">
+                                    <div class="dl-dish-chef">
+                                        小厨： <g:link controller="chef" action="getChefById" params="[chefId: it.chef.id]">${it.chef.name}</g:link>
+                                    </div>
+                                    <div class="dl-dish-price">
+                                        $${it.price}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="dl-intro">
-                            就连在四川的饭馆吃个鱼香肉丝都容易踩雷，成都……
-                        </div>
-                        <div class="dl-rate">
-                            综合评分： <div class="dl-rate-score">7.5</div>  ( 86 吃过 )
-                        </div>
-                        <div class="dl-content-bottom">
-                            <div class="dl-dish-chef">
-                                小厨： <a href="#">甜甜圈不辣</a>
-                            </div>
-                            <div class="dl-dish-price">
-                                $6
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dl-block">
-                    <div class="dl-img">
-                        <a href="#"><img src="${resource(dir: 'images', file: 'yxrs3.png')}" class="pure-img"></a>
-                    </div>
-                    <div class="dl-content">
-                        <div class="dl-name">
-                            <div class="dl-name1">
-                                <a href="#">鱼香肉丝</a>
-                            </div>
-                            <div class="dl-dish-type">
-                                川菜
-                            </div>
-                        </div>
-                        <div class="dl-intro">
-                            就连在四川的饭馆吃个鱼香肉丝都容易踩雷，成都……
-                        </div>
-                        <div class="dl-rate">
-                            综合评分： <div class="dl-rate-score">7.5</div>  ( 86 吃过 )
-                        </div>
-                        <div class="dl-content-bottom">
-                            <div class="dl-dish-chef">
-                                小厨： <a href="#">甜甜圈不辣</a>
-                            </div>
-                            <div class="dl-dish-price">
-                                $6
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dl-block">
-                    <div class="dl-img">
-                        <a href="#"><img src="${resource(dir: 'images', file: 'yxrs4.png')}" class="pure-img"></a>
-                    </div>
-                    <div class="dl-content">
-                        <div class="dl-name">
-                            <div class="dl-name1">
-                                <a href="#">鱼香肉丝</a>
-                            </div>
-                            <div class="dl-dish-type">
-                                川菜
-                            </div>
-                        </div>
-                        <div class="dl-intro">
-                            就连在四川的饭馆吃个鱼香肉丝都容易踩雷，成都……
-                        </div>
-                        <div class="dl-rate">
-                            综合评分： <div class="dl-rate-score">7.5</div>  ( 86 吃过 )
-                        </div>
-                        <div class="dl-content-bottom">
-                            <div class="dl-dish-chef">
-                                小厨： <a href="#">甜甜圈不辣</a>
-                            </div>
-                            <div class="dl-dish-price">
-                                $6
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </g:link>
+
+                </g:each>
+
+
+
                 <div class="paginator">
                     <ul class="pure-paginator">
                         <li><a class="pure-button prev" href="#">&#171;</a></li>
@@ -171,6 +92,7 @@
                 </div>
             </div>
         </div>
+
         <div class="dl-right">
             <div class="ad-banner1">
                 <img src="${resource(dir: 'images', file: 'dd-ad.png')}" class="pure-img">

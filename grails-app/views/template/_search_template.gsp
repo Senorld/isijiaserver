@@ -1,7 +1,7 @@
 <div class="content">
 <div class="title">
     <div class="title-left">
-        <g:link uri="http://isijia.com">
+        <g:link controller="home">
             <img src="${resource(dir: 'images', file: 'logo.png')}" alt="logo">
         </g:link>
 

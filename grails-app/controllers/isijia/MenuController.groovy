@@ -63,7 +63,7 @@ class MenuController {
         def menu = Menu.list([sort: "visit"])
        // render(view: '/test/menuList', model: [menuList: menu])
         def user = springSecurityService.currentUser
-        render(view:'/dish_list.gsp', model: [dishList: menu, user: user])
+        render(view:'/dish_list', model: [dishList: menu, user: user])
     }
 
     def retrieveFoodByChef(long chefId){
