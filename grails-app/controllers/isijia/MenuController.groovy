@@ -59,7 +59,7 @@ class MenuController {
         render(view: "/test/menuList", model: [menuList: result])
     }
 
-    def retrieveList(){
+    def list(){
         def menu = Menu.list([sort: "visit"])
        // render(view: '/test/menuList', model: [menuList: menu])
         def user = springSecurityService.currentUser
