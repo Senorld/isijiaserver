@@ -398,7 +398,7 @@
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                 <div class="col-md-3">
                     <div>
-                        <img data-src="${resource(dir:'images/dish/' + it.chef.id, file: 'it.image')}" alt="..." width="100%" height="150">
+                        <img data-src="${createLink(uri: '/') + it.image}" alt="..." width="100%" height="150">
                         <div class="caption">
                             <h4><font color="#a52a2a">${it.name}</font></h4>
                             <p>${it.shortDescription}</p>

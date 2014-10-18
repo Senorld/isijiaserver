@@ -25,7 +25,9 @@ class MenuController {
                 fileName = "dish_${milSecond}.png"
                 String filePath = "dish/${chef.id}"
                 ftpService.save(image.getBytes(), fileName, filePath)
+                fileName = "userUpload/$filePath/$fileName"
             }
+
 
             result = menuService.createFood(name, price, description, shortDescription, status, closeDate, highLight, fileName)
 
