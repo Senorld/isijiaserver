@@ -85,6 +85,11 @@ grails.hibernate.pass.readonly = false
 // configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
 grails.hibernate.osiv.readonly = false
 
+ftp.server = "ftp.isijia.com"
+ftp.username = "userupload@isijia.com"
+ftp.password = "sUPuteP6"
+ftp.path = ""
+
 environments {
     development {
         grails.logging.jul.usebridge = true
@@ -137,3 +142,10 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/home/**':                       ['permitAll']
 ]
 
+grails.assets.less.compile = 'less4j'
+grails.assets.plugin."twitter-bootstrap".excludes = ["**/*.less"]
+grails.assets.plugin."twitter-bootstrap".includes = ["bootstrap.less"]
+
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']   /*no changes here*/
+grails.resources.adhoc.excludes = ['/**/langs/**/*.*', '/**/themes/**/*.*']  /*to permit some Ajax calls from tiny_mce.js to relevant resources*/
+grails.resources.debug=true

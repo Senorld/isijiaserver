@@ -7,6 +7,7 @@ class MenuController {
     def springSecurityService
     def menuService
     def chefService
+    def ftpService
 
     def index() {
         render(view: '/test/menu')
@@ -16,20 +17,14 @@ class MenuController {
     def createFood(String name, int price, String description, String shortDescription, String status, String closeDate, boolean highLight) {
         def result
         try {
-            def webrootDir = servletContext.getRealPath("/") //app directory
             def image = params.foodImage
             String fileName = null
             if (image) {
                 def milSecond = System.currentTimeMillis()
                 def chef = springSecurityService.currentUser
                 fileName = "dish_${milSecond}.png"
-                String filePath = "images/dish/${chef.id}/${fileName}"
-                File file = new File(webrootDir, filePath)
-                if (!file.exists()) {
-                    file.mkdirs()
-                }
-
-                image.transferTo(file)
+                String filePath = "dish/${chef.id}"
+                ftpService.save(image.getBytes(), fileName, filePath)
             }
 
             result = menuService.createFood(name, price, description, shortDescription, status, closeDate, highLight, fileName)
