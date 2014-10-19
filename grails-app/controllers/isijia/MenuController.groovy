@@ -74,4 +74,10 @@ class MenuController {
 
         render hotDishList
     }
+
+    @Secured(['ROLE_CHEF', 'ROLE_USER'])
+    def likeMenu(long menuId){
+        def result = menuService.likeMenu(menuId)
+        render result
+    }
 }

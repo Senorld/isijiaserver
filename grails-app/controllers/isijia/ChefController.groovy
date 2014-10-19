@@ -33,6 +33,7 @@ class ChefController {
         }
     }
 
+
     @Secured(['ROLE_USER', 'ROLE_CHEF'])
     def postFeed(String message, int chefId, int rate){
         def result = chefService.postFeed(message, chefId, rate)

@@ -281,65 +281,17 @@
         <div class="panel-heading" style="background-color: #ffffff">
             <h3 class="panel-title">热门小厨</h3><br>
             <div class="row">
+            <g:each in="${hotChef}">
                 <div class="col-md-2">
                     <div align="center">
-                        <img data-src="holder.js/70x70" alt="..." class="img-thumbnail">
+                        <img src="${createLink(uri: '/') + it.profile}" class="img-thumbnail user">
                         <div class="caption">
-                            <h5 align="center">小琪</h5>
-                            <p align="center">20位食客</p>
+                            <h5 align="center">${it.name}</h5>
+                            <p align="center">${it.visit}位食客</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-2">
-                    <div align="center">
-                        <img data-src="holder.js/70x70" alt="..." class="img-thumbnail">
-                        <div class="caption">
-                            <h5 align="center">甜甜圈不辣</h5>
-                            <p align="center">7位食客</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div align="center">
-                        <img data-src="holder.js/70x70" alt="..." class="img-responsive">
-                        <div class="caption">
-                            <h5 align="center">逆风三米半</h5>
-                            <p align="center">11位食客</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div align="center">
-                        <img data-src="holder.js/70x70" alt="..." class="img-responsive">
-                        <div class="caption">
-                            <h5 align="center">小彩旗</h5>
-                            <p align="center">6位食客</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div align="center">
-                        <img data-src="holder.js/70x70" alt="..." class="img-circle">
-                        <div class="caption">
-                            <h5 align="center">小琪</h5>
-                            <p align="center">拿手菜10道</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div align="center">
-                        <img data-src="holder.js/70x70" alt="..." class="img-circle">
-                        <div class="caption">
-                            <h5 align="center">小琪</h5>
-                            <p align="center">拿手菜10道</p>
-                        </div>
-                    </div>
-                </div>
+            </g:each>
 
             </div>
         </div>
@@ -398,7 +350,7 @@
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                 <div class="col-md-3">
                     <div>
-                        <img src="${createLink(uri: '/') + it.image}" alt="..." width="100%" height="150">
+                        <img src="${createLink(uri: '/') + it.image}" class="img-thumbnail dish">
                         <div class="caption">
                             <h4><font color="#a52a2a">${it.name}</font></h4>
                             <p>${it.shortDescription}</p>

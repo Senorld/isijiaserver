@@ -17,8 +17,8 @@ class Menu {
     String image
     boolean highLight = false
     Member chef
-    int rate = 0
     long visit = 0
+    static hasMany = [likes: LikeMenu]
 
     static constraints = {
         name nullable: false

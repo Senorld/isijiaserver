@@ -62,4 +62,16 @@ class MenuService {
 
         return hotDishList
     }
+
+    def likeMenu(long menuId){
+        def menu = Menu.get(menuId)
+        if(!menu){ return [success: false] }
+
+        def user = springSecurityService.currentUser as Member
+        if(!menu.likes.find({member: user})){
+            menu.addToLikes(new LikeMenu(menu: menu, member: user)).save(failOnError: true)
+        }
+
+        return [success: true]
+    }
 }
