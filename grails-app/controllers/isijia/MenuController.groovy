@@ -50,17 +50,18 @@ class MenuController {
         render(view: "/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, user: user])
     }
 
-    def foodSearch(String keyWord){
-        def result = menuService.searchFood(keyWord)
+    def foodSearch(String keyWord, int offset){
+        def result = menuService.searchFood(keyWord, offset)
+        def user = springSecurityService.currentUser
 
-        render(view: "/test/menuList", model: [menuList: result])
+        render(view: "/food/dish_list", model: [resultList: result.resultList, pages: result.pages, user: user, params: params])
     }
 
     def list(){
         def menu = Menu.list([sort: "visit"])
        // render(view: '/test/menuList', model: [menuList: menu])
         def user = springSecurityService.currentUser
-        render(view:'/dish_list', model: [dishList: menu, user: user])
+        render(view:'/food/dish_list', model: [dishList: menu, user: user])
     }
 
     def retrieveFoodByChef(long chefId){

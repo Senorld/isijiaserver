@@ -92,9 +92,13 @@ ftp.path = ""
 
 environments {
     development {
+        baseUrl = "http://www.isijia.com/"
+
         grails.logging.jul.usebridge = true
     }
     production {
+        baseUrl = "http://www.isijia.com/"
+
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
     }

@@ -39,14 +39,15 @@ class MenuService {
         return [success: true]
     }
 
-    def searchFood(String keyWorld){
+    def searchFood(String keyWorld, int offset){
+        int limit = 15;
         if(!keyWorld){
             return [success: false, message: "Please enter key world."]
         }
 
-        def foodList = Menu.findAllByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%")
-
-        return foodList
+        def foodList = Menu.findAllByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%", [max: limit ?: -1, sort: "createdDate", order: "desc", offset: offset ?: 0])
+        def pages = Menu.countByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%")/15 as Integer
+        return [resultList: foodList, pages: pages]
     }
 
     def getRelatedDish(Member chef, Menu dish){

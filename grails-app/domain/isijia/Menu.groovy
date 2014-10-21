@@ -10,7 +10,7 @@ class Menu {
     int price
     String shortDescription
     String description
-    String dishOrigin
+    String dishFlavor
     MenuStatus status = MenuStatus.PRIVATE
     Date createdDate = new Date()
     Date closeDate
@@ -26,6 +26,6 @@ class Menu {
         createdDate nullable: false
         closeDate nullable: true
         chef nullable: false
-        dishOrigin nullable: true
+        dishFlavor nullable: true
     }
 }
