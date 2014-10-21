@@ -54,7 +54,7 @@ class MenuController {
         def result = menuService.searchFood(keyWord, offset)
         def user = springSecurityService.currentUser
 
-        render(view: "/food/dish_list", model: [resultList: result.resultList, pages: result.pages, user: user, params: params])
+        render(view: "/food/dish_list", model: [resultList: result.resultList, pages: result.pages, limit: result.limit, user: user, params: params])
     }
 
     def list(){

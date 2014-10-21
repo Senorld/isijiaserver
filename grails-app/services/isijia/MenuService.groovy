@@ -46,8 +46,9 @@ class MenuService {
         }
 
         def foodList = Menu.findAllByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%", [max: limit ?: -1, sort: "createdDate", order: "desc", offset: offset ?: 0])
-        def pages = Menu.countByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%")/15 as Integer
-        return [resultList: foodList, pages: pages]
+        def pages = Menu.countByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%")/limit as Integer
+
+        return [resultList: foodList, pages: pages, limit: limit]
     }
 
     def getRelatedDish(Member chef, Menu dish){
