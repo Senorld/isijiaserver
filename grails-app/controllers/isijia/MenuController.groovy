@@ -47,7 +47,7 @@ class MenuController {
             relatedDish = menuService.getRelatedDish(dish.chef, dish)
         }
         def user = springSecurityService.currentUser
-        render(view: "/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, user: user])
+        render(view: "/food/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, user: user])
     }
 
     def foodSearch(String keyWord, int offset){
