@@ -13,7 +13,6 @@ class Menu {
     String dishFlavor
     MenuStatus status = MenuStatus.PRIVATE
     Date createdDate = new Date()
-    Date closeDate
     String image
     boolean highLight = false
     Member chef
@@ -24,7 +23,6 @@ class Menu {
         name nullable: false
         image nullable: true
         createdDate nullable: false
-        closeDate nullable: true
         chef nullable: false
         dishFlavor nullable: true
     }
