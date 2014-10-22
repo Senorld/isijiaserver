@@ -6,19 +6,13 @@ import grails.transaction.Transactional
 class MenuService {
     def springSecurityService
     def utilService
-    def createFood(String name, int price, String description, String shortDescription, String status, String closeDate, boolean highLight, String fileName){
+    def createFood(String name, float price, String description, String shortDescription, String dishFlavor, boolean highLight, String fileName){
         if(!name){
             return [success: false, message: "Please enter food name."]
         }
 
         if(!price){
             return [success: false, message: "The price shouldn't be 0."]
-        }
-
-        Date date = null
-        if(closeDate){
-
-            date = utilService.convertStringToDate(closeDate)
         }
 
         def userRoles = springSecurityService.getPrincipal().getAuthorities()
@@ -28,15 +22,15 @@ class MenuService {
 
         def chef = springSecurityService.currentUser
 
-        MenuStatus menuStatus = status as MenuStatus
+        MenuStatus menuStatus = MenuStatus.PUBLIC
 
-        def food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, closeDate: date, highLight: highLight, chef: chef, image: fileName).save(flush: true, failOnError: true)
+        Menu food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, dishFlavor: dishFlavor, highLight: highLight, chef: chef, image: fileName).save(flush: true, failOnError: true)
 
         if(!food){
             return [success: false, message: "Something wrong when store food into database. Please try again later."]
         }
 
-        return [success: true]
+        return [success: true, dish: food]
     }
 
     def searchFood(String keyWorld, int offset){

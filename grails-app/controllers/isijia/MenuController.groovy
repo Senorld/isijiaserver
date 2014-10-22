@@ -14,11 +14,12 @@ class MenuController {
     }
 
     @Secured(['ROLE_CHEF'])
-    def createFood(String name, int price, String description, String shortDescription, String status, String closeDate, boolean highLight) {
+    def createFood(String name, float price, String description, String shortDescription, String dishFlavor, boolean highLight) {
         def result
         try {
             def image = params.foodImage
             String fileName = null
+            println image
             if (image) {
                 def milSecond = System.currentTimeMillis()
                 def chef = springSecurityService.currentUser
@@ -29,18 +30,30 @@ class MenuController {
             }
 
 
-            result = menuService.createFood(name, price, description, shortDescription, status, closeDate, highLight, fileName)
+            result = menuService.createFood(name, price, description, shortDescription, dishFlavor, highLight, fileName)
 
         } catch (Exception e) {
             e.printStackTrace()
             result = [success: false, message: "Erorr on uploading image null error: ${e.message}"]
         }
 
-        render result
+        if(result.success){
+            dishDetail(result?.dish?.id)
+        }else{
+            dishCreationPage()
+        }
+    }
+
+    @Secured(['ROLE_CHEF'])
+    def dishCreationPage(){
+        def user = springSecurityService.currentUser
+
+        render(view: "/food/create_dish", model: [user: user])
     }
 
     def dishDetail(long dishId){
         def dish = Menu.get(dishId)
+
         dish.visit++
         def relatedDish = []
         if(dish){
