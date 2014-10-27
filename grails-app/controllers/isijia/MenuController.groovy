@@ -45,11 +45,12 @@ class MenuController {
 
     def dishDetail(long dishId){
         def dish = Menu.get(dishId)
-
-        dish.visit++
         def relatedDish = []
         if(dish){
-            relatedDish = menuService.getRelatedDish(dish.chef, dish)
+            dish.visit++
+            if(dish){
+                relatedDish = menuService.getRelatedDish(dish.chef, dish)
+            }
         }
         def user = springSecurityService.currentUser
         render(view: "/food/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, user: user])
