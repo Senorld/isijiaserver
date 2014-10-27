@@ -118,8 +118,7 @@
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
                         <div class="panel-body">
                             <address>
-                                ${dishDetail.chef.address1}<br/>
-                                ${dishDetail.chef.address2}<br/>
+                                ${dishDetail.chef.address}<br/>
                                 ${dishDetail.chef.city}, ${dishDetail.chef.zipCode} <br/>
                                 ${dishDetail.chef.phoneNumber}<br/><br/>
                             </address>

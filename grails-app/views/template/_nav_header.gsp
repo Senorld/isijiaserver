@@ -162,7 +162,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="center" width="20%">地址</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="address1" value="${params.address}"></div></td>
+                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="address" value="${params.address}"></div></td>
                                                 </tr>
                                                 <tr>
                                                     <td align="center" width="20%">城市</td>

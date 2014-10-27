@@ -26,4 +26,7 @@ class Menu {
         chef nullable: false
         dishFlavor nullable: true
     }
+    static mapping = {
+        description type: 'text'
+    }
 }

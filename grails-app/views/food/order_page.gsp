@@ -60,7 +60,7 @@
                     </tr>
                     <tr>
                         <td align="center" width="10%">地址</td>
-                        <td><div class="form-group" style="width:300px;margin: 5px"><input type="text" class="form-control" name="address" placeholder="Street, Room/Suite" value="${user.address1}"></div></td>
+                        <td><div class="form-group" style="width:300px;margin: 5px"><input type="text" class="form-control" name="address" placeholder="Street, Room/Suite" value="${user.address}"></div></td>
                     </tr>
                     <tr>
                         <td align="center" width="10%"></td>
