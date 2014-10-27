@@ -11,8 +11,6 @@ class UserService {
     def personalPage(def user, int offset){
         def userRoles = springSecurityService.getPrincipal().getAuthorities()
         def chefFoods = [:]
-        println userRoles
-        println user
         if(userRoles.any{ it.authority == "ROLE_CHEF"}){
             chefFoods = chefService.retrieveFoodByChef(user, offset)
             def menuList = Menu.findAllByChef(user)
