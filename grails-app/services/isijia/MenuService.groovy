@@ -6,7 +6,10 @@ import grails.transaction.Transactional
 class MenuService {
     def springSecurityService
     def utilService
-    def createFood(String name, float price, String description, String shortDescription, String dishFlavor, boolean highLight, String fileName){
+    def chefService
+    def ftpService
+
+    def createFood(String name, float price, String description, String shortDescription, String dishFlavor, boolean highLight, def imageFiles){
         if(!name){
             return [success: false, message: "Please enter food name."]
         }
@@ -20,14 +23,28 @@ class MenuService {
             return [success: false, message: "You don't have permission to create food."]
         }
 
+
+
         def chef = springSecurityService.currentUser
 
-        MenuStatus menuStatus = MenuStatus.PUBLIC
+        MenuStatus menuStatus = MenuStatus.ACTIVE
 
-        Menu food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, dishFlavor: dishFlavor, highLight: highLight, chef: chef, image: fileName).save(flush: true, failOnError: true)
+        Menu food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, dishFlavor: dishFlavor, highLight: highLight, chef: chef).save(flush: true, failOnError: true)
 
         if(!food){
             return [success: false, message: "Something wrong when store food into database. Please try again later."]
+        }
+
+        if(imageFiles.size() > 0){
+            imageFiles.each(){
+                def milSecond = System.currentTimeMillis()
+                def fileName = "dish_${milSecond}.png"
+                String filePath = "dish/${chef.id}"
+                ftpService.save(it.getBytes(), fileName, filePath)
+                fileName = "userUpload/$filePath/$fileName"
+
+                food.addToImages(image: fileName).save()
+            }
         }
 
         return [success: true, dish: food]
@@ -39,8 +56,8 @@ class MenuService {
             return [success: false, message: "Please enter key world."]
         }
 
-        def foodList = Menu.findAllByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%", [max: limit ?: -1, sort: "createdDate", order: "desc", offset: offset ?: 0])
-        def pages = Menu.countByNameLikeOrDescriptionLike("%$keyWorld%", "%$keyWorld%")/limit as Integer
+        def foodList = Menu.findAllByNameLikeAndStatus("%$keyWorld%", MenuStatus.ACTIVE, [max: limit ?: -1, sort: "createdDate", order: "desc", offset: offset ?: 0])
+        def pages = Menu.countByNameLikeAndStatus("%$keyWorld%", MenuStatus.ACTIVE)/limit as Integer
 
         return [resultList: foodList, pages: pages, limit: limit]
     }
@@ -59,15 +76,17 @@ class MenuService {
         return hotDishList
     }
 
-    def likeMenu(long menuId){
-        def menu = Menu.get(menuId)
-        if(!menu){ return [success: false] }
+    def removeDish(def user, long dishId, int offset){
+        def dish = Menu.findByIdAndChef(dishId, user)
 
-        def user = springSecurityService.currentUser as Member
-        if(!menu.likes.find({member: user})){
-            menu.addToLikes(new LikeMenu(menu: menu, member: user)).save(failOnError: true)
+        def result = [:]
+        if(dish){
+            dish.status = MenuStatus.CLOSE
+            result = [success: true]
+        }else{
+            result = [success: false]
         }
 
-        return [success: true]
+        return result
     }
 }

@@ -23,18 +23,7 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <ul class="nav nav-pills">
-                                <li class="active"><a href="dealer.html">菜品</a></li>
-                                <li><a href="dealer-pingjia.html">评价</a></li>
-                                <li><a href="dealer-shoucang.html">收藏</a></li>
-                                <li><a href="dealer-liuyan.html">留言板</a></li>
-                                <li><a href="dealer-dingdan.html">订单管理</a></li>
-                                <li><a href="dealer-shezhi.html">设置</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <g:render template="/template/personal_header_template"/>
 
                     <div class="panel panel-default" style="margin-top: 20px">
                         <div class="panel-body">
@@ -109,33 +98,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="row">
-                        <ul class="list-group" style="margin-left: 10px">
-                            <li class="list-group-item">
-                                <table>
-                                    <tr>
-                                        <td align="left">
-                                            <img src="holder.js/90x90" class="img-circle" style="margin: 5px">
-                                        </td>
-                                        <td>
-                                            <p style="margin-left: 5px; margin-top: 15px">小厨</p>
-                                            <h4 style="margin-left: 5px">天使海爱吃</h4>
-                                            <p style="margin-left: 5px"><small>2014年10月1日 加入</small></p>
-
-                                        </td>
-                                    </tr>
-                                </table>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row">
-                                    <div class="col-md-4" align="center"><p>接待食客</p><h3 style="margin-top: 2px">48</h3></div>
-                                    <div class="col-md-4" align="center"><p>菜品被收藏</p><h3 style="margin-top: 2px">221</h3></div>
-                                    <div class="col-md-4" align="center"><p>TA被关注</p><h3 style="margin-top: 2px">48</h3></div>
-                                </div>
-                            </li>
-                            <li class="list-group-item"><button style="width: 100%" type="button" class="btn btn btn-warning">取消关注</button></li>
-                        </ul>
-                    </div>
+                    <g:render template="/template/personal_block"/>
                     <!-- END OF 美食广告位 -->
 
                     <!-- 最新动态 -->

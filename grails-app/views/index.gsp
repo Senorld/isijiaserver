@@ -156,7 +156,10 @@
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                 <div class="col-md-3">
                     <div>
-                        <img src="${createLink(uri: '/') + it.image}" class="img-thumbnail dish">
+                        <g:if test="${it.images.size() > 0}">
+                            <img src="${createLink(uri: '/') + it.images.first()}" class="img-thumbnail dish">
+                        </g:if>
+
                         <div class="caption">
                             <h4><font color="#a52a2a">${it.name}</font></h4>
                             <p>${it.shortDescription}</p>
@@ -177,7 +180,7 @@
 </div>
 <div class="col-md-3">
     <!-- 热门小菜 -->
-    <div class="row">
+%{--    <div class="row">
         <div class="list-group" style="margin-left: 10px">
             <a href="#" class="list-group-item active">
                 <h4>热门小菜</h4>
@@ -191,7 +194,7 @@
             <a href="#" class="list-group-item"><h5>老北京涮羊肉<small> by Pada</small></h5></a>
             <a href="#" class="list-group-item"><h5>炒凉粉<small>  by 小美</small></h5></a>
         </div>
-    </div>
+    </div>--}%
     <!-- END OF 热门小菜 -->
 
     <!-- 美食广告位 -->

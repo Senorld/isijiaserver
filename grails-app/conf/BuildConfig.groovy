@@ -69,7 +69,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.11.1"
         compile ":spring-security-core:2.0-RC4"
         compile ":joda-time:1.6-SNAPSHOT"
-        runtime ':twitter-bootstrap:3.2.1'
+        runtime ':twitter-bootstrap:3.2.0.2'
         compile ':asset-pipeline:1.9.4'
 
         // Uncomment these to enable additional asset-pipeline capabilities

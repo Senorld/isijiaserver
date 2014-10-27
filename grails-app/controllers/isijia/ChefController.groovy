@@ -26,8 +26,8 @@ class ChefController {
         chef.visit++
         def user = springSecurityService.currentUser
         if(MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
-            def foodList = chefService.retrieveFoodByChef(chef)
-            render(view: "/chef", model: [chef: chef, dishList: foodList, user: user])
+            def result = chefService.retrieveFoodByChef(chef)
+            render(view: "/chef", model: [chef: chef, dishList: result.foodList, pages: result.pages, user: user])
         }else{
             render(controller: "home")
         }

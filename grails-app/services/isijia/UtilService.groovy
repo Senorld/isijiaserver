@@ -10,4 +10,5 @@ class UtilService {
     def convertStringToDate(String dateString, String format = "yyyy-MM-dd"){
         return new SimpleDateFormat(format, Locale.ENGLISH).parse(dateString);
     }
+
 }

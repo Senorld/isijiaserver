@@ -17,20 +17,12 @@ class MenuController {
     def createFood(String name, float price, String description, String shortDescription, String dishFlavor, boolean highLight) {
         def result
         try {
-            def image = params.foodImage
-            String fileName = null
-            println image
-            if (image) {
-                def milSecond = System.currentTimeMillis()
-                def chef = springSecurityService.currentUser
-                fileName = "dish_${milSecond}.png"
-                String filePath = "dish/${chef.id}"
-                ftpService.save(image.getBytes(), fileName, filePath)
-                fileName = "userUpload/$filePath/$fileName"
+            def imageFiles = []
+            params.foodImage.each {
+                imageFiles.add(it.value)
             }
 
-
-            result = menuService.createFood(name, price, description, shortDescription, dishFlavor, highLight, fileName)
+            result = menuService.createFood(name, price, description, shortDescription, dishFlavor, highLight, imageFiles)
 
         } catch (Exception e) {
             e.printStackTrace()
@@ -48,7 +40,7 @@ class MenuController {
     def dishCreationPage(){
         def user = springSecurityService.currentUser
 
-        render(view: "/food/create_dish", model: [user: user])
+        render(template: "/template/personal_dish_create", model: [user: user])
     }
 
     def dishDetail(long dishId){
@@ -80,7 +72,7 @@ class MenuController {
     def retrieveFoodByChef(long chefId){
         def result = chefService.retrieveFoodByChef(chefId)
         def user = springSecurityService.currentUser
-        render(view: "/test/menuList", model: [menuList: result, user: user])
+        render(view: "/test/menuList", model: [menuList: result.foodList, pages: result.pages, user: user])
     }
 
     def hotDish(int limit){
@@ -89,9 +81,19 @@ class MenuController {
         render hotDishList
     }
 
-    @Secured(['ROLE_CHEF', 'ROLE_USER'])
-    def likeMenu(long menuId){
-        def result = menuService.likeMenu(menuId)
-        render result
+    @Secured(['ROLE_CHEF'])
+    def removeDish(long dishId, int offset){
+        def user = springSecurityService.currentUser
+        def result = menuService.removeDish(user, dishId, offset)
+
+        render([data: result])
+    }
+
+    def retrieveDishTemplate(int offset){
+        def user = springSecurityService.currentUser as Member
+        def disList = Menu.findAllByChefAndStatus(user, MenuStatus.ACTIVE, [max: 15, sort: "createdDate", order: "desc", offset: offset ?: 0])
+        def pages = Menu.countByChefAndStatus(user, MenuStatus.ACTIVE)/15 as Integer
+
+        render(template: '/template/personal_dish', model:[data: [dishList: disList, pages: pages], user: user])
     }
 }

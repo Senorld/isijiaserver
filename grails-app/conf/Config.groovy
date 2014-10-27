@@ -131,6 +131,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'isijia.Member'
 grails.plugin.springsecurity.userLookup.usernamePropertyName = 'email'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'isijia.MemberRole'
 grails.plugin.springsecurity.authority.className = 'isijia.Role'
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = "/"
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -143,7 +145,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/test/**':                       ['permitAll'],
     '/register/**':                   ['permitAll'],
     '/plugins/**':                    ['permitAll'],
-    '/home/**':                       ['permitAll']
+    '/home/**':                       ['permitAll'],
+    '/file/**':                       ['permitAll']
 ]
 
 grails.assets.less.compile = 'less4j'

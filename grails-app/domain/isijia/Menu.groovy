@@ -1,7 +1,7 @@
 package isijia
 
 public enum MenuStatus{
-    PRIVATE, PUBLIC, CLOSE
+    ACTIVE, CLOSE
 }
 
 class Menu {
@@ -11,17 +11,17 @@ class Menu {
     String shortDescription
     String description
     String dishFlavor
-    MenuStatus status = MenuStatus.PRIVATE
+    MenuStatus status = MenuStatus.ACTIVE
     Date createdDate = new Date()
-    String image
+    static hasMany = [images: DishImage]
     boolean highLight = false
     Member chef
     long visit = 0
-    static hasMany = [likes: LikeMenu]
+    long likes = 0
 
     static constraints = {
         name nullable: false
-        image nullable: true
+        //images nullable: true
         createdDate nullable: false
         chef nullable: false
         dishFlavor nullable: true

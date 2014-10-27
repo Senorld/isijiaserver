@@ -68,27 +68,23 @@
             <!-- 大图片展示区 -->
             <div class="row">
                 <div class="thumbnail">
-                    <img src="${createLink(uri: '/') + dishDetail.image}">
+                    <g:if test="${dishDetail.images.size() > 0}">
+                        <img src="${createLink(uri: '/') + dishDetail.images.first()}">
+                    </g:if>
+
                 </div>
             </div>
             <!-- END OF 大图片展示区 -->
 
             <div class="row">
-                <div class="col-md-4">
-                    <a href="images/food-1.jpg" title="东坡肉" data-gallery class="thumbnail">
-                        <img src="images/food-1.jpg" alt="东坡肉">
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="images/food-2.jpg" title="红烧肘子" data-gallery class="thumbnail">
-                        <img src="images/food-2.jpg" alt="红烧肘子">
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="images/food-3.jpg" title="鱼香肉丝" data-gallery class="thumbnail">
-                        <img src="images/food-3.jpg" alt="鱼香肉丝">
-                    </a>
-                </div>
+
+                <g:each in="${dishDetail.images}">
+                    <div class="col-md-4">
+                        <a href="${createLink(uri: '/') + it.image}" data-gallery class="thumbnail">
+                            <img src="${createLink(uri: '/') + it.image}">
+                        </a>
+                    </div>
+                </g:each>
             </div>
         </div>
     </div>
@@ -146,8 +142,7 @@
         <div class="row">
             <table width="100%">
                 <tr>
-                    <td align="center"><button type="button" class="btn btn-warning btn-lg">马上关注</button></td>
-                    <td><button type="button" class="btn btn-danger btn-lg">点击购买</button></td>
+                    <td colspan="2"><g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link></td>
                 </tr>
             </table>
         </div>
@@ -310,8 +305,12 @@
     <g:each in="${relatedDish}">
         <div class="col-md-3">
             <a href="${createLink(action: dishDetail, params: [dishId: it.id])}" title="${it.name}" data-gallery class="thumbnail">
-                <img src=""${createLink(uri: '/') + it.image}" alt="${it.name}">
+                <g:if test="${it.images.size() > 0}">
+                    <img src=""${createLink(uri: '/') + it.images.first()}" alt="${it.name}">
+                </g:if>
+                <div>${it.name}</div>
             </a>
+
         </div>
     </g:each>
 </div>

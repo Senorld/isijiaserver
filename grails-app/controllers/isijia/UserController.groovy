@@ -7,6 +7,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class UserController {
     def springSecurityService
     def memberOrderService
+    def userService
 
     def index(){
         render (view: '/user');
@@ -18,10 +19,18 @@ class UserController {
     }
 
     @Secured(['ROLE_USER', 'ROLE_CHEF'])
-    def personalHomePage(){
+    def personalHomePage(int offset){
         def user = springSecurityService.currentUser as Member
-        def orderList = memberOrderService.retrieveOrderByUser(user)
+        def orderList = memberOrderService.retrieveOrderByUser(user, offset)
         render(view: '/user', model: [user: user, orderList: orderList])
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_CHEF'])
+    def personalPage(int offset){
+        def user = springSecurityService.currentUser as Member
+        def result = userService.personalPage(user, offset)
+
+        render(view: '/user/personalPage', model: [user: user, data: result])
     }
 
 

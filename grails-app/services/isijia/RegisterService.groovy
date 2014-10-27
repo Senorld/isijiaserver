@@ -5,8 +5,9 @@ import grails.transaction.Transactional
 @Transactional
 class RegisterService {
     def utilService
+    def ftpService
 
-    def member(String email, String password, String name, String phoneNumber, String zipCode, String address1, String address2, String city, String state, String birthdayString, String roleString, String gender, String description){
+    def member(String email, String password, String name, String phoneNumber, String zipCode, String address1, String address2, String city, String state, String birthdayString, String roleString, String gender, String description, def file){
         if(!email || !password || !name){
             return [success: false, message: "Email, Password, and name are required to register."]
         }
@@ -14,6 +15,7 @@ class RegisterService {
         if(roleString == "ROLE_ADMIN"){
             return [success: false, message: "Admin user shouldn't registered by this way."]
         }
+
         def role = Role.findByAuthority(roleString)
 
         def existsMember = Member.findByEmail(email)
@@ -26,7 +28,16 @@ class RegisterService {
 
         gender = gender ?: "Male"
 
-        def registered = new Member(email: email, password: password, name: name, phoneNumber: phoneNumber, zipCode: zipCode, address1: address1, address2: address2, city: city, state: state, birthday: date, gender: gender, description: description).save(failOnError: true)
+        def registered = new Member(email: email, password: password, name: name, phoneNumber: phoneNumber, zipCode: zipCode, address1: address1, address2: address2, city: city, state: state, birthday: date, gender: gender, description: description).save(flush: true, failOnError: true)
+
+        if (file) {
+            String fileName = "profile_image.png"
+            String filePath = "user/${registered.id}"
+            ftpService.save(file.getBytes(), fileName, filePath)
+            fileName = "userUpload/$filePath/$fileName"
+
+            registered.profile = fileName
+        }
 
         if(!registered){
             log.error("Member register error: $registered")

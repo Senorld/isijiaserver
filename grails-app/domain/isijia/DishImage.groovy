@@ -1,9 +1,8 @@
 package isijia
 
-class LikeMenu {
+class DishImage {
 
-    Member member
-    Menu menu
+    String image
 
     static constraints = {
     }

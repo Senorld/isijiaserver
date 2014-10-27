@@ -8,18 +8,21 @@ class ChefService {
 
     def retrieveFoodByChef(long chefId){
         def chef = Member.get(chefId)
-        return retrieveFoodByChef(chef)
+        def result = retrieveFoodByChef(chef)
+        return [foodList: result.foodList, pages: result.pages]
     }
 
-    def retrieveFoodByChef(Member chef){
+    def retrieveFoodByChef(Member chef, int offset = 0){
+        int limit = 15
         if(!MemberRole.findByMemberAndRole(chef, Role.findByAuthority("ROLE_CHEF"))){
             log.error("Error on retrieveFoodByChef, The chef is not chef")
             return null
         }
 
-        def foodList = Menu.findAllByChef(chef)
+        def foodList = Menu.findAllByChefAndStatus(chef, MenuStatus.ACTIVE, [sort: 'createdDate', order: 'desc', offset: offset ?: 0, max: limit ?: -1])
+        def pages = Menu.countByChefAndStatus(chef, MenuStatus.ACTIVE)/limit as Integer
 
-        return foodList
+        return [foodList: foodList, pages: pages]
     }
 
     def postFeed(String message, int chefId, int rate){
@@ -59,6 +62,7 @@ class ChefService {
 
     def getHotChef(){
         def chef = MemberRole.findAllByRole(Role.findByAuthority("ROLE_CHEF")).member.sort({ -it.visit })
+
 
         def hotChef = chef.subList(0, chef.size() > 5 ? 5 : chef.size())
 
