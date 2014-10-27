@@ -17,13 +17,13 @@
             <tr>
                 <td width="35%">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-7">
                             <g:if test="${it.menu.images.size() > 0}">
-                                <img src="${createLink(uri: "/") + it.menu.images.first().image}">
+                                <img src="${createLink(uri: "/") + it.menu.images.first().image}" style="width: 150px;">
                             </g:if>
 
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-5" style="float: right;">
                             <h4 style="color: #ac2925">${it.menu.name}</h4>
                             <p>单价：$${it.menu.price} 数量：${it.amount}个</p>
                         </div>

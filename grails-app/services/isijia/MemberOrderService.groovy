@@ -26,6 +26,14 @@ class MemberOrderService {
         }
         food.likes++
 
+        def member = Member.findByEmail(user.email)
+        if(!member?.address){
+            member.address = address
+            member.phoneNumber = phoneNumber
+            member.city = city
+            member.zipCode = zipCode
+        }
+
         return [success: true]
     }
 
