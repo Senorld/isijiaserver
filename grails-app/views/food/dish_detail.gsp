@@ -141,7 +141,7 @@
         <div class="row">
             <table width="100%">
                 <tr>
-                    <td colspan="2"><g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link></td>
+                    <td colspan="2" style="text-align: right;"><g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link></td>
                 </tr>
             </table>
         </div>
