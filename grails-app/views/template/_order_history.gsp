@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <g:if test="${it.menu.images.size() > 0}">
-                                <img src="${createLink(uri: "/") + it.menu.images.first()}">
+                                <img src="${createLink(uri: "/") + it.menu.images.first().image}">
                             </g:if>
 
                         </div>

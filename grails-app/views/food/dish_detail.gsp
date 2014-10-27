@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="thumbnail">
                     <g:if test="${dishDetail.images.size() > 0}">
-                        <img src="${createLink(uri: '/') + dishDetail.images.first()}">
+                        <img src="${createLink(uri: '/') + dishDetail.images.first().image}">
                     </g:if>
 
                 </div>
@@ -305,7 +305,7 @@
         <div class="col-md-3">
             <a href="${createLink(action: dishDetail, params: [dishId: it.id])}" title="${it.name}" data-gallery class="thumbnail">
                 <g:if test="${it.images.size() > 0}">
-                    <img src=""${createLink(uri: '/') + it.images.first()}" alt="${it.name}">
+                    <img src=""${createLink(uri: '/') + it.images.first().image}" alt="${it.name}">
                 </g:if>
                 <div>${it.name}</div>
             </a>
