@@ -58,14 +58,14 @@
                     <g:form controller="menu" action="foodSearch" method="get">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">法拉盛 <span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Flushing <span class="caret"></span></button>
+%{--                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
-                            </ul>
+                            </ul>--}%
                         </div><!-- /btn-group -->
                         <input type="text" class="form-control" name="keyWord" value="${params.keyWord ?: ''}">
                         <div class="input-group-btn">
@@ -228,6 +228,10 @@
                                                         </div>
 
                                                     </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" width="20%">Zip Code</td>
+                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="zipCode" value="${params.zipCode}"></div></td>
                                                 </tr>
                                                 <tr>
                                                     <td>照片 </td>

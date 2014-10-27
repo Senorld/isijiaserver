@@ -157,7 +157,7 @@
                 <div class="col-md-3">
                     <div>
                         <g:if test="${it.images.size() > 0}">
-                            <img src="${createLink(uri: '/') + it.images.first()}" class="img-thumbnail dish">
+                            <img src="${createLink(uri: '/') + it.images.first().image}" class="img-thumbnail dish">
                         </g:if>
 
                         <div class="caption">

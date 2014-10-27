@@ -68,7 +68,7 @@
                                                             <td><div class="form-group" style="width: 90%"><input type="email" class="form-control" placeholder="" name="phoneNumber" value="${params.phoneNumber}"></div></td>
                                                         </tr>
                                                         <tr>
-                                                            <td align="center" width="20%">地址1</td>
+                                                            <td align="center" width="20%">地址</td>
                                                             <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="address" value="${params.address}"></div></td>
                                                         </tr>
                                                         <tr>
@@ -135,6 +135,10 @@
                                                                 </div>
 
                                                             </div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" width="20%">Zip Code</td>
+                                                            <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="zipCode" value="${params.zipCode}"></div></td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>

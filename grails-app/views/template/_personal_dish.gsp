@@ -6,7 +6,7 @@
         <td width="35%">
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                 <g:if test="${it.images.size() > 0}">
-                    <img src="${createLink(uri: "/") + it.images.first().image}" style="margin: 5px" class="img-rounded">
+                    <img src="${createLink(uri: "/") + it.images.first().image}" style="margin: 5px; height: 130px;" class="img-rounded">
                 </g:if>
 
             </g:link>

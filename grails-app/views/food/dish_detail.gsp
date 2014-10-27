@@ -156,7 +156,7 @@
 <table>
     <tr>
         <g:if test="${dishDetail.chef.profile != null}">
-            <td><img src="${createLink(uri: '/') + dishDetail.chef.profile}" class="img-circle" style="margin: 5px"></td>
+            <td><img src="${createLink(uri: '/') + dishDetail.chef.profile}" class="img-circle" style="margin: 5px; height: 100px; width: 100px;"></td>
         </g:if>
 
         <td>小厨<br><h4>${dishDetail.chef.name}</h4></td>
@@ -166,7 +166,7 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist" data-tabs="tabs">
     <li class="active"><a href="#home" role="tab" data-toggle="tab">小菜介绍</a></li>
-    <li><a href="#profile" role="tab" data-toggle="tab">评论留言</a></li>
+    %{--<li><a href="#profile" role="tab" data-toggle="tab">评论留言</a></li>--}%
 </ul>
 
 <!-- Tab panes -->
