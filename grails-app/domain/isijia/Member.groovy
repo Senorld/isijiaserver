@@ -11,8 +11,7 @@ class Member {
     String description
     String phoneNumber
     String zipCode
-    String address1
-    String address2
+    String address
     String city
     String state
     Date birthday
@@ -33,8 +32,7 @@ class Member {
 		password blank: false
         name blank: false, nullable: false
         phoneNumber nullable: true
-        address1 nullable: true
-        address2 nullable: true
+        address nullable: true
         city nullable: true
         state nullable: true
         birthday nullable: true

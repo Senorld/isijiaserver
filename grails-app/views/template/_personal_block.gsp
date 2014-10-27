@@ -4,7 +4,7 @@
             <table>
                 <tr>
                     <td align="left">
-                        <img src="${createLink(uri: ('/'))}${user.profile}" class="img-circle" style="margin: 5px">
+                        <img src="${createLink(uri: ('/'))}${user.profile}" class="img-circle" style="margin: 5px; width: 100px; height: 100px;">
                     </td>
                     <td>
                         <h4 style="margin-left: 5px">${user.name}</h4>
