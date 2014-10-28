@@ -303,9 +303,9 @@
     <p align="left"><span class="label label-warning">相關的其他菜谱</span></p>
     <g:each in="${relatedDish}">
         <div class="col-md-3">
-            <a href="${createLink(action: dishDetail, params: [dishId: it.id])}" title="${it.name}" data-gallery class="thumbnail">
+            <a href="${createLink(controller: 'menu', action: 'dishDetail', params: [dishId: it.id])}" title="${it.name}" data-gallery class="thumbnail">
                 <g:if test="${it.images.size() > 0}">
-                    <img src=""${createLink(uri: '/') + it.images.first().image}" alt="${it.name}">
+                    <img src=""${createLink(uri: '/') + it.images.image.first()}" alt="${it.name}">
                 </g:if>
                 <div>${it.name}</div>
             </a>
