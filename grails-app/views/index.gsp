@@ -183,7 +183,7 @@
 
 
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
-                <div class="col-md-3">
+                <div class="col-md-3 thumbnail">
                     <div>
                         <g:if test="${it.images.size() > 0}">
                             <img src="${createLink(uri: '/') + it.images.first().image}" class="img-thumbnail dish">
