@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="thumbnail">
                     <g:if test="${dishDetail.images.size() > 0}">
-                        <img src="${createLink(uri: '/') + dishDetail.images.first().image}">
+                        <img src="${createLink(uri: '/') + dishDetail.images.image.first()}">
                     </g:if>
 
                 </div>
