@@ -13,6 +13,8 @@ class HomeController {
 
         //retrieve hot dish
         def hotDishList = menuService.hotDish(6)
-        render(view: "/index", model: [user: member, hotDishList: hotDishList, hotChef: chefService.getHotChef()])
+        def newDishList = Menu.list([max: 4, sort: 'createdDate', order: 'desc'])
+
+        render(view: "/index", model: [user: member, hotDishList: hotDishList, hotChef: chefService.getHotChef(), newDishList: newDishList])
     }
 }

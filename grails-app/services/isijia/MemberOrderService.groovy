@@ -37,20 +37,6 @@ class MemberOrderService {
         return [success: true]
     }
 
-/*    def retrieveFoodDetail(long dishId){
-        if(!foodIdList){
-            return [success: false, message: "The Food List is null"]
-        }
-
-        def food = Menu.findAllByStatusAndIdInList(MenuStatus.ACTIVE, foodIdList)
-
-        if(!food){
-            return [success: false, message: "Can't find food or user"]
-        }
-
-        return food
-    }*/
-
     def retrieveOrderByUser(Member user, int offset, String status = 'PENDING'){
         def orderList = MemberOrder.findAllByUser(user, [sort: "lastChangDate", order: 'desc', offset: offset ?: 0, max: 15])
         //def orderList = MemberOrder.all.findAll{it.menu.containsAll(chefMenu)}
@@ -103,6 +89,28 @@ class MemberOrderService {
         }
 
         order.status = OrderStatus.SUCCESS
+
+        return [success: true]
+    }
+
+    def cancelOrder(long orderId){
+        def order = MemberOrder.get(orderId)
+        if(!order){
+            return [success: false, message: "can't find the order"]
+        }
+
+        order.status = OrderStatus.CANCELED
+
+        return [success: true]
+    }
+
+    def rejectOrder(long orderId){
+        def order = MemberOrder.get(orderId)
+        if(!order){
+            return [success: false, message: "can't find the order"]
+        }
+
+        order.status = OrderStatus.REJECT
 
         return [success: true]
     }

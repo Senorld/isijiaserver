@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="orderHistory">
 <g:each in="${orderHistory}">
 
         <table class="table table-bordered">
@@ -44,10 +44,10 @@
                         </div>
                         <div class="row">
                             <g:if test="${it.status == isijia.OrderStatus.PENDING}">
-                                <g:link controller="memberOrder" action="confirmOrder" params="[orderId: it.id]" class="btn btn btn-default" style="margin: 5px">确认订单</g:link>
+                                <g:remoteLink update="orderHistory" controller="memberOrder" action="confirmOrder" params="[orderId: it.id]" class="btn btn btn-default" style="margin: 5px">确认订单</g:remoteLink>
                             </g:if>
                             <g:elseif test="${it.status == isijia.OrderStatus.CONFIRMED}">
-                                <g:link controller="memberOrder" action="successOrder" params="[orderId: it.id]" class="btn btn btn-default" style="margin: 5px">已完成</g:link>
+                                <g:remoteLink update="orderHistory" controller="memberOrder" action="successOrder" params="[orderId: it.id]" class="btn btn btn-default" style="margin: 5px">已完成</g:remoteLink>
                             </g:elseif>
                             <g:elseif test="${it.status == isijia.OrderStatus.SUCCESS}">
                                 已完成
@@ -55,7 +55,7 @@
                         </div>
                         <g:if test="${it.status == isijia.OrderStatus.PENDING}">
                             <div class="row">
-                                <button type="button" class="btn btn btn-default" style="margin: 5px">拒绝订单</button>
+                                <g:remoteLink update="orderHistory" controller="memberOrder" action="rejectOrder" params="[orderId: it.id]" class="btn btn btn-default" style="margin: 5px">拒绝订单</g:remoteLink>
                             </div>
                         </g:if>
                     </sec:ifAllGranted>
@@ -66,7 +66,7 @@
                         </div>
                         <g:if test="${it.status == isijia.OrderStatus.PENDING}">
                             <div class="row">
-                                <button type="button" class="btn btn btn-default" style="margin: 5px">移除</button>
+                                <g:remoteLink update="orderHistory" controller="memberOrder" action="cancelOrder" params="[orderId: it.id]" class="btn btn btn-default" style="margin: 5px">移除订单</g:remoteLink>
                             </div>
                         </g:if>
                         <g:elseif test="${it.status == isijia.OrderStatus.SUCCESS}">

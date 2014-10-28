@@ -58,13 +58,25 @@ class MemberOrderController {
     def confirmOrder(long orderId){
         def result = memberOrderService.confirmOrder(orderId)
 
-        redirect(controller: 'user', action: 'personalPage')
+        redirect(action: 'retrieveOrderHistoryTemplate')
     }
 
     def successOrder(long orderId){
         def result = memberOrderService.successOrder(orderId)
 
-        redirect(controller: 'user', action: 'personalPage')
+        redirect(action: 'retrieveOrderHistoryTemplate')
+    }
+
+    def cancelOrder(long orderId){
+        def result = memberOrderService.cancelOrder(orderId)
+
+        redirect(action: 'retrieveOrderHistoryTemplate')
+    }
+
+    def rejectOrder(long orderId){
+        def result = memberOrderService.rejectOrder(orderId)
+
+        redirect(action: 'retrieveOrderHistoryTemplate')
     }
 
     def reviewOrder(){
@@ -88,6 +100,6 @@ class MemberOrderController {
     def updateStatus(long orderId, String status){
         def result = memberOrderService.updateStatus(orderId, status)
 
-        render result
+        retrieveOrderHistoryTemplate(params.offset)
     }
 }

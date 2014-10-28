@@ -29,8 +29,14 @@
     <div id="personalContent">
 
 
-    <div class="panel panel-default" style="margin-top: 20px">
-        <g:render template="/template/personal_dish"/>
+    <div class="" style="margin-top: 20px">
+        <sec:ifAnyGranted roles="ROLE_CHEF">
+            <g:render template="/template/personal_dish"/>
+        </sec:ifAnyGranted>
+        <sec:ifAnyGranted roles="ROLE_USER">
+            <g:render template="/template/order_history"/>
+        </sec:ifAnyGranted>
+
     </div>
     </div>
 

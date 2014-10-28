@@ -1,7 +1,7 @@
 package isijia
 
 public enum OrderStatus{
-    PENDING, SUCCESS, REJECT, CLOSE, CONFIRMED
+    PENDING, SUCCESS, REJECT, CLOSE, CONFIRMED, CANCELED
 }
 
 class MemberOrder {

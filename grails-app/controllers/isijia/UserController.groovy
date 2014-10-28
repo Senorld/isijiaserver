@@ -30,7 +30,7 @@ class UserController {
         def user = springSecurityService.currentUser as Member
         def result = userService.personalPage(user, offset)
 
-        render(view: '/user/personalPage', model: [user: user, data: result])
+        render(view: '/user/personalPage', model: [user: user, data: result, orderHistory: result?.orderHistory])
     }
 
 

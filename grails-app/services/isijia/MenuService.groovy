@@ -57,6 +57,7 @@ class MenuService {
         }
 
         def foodList = Menu.findAllByNameLikeAndStatus("%$keyWorld%", MenuStatus.ACTIVE, [max: limit ?: -1, sort: "createdDate", order: "desc", offset: offset ?: 0])
+
         def pages = Menu.countByNameLikeAndStatus("%$keyWorld%", MenuStatus.ACTIVE)/limit as Integer
 
         return [resultList: foodList, pages: pages, limit: limit]

@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="panel-body">
+%{--        <div class="panel-body">
             <div class="row">
                 <div class="col-md-4">
                     <div class="thumbnail">
@@ -135,16 +135,45 @@
                 </div>
 
             </div>
-        </div>
+        </div>--}%
 
     </div>
 </div>
 <!--  END OF 热门小厨  -->
 
+    <div class="row">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">最新上菜</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <g:each in="${newDishList}">
+                        <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
+                        <div class="col-md-3">
+                            <div class="thumbnail">
+                                <g:if test="${it.images.image.size() > 0}">
+                                    <img src="${createLink(uri: '/') + it.images.image.first()}" width="200px" height="236px">
+                                </g:if>
+
+                                <div class="caption">
+                                    <h3>${it.name}</h3>
+                                    <p>${it.likes}个人品尝</p>
+                                </div>
+                            </div>
+                        </div>
+                        </g:link>
+                    </g:each>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 <!-- 最近热门 -->
 
 <div class="row">
-    <div class="panel panel-warning"">
+    <div class="panel panel-warning">
     <div class="panel-heading">
         <h3 class="panel-title">最近热门</h3>
     </div>

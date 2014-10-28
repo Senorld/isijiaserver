@@ -74,7 +74,10 @@
             <g:each in="${resultList}">
                 <tr>
                     <td width="35%">
-                        <img src="${createLink(uri: '/') + it.image}" style="margin: 5px" class="img-rounded">
+                        <g:if test="${it.images.size() > 0}">
+                            <img src="${createLink(uri: '/') + it.images.image.first()}" style="margin: 5px" class="img-rounded">
+                        </g:if>
+
                     </td>
                     <td>
                         <h4>${it.name}  <span class="label label-danger">${it.dishFlavor}</span> </h4>
