@@ -55,6 +55,7 @@ class MenuController {
     }
 
     def foodSearch(String keyWord, int offset){
+        println "search food: $keyWord"
         def result = menuService.searchFood(keyWord, offset)
         def user = springSecurityService.currentUser
 

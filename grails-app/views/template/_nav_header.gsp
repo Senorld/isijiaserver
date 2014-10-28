@@ -1,49 +1,5 @@
 <%@ page import="grails.plugin.springsecurity.SpringSecurityUtils" %>
 <!-- 顶部导航栏 -->
-%{--<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-
-        <!-- 手机客户端增强效果 随分辨率自动切换到手机浏览模式 -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <sec:ifNotLoggedIn>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
-                </ul>
-
-            </sec:ifNotLoggedIn>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">我的订单</a></li>
-                <li><a href="#">我的小厨</a></li>
-                <li><a href="#">最近浏览</a></li>
-                <li><a href="#">购物车</a></li>
-                <li><a href="#">联系客服</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多 <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>--}%
-<!-- END OF 顶部导航栏 -->
 
 <!-- LOGO\搜索\登陆区-->
 <div class="container-fluid" style="margin-top: 30px;">
@@ -55,7 +11,7 @@
                     <h1 style="margin-top: -5px; color: black;">私家<br><small>isijia.co</small></h1>
                 </a>
                 <div class="col-md-6">
-                    <g:form controller="menu" action="foodSearch" method="get">
+                    <g:form controller="menu" action="foodSearch" method="get" accept-charset="UTF-8">
                     <div class="input-group">
                         <div class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Flushing <span class="caret"></span></button>
