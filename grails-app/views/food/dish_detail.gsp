@@ -304,7 +304,7 @@
     <g:each in="${relatedDish}">
         <div class="col-md-3">
             <a href="${createLink(controller: 'menu', action: 'dishDetail', params: [dishId: it.id])}" title="${it.name}" data-gallery class="thumbnail">
-                <g:if test="${it.images.size() > 0}">
+                <g:if test="${it.images.image.size() > 0}">
                     <img src=""${createLink(uri: '/') + it.images.image.first()}" alt="${it.name}">
                 </g:if>
                 <div>${it.name}</div>
