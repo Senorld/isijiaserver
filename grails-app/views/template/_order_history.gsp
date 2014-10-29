@@ -18,12 +18,13 @@
                 <td width="35%">
                     <div class="row">
                         <div class="col-md-7">
-                            <g:if test="${it.menu.images.size() > 0}">
-                                <img src="${createLink(uri: "/") + it.menu.images.first().image}" style="width: 150px;">
-                            </g:if>
-
+                            <div class="thumbnail">
+                                <g:if test="${it.menu.images.size() > 0}">
+                                    <img src="${createLink(uri: "/") + it.menu.images.first().image}">
+                                </g:if>
+                            </div>
                         </div>
-                        <div class="col-md-5" style="float: right;">
+                        <div class="col-md-5">
                             <h4 style="color: #ac2925">${it.menu.name}</h4>
                             <p>单价：$${it.menu.price} 数量：${it.amount}个</p>
                         </div>

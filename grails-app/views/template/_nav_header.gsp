@@ -99,34 +99,25 @@
                                     <div class="tab-pane ${params?.role == 'ROLE_CHEF' ? 'active' : ''}" id="chef">
                                         <g:form name="chefForm" controller="register" action="member" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="role" value="ROLE_CHEF"/>
-                                            <table style="margin: 20px" width="100%">
-                                                <tr>
-                                                    <td align="center" width="20%">邮箱</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="email" class="form-control" name="email" value="${params.email}"></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">密码</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="password" class="form-control" name="password" value=""></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">名字</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="name" value="${params.name}"></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">电话</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="phoneNumber" value="${params.phoneNumber}"></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">地址</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="address" value="${params.address}"></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">城市</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="city" value="${params.city}"></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">州</td>
-                                                    <td><div class="form-group" style="width: 90%">
+                                            <div class="form-group" style="margin-top: 20px;">
+                                                <input type="email" class="form-control" placeholder="邮箱" name="email" value="${params.email}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" name="password" value="" placeholder="密码">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="名字" name="name" value="${params.name}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="电话" name="phoneNumber" value="${params.phoneNumber}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="地址" name="address" value="${params.address}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="城市" name="city" value="${params.city}">
+                                            </div>
+                                                <div class="form-group">
                                                         <div class="pure-control-group">
                                                             <select id="stats" name="stats">
                                                                 <option value="NY">New York</option>
@@ -182,59 +173,43 @@
                                                                 <option value="WY">Wyoming</option>
                                                             </select>
                                                         </div>
+                                                       </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Zip Code" name="zipCode" value="${params.zipCode}" maxlength="5">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="profileImage">照片</label>
+                                                <input type="file" id="profileImage" name="profileImage"/>
+                                            </div>
 
-                                                    </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" width="20%">Zip Code</td>
-                                                    <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" placeholder="" name="zipCode" value="${params.zipCode}"></div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>照片 </td>
-                                                    <td><input type="file" name="profileImage"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2"><div style="margin-top:10px;" class="form-group"><input type="checkbox"> 我已经阅读并接受私家的<font color="#a52a2a"><a href="${resource(dir: 'file', file: 'policy.pdf')}" target="_blank"> 《使用协议》</a></font> </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><div class="form-group"><input type="submit" class="btn btn btn-success" value="注册"></div></td>
-                                                </tr>
-                                            </table>
+                                            <div class="form-group">
+                                                <input type="checkbox"> 我已经阅读并接受私家的<font color="#a52a2a"><a href="${resource(dir: 'file', file: 'policy.pdf')}" target="_blank"></a></font>
+                                            </div>
+
+                                            <div class="form-group"><input type="submit" class="btn btn btn-success" value="注册"></div>
+
                                         </g:form>
-
-
                                     </div>
+
                                     <div class="tab-pane ${!params?.role || params?.role == 'ROLE_USER' ? 'active' : ''}" id="user">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <g:form action="member" controller="register" method="post" enctype="multipart/form-data">
                                                     <input type="hidden" name="role" value="ROLE_USER"/>
-                                                    <table style="margin: 20px" width="100%">
-                                                        <tr>
-                                                            <td align="center" width="20%">邮箱</td>
-                                                            <td><div class="form-group" style="width: 90%"><input type="email" class="form-control" name="email" value="${params.email}"></div></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" width="20%">密码</td>
-                                                            <td><div class="form-group" style="width: 90%"><input type="password" class="form-control" name="password"></div></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" width="20%">名字</td>
-                                                            <td><div class="form-group" style="width: 90%"><input type="text" class="form-control" name="name" placeholder="" value="${params.name}"></div></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>照片 </td>
-                                                            <td><input type="file" name="profileImage"/></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2"><div style="margin-top:10px;" class="form-group"><input type="checkbox"> 我已经阅读并接受私家的<font color="#a52a2a"><a href="${resource(dir: 'file', file: 'policy.pdf')}" target="_blank"> 《使用协议》</a></font> </div></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td><div class="form-group"><input type="submit" class="btn btn btn-success" value="注册"></div></td>
-                                                        </tr>
-                                                    </table>
+                                                    <div class="form-group" style="margin-top: 20px;">
+                                                        <input type="email" class="form-control" placeholder="邮箱" name="email" value="${params.email}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control" name="password" value="" placeholder="密码">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="名字" name="name" value="${params.name}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="checkbox"> 我已经阅读并接受私家的<font color="#a52a2a"><a href="${resource(dir: 'file', file: 'policy.pdf')}" target="_blank"></a></font>
+                                                    </div>
+                                                    <div class="form-group"><input type="submit" class="btn btn btn-success" value="注册"></div>
+
                                                 </g:form>
 
 
