@@ -141,7 +141,7 @@
     </div>
 </div>
 <!--  END OF 热门小厨  -->
-
+<!--最新上菜-->
     <div class="row">
         <div class="panel panel-warning">
             <div class="panel-heading">
@@ -152,9 +152,9 @@
                     <g:each in="${newDishList}">
                         <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                         <div class="col-md-3">
-                            <div class="thumbnail">
+                            <div class="thumbnail" style="height: 350px;">
                                 <g:if test="${it.images.image.size() > 0}">
-                                    <img src="${createLink(uri: '/') + it.images.image.first()}" style="max-height: 200px; min-height: 200px;">
+                                    <img src="${createLink(uri: '/') + it.images.image.first()}" style="max-height: 230px;">
                                 </g:if>
 
                                 <div class="caption">
