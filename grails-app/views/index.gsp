@@ -185,7 +185,7 @@
 
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                 <div class="col-md-3">
-                    <div class="thumbnail">
+                    <div class="thumbnail" style="height: 350px;">
                         <g:if test="${it.images.size() > 0}">
                             <img src="${createLink(uri: '/') + it.images.first().image}" class="dish" style="min-height: 200px; max-height: 200px;">
                         </g:if>

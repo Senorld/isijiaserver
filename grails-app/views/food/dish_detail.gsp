@@ -64,6 +64,7 @@
     <div class="col-md-8">
 
         <div id="links">
+
             <!-- 大图片展示区 -->
             <div class="row">
                 <div class="thumbnail">
@@ -88,6 +89,15 @@
                     </div>
                 </g:each>
             </div>
+            <div class="row">
+                <div class="thumbnail" style="margin-left: 10px">
+                    <a href="${resource(dir: 'images', file: 'AD-1.jpg')}" data-gallery>
+                        <img src="${resource(dir: 'images', file: 'AD-1.jpg')}" alt="...">
+                    </a>
+
+                </div>
+            </div>
+
         </div>
     </div>
     <!--END OF 菜品展示区-->
