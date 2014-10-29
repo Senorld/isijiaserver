@@ -152,9 +152,9 @@
                     <g:each in="${newDishList}">
                         <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
                         <div class="col-md-3">
-                            <div class="thumbnail" style="height: 350px;">
+                            <div class="thumbnail">
                                 <g:if test="${it.images.image.size() > 0}">
-                                    <img src="${createLink(uri: '/') + it.images.image.first()}" style="max-height: 230px;">
+                                    <img src="${createLink(uri: '/') + it.images.image.first()}" style="max-height: 200px; min-height: 200px;">
                                 </g:if>
 
                                 <div class="caption">
