@@ -1,4 +1,4 @@
-<div class="panel panel-default" style="margin-top: 20px">
+<div class="row panel panel-default" style="margin-top: 20px">
     <div class="panel-body">
         <g:form action="createFood" role="form" enctype="multipart/form-data">
             <table style="margin: 20px" width="100%">

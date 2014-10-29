@@ -1,4 +1,4 @@
-<div class="panel panel-default" style="margin-top: 20px">
+<div class="row panel panel-default" style="margin-top: 20px">
     <div class="panel-body">
         <table class="table-hover" style="width: 100%">
 <g:each in="${data.dishList}">
