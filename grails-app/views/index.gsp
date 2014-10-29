@@ -90,7 +90,7 @@
             <g:each in="${hotChef}">
                 <div class="col-md-2">
                     <div align="center">
-                        <img src="${createLink(uri: '/') + it.profile}" class="thumbnail user">
+                        <img src="${createLink(uri: '/') + it.profile}" class="img-thumbnail user">
                         <div class="caption">
                             <h5 align="center">${it.name}</h5>
                             <p align="center">${it.likes}位食客</p>
