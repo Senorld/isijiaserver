@@ -7,6 +7,7 @@
 
     <!-- Bootstrap 组件 -->
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <asset:stylesheet src="application.css"/>
 </head>
@@ -186,7 +187,7 @@
                 <div class="col-md-3">
                     <div class="thumbnail">
                         <g:if test="${it.images.size() > 0}">
-                            <img src="${createLink(uri: '/') + it.images.first().image}" class="dish" style="width: 200px; height: 200px;">
+                            <img src="${createLink(uri: '/') + it.images.first().image}" class="dish" style="min-height: 200px; max-height: 200px;">
                         </g:if>
 
                         <div class="caption">
@@ -359,6 +360,5 @@
 
 <!-- END OF FOOTER-->
 <asset:javascript src="application.js"/>
-<asset:javascript src="holder.js"/>
 </body>
 </html>

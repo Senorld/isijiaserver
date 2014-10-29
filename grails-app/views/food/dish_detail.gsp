@@ -79,9 +79,12 @@
 
                 <g:each in="${dishDetail.images}">
                     <div class="col-md-4">
-                        <a href="${createLink(uri: '/') + it.image}" data-gallery title="${it.id}">
-                            <img src="${createLink(uri: '/') + it.image}" alt="${it.id}">
-                        </a>
+                        <div class="thumbnail">
+                            <a href="${createLink(uri: '/') + it.image}" title="${it.id}" data-gallery>
+                                <img src="${createLink(uri: '/') + it.image}" alt="${it.id}">
+                            </a>
+                        </div>
+
                     </div>
                 </g:each>
             </div>
