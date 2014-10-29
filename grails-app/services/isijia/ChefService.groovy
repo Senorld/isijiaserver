@@ -61,7 +61,7 @@ class ChefService {
     }
 
     def getHotChef(){
-        def chef = MemberRole.findAllByRole(Role.findByAuthority("ROLE_CHEF")).member.sort({ -it.visit })
+        def chef = MemberRole.findAllByRole(Role.findByAuthority("ROLE_CHEF")).member.sort({ -it.likes })
 
 
         def hotChef = chef.subList(0, chef.size() > 5 ? 5 : chef.size())

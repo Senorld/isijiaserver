@@ -46,6 +46,12 @@
                                                     <option>湖南菜</option>
                                                     <option>广东菜</option>
                                                     <option>东北菜</option>
+                                                    <option>京菜</option>
+                                                    <option>上海菜</option>
+                                                    <option>西北菜</option>
+                                                    <option>浙菜</option>
+                                                    <option>台菜</option>
+                                                    <option>其他</option>
                                                 </select>
                                             </div>
                                         </td>
@@ -63,7 +69,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td align="center" width="10%">描述</td>
+                                        <td align="center" width="10%">详细描述</td>
                                         <td>
                                             <div class="form-group" style="width: 90%;margin-left: 5px">
                                                 <textarea  name="description" id="editor1" rows="20" cols="85">
@@ -74,17 +80,6 @@
                                                 // instance, using default configuration.
                                                 CKEDITOR.replace( 'editor1' );
                                             </script>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" width="10%">送货</td>
-                                        <td>
-                                            <div class="form-group" style="width: 50%;margin: 5px">
-                                                <input type="radio" value="Option one" name="shipping" checked="checked">
-                                                邮递
-                                                <input type="radio" value="Option two" name="shipping">
-                                                自取
-                                            </div>
                                         </td>
                                     </tr>
                                     <tr>

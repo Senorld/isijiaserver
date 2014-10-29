@@ -90,10 +90,10 @@
             <g:each in="${hotChef}">
                 <div class="col-md-2">
                     <div align="center">
-                        <img src="${createLink(uri: '/') + it.profile}" class="img-thumbnail user">
+                        <img src="${createLink(uri: '/') + it.profile}" class="thumbnail user">
                         <div class="caption">
                             <h5 align="center">${it.name}</h5>
-                            <p align="center">${it.visit}位食客</p>
+                            <p align="center">${it.likes}位食客</p>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
                         <div class="col-md-3">
                             <div class="thumbnail">
                                 <g:if test="${it.images.image.size() > 0}">
-                                    <img src="${createLink(uri: '/') + it.images.image.first()}" width="200px" height="236px">
+                                    <img src="${createLink(uri: '/') + it.images.image.first()}" style="max-height: 200px; min-height: 200px;">
                                 </g:if>
 
                                 <div class="caption">
@@ -183,10 +183,10 @@
 
 
             <g:link controller="menu" action="dishDetail" params="[dishId: it.id]">
-                <div class="col-md-3 thumbnail">
-                    <div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
                         <g:if test="${it.images.size() > 0}">
-                            <img src="${createLink(uri: '/') + it.images.first().image}" class="img-thumbnail dish">
+                            <img src="${createLink(uri: '/') + it.images.first().image}" class="dish" style="width: 200px; height: 200px;">
                         </g:if>
 
                         <div class="caption">
@@ -229,7 +229,7 @@
     <!-- 美食广告位 -->
     <div class="row">
         <div class="thumbnail" style="margin-left: 10px">
-            <img src="images/AD-1.jpg" alt="...">
+            <img src="${resource(dir: 'images', file: 'AD-1.jpg')}" alt="...">
             <div class="caption">
                 <h4>丁胖子美食广场</h4>
                 <p>丁胖子美食广场位于圣盖博市区，集中了大小30余家中华美食店面</p>
@@ -241,7 +241,7 @@
     <!-- 美食广告位 -->
     <div class="row">
         <div class="thumbnail" style="margin-left: 10px">
-            <img src="images/AD-2.jpg" alt="...">
+            <img src="${resource(dir: 'images', file: 'AD-2.jpg')}" alt="...">
             <div class="caption">
                 <h4>丁胖子美食广场</h4>
                 <p>丁胖子美食广场位于圣盖博市区，集中了大小30余家中华美食店面</p>

@@ -58,6 +58,7 @@ class MemberOrderController {
     def confirmOrder(long orderId){
         def result = memberOrderService.confirmOrder(orderId)
 
+
         redirect(action: 'retrieveOrderHistoryTemplate')
     }
 

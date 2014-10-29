@@ -35,7 +35,7 @@
                     <input type="hidden" name="dishId" value="${dish.id}"/>
                     <tr>
                         <td align="center" width="10%">电话</td>
-                        <td><div class="form-group" style="width:300px;margin: 5px"><input type="tel" class="form-control" name="phoneNumber" placeholder="必填"></div></td>
+                        <td><div class="form-group" style="width:300px;margin: 5px"><input type="tel" class="form-control" name="phoneNumber" placeholder="必填" value="${user.phoneNumber}"></div></td>
                     </tr>
                     <tr>
                         <td align="center" width="10%">微信</td>
@@ -91,7 +91,7 @@
 <div class="col-md-3">
     <div class="row">
         <div class="thumbnail" style="margin-left: 10px">
-            <img src="images/AD-1.jpg" alt="...">
+            <img src="${resource(dir: 'images', file: 'AD-1.jpg')}" alt="...">
             <div class="caption">
                 <h4>丁胖子美食广场</h4>
                 <p>丁胖子美食广场位于圣盖博市区，集中了大小30余家中华美食店面</p>
@@ -111,7 +111,7 @@
     <!-- 美食广告位 -->
     <div class="row">
         <div class="thumbnail" style="margin-left: 10px">
-            <img src="images/AD-2.jpg" alt="...">
+            <img src="${resource(dir: 'images', file: 'AD-2.jpg')}" alt="...">
             <div class="caption">
                 <h4>丁胖子美食广场</h4>
                 <p>丁胖子美食广场位于圣盖博市区，集中了大小30余家中华美食店面</p>

@@ -25,6 +25,7 @@ class MemberOrderService {
             return [success: false, message: "Something wrong when saving into database, please try again later."]
         }
         food.likes++
+        food.chef.likes++
 
         def member = Member.findByEmail(user.email)
         if(!member?.address){

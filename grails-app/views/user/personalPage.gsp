@@ -52,7 +52,7 @@
     <!-- 美食广告位 -->
     <div class="row">
         <div class="thumbnail" style="margin-left: 10px">
-            <img src="images/AD-2.jpg" alt="...">
+            <img src="${resource(dir: 'images', file: 'AD-2.jpg')}" alt="...">
             <div class="caption">
                 <h4>丁胖子美食广场</h4>
                 <p>丁胖子美食广场位于圣盖博市区，集中了大小30余家中华美食店面</p>
