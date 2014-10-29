@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="row panel panel-default">
     <div class="panel-body">
         <ul class="nav nav-pills">
 

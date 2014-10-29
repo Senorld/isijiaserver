@@ -6,8 +6,9 @@
                 <td colspan="4">
                     <div class="row">
                         <div class="col-md-12">
-                            <span class="label label-primary"><g:formatDate date="${it.createdDate}" format="yyyy-MM-dd"/></span>
-                            <span class="label label-success">${it.user.name} ${it.user.phoneNumber}</span>
+                            <span class="label label-primary">${it.user.name} ${it.user.phoneNumber}</span>
+                            <span class="label label-info">${it.shipOption}</span>
+                            <span class="label label-success"><g:formatDate date="${it.createdDate}" format="yyyy-MM-dd"/></span>
                         </div>
 
                     </div>
@@ -34,7 +35,7 @@
                     <h3 style="margin-top: 30px">$${it.amount*it.menu.price}</h3>
                 </td>
                 <td width="45%">
-                    <p>已选择 ${it.shipOption} <small>${it.address}, ${it.city} ${it.zipCode}</small></p>
+                    <p><small>${it.address}, ${it.city} ${it.zipCode}</small></p>
                     <p>Wechat: ${it.wechat}</p>
                     <p><small>${it.note}</small></p>
                 </td>
