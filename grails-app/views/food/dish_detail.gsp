@@ -90,14 +90,6 @@
                     </div>
                 </g:each>
             </div>
-            <div class="row">
-                <div class="thumbnail" style="margin-left: 10px">
-                    <a href="${resource(dir: 'images', file: 'AD-1.jpg')}" data-gallery>
-                        <img src="${resource(dir: 'images', file: 'AD-1.jpg')}" alt="...">
-                    </a>
-
-                </div>
-            </div>
 
         </div>
     </div>
