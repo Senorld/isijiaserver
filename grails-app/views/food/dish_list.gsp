@@ -97,7 +97,7 @@
     <div class="row">
         <div align="center">
             <ul class="pagination pagination-lg">
-                <g:if test="${pages > 0}">
+                <g:if test="${pages > 1}">
                     <g:each in="${1..pages}" var="pageNumber" status="i">
                         <li class=""><a href="${createLink(action:'foodSearch', params: [keyWord: params.keyWord, offset: i*limit])}">${i+1}<span class="sr-only">(current)</span></a></li>
                     </g:each>

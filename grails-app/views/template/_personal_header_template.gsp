@@ -13,7 +13,7 @@
                 <li class="active"><g:remoteLink update="personalContent" name="memberOrder" controller="memberOrder" action="retrieveOrderHistoryTemplate">订单管理</g:remoteLink></li>
             </sec:ifAnyGranted>
 
-            <li><a href="dealer-shezhi.html">设置</a></li>
+            <li><g:remoteLink update="personalContent" name="updateInfo" controller="user" action="userSetting">设置</g:remoteLink></li>
         </ul>
     </div>
 </div>

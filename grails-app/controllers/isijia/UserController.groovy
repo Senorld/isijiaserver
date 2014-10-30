@@ -33,5 +33,21 @@ class UserController {
         render(view: '/user/personalPage', model: [user: user, data: result, orderHistory: result?.orderHistory])
     }
 
+    @Secured(['ROLE_USER', 'ROLE_CHEF'])
+    def userSetting(){
+        def user = springSecurityService.currentUser as Member
+
+        render(template: '/template/personal_setting', model: [user: user])
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_CHEF'])
+    def updateInfo(String email, String password, String name, String phoneNumber, String address, String city, String state, String zipCode){
+        def user = springSecurityService.currentUser as Member
+
+        userService.updateInfo(user, email, password, name, phoneNumber, address, city, state, zipCode, params.profileImage)
+
+        render(template: '/template/personal_setting', model: [user: user])
+    }
+
 
 }

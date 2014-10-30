@@ -69,10 +69,10 @@ class MenuController {
         render(view:'/food/dish_list', model: [dishList: menu, user: user])
     }
 
-    def retrieveFoodByChef(long chefId){
-        def result = chefService.retrieveFoodByChef(chefId)
+    def retrieveFoodListByChef(long chefId, int offset){
+        def result = chefService.retrieveFoodByChef(chefId, offset)
         def user = springSecurityService.currentUser
-        render(view: "/test/menuList", model: [menuList: result.foodList, pages: result.pages, user: user])
+        render(view: "/food/dish_list", model: [resultList: result.foodList, pages: result.pages, user: user, params: params])
     }
 
     def hotDish(int limit){

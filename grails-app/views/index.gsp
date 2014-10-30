@@ -89,15 +89,18 @@
             <h3 class="panel-title">热门小厨</h3><br>
             <div class="row">
             <g:each in="${hotChef}">
-                <div class="col-md-2">
-                    <div align="center">
-                        <img src="${createLink(uri: '/') + it.profile}" class="img-thumbnail user">
-                        <div class="caption">
-                            <h5 align="center">${it.name}</h5>
-                            <p align="center">${it.likes}位食客</p>
+                <g:link controller="menu" action="retrieveFoodListByChef" params="[chefId: it.id]">
+                    <div class="col-md-2">
+                        <div align="center">
+                            <img src="${createLink(uri: '/') + it.profile}" class="img-thumbnail user">
+                            <div class="caption">
+                                <h5 align="center">${it.name}</h5>
+                                <p align="center">${it.likes}位食客</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </g:link>
+
             </g:each>
 
             </div>

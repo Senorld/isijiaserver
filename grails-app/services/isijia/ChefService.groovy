@@ -6,9 +6,9 @@ import grails.transaction.Transactional
 class ChefService {
     def springSecurityService
 
-    def retrieveFoodByChef(long chefId){
+    def retrieveFoodByChef(long chefId, int offset){
         def chef = Member.get(chefId)
-        def result = retrieveFoodByChef(chef)
+        def result = retrieveFoodByChef(chef, offset)
         return [foodList: result.foodList, pages: result.pages]
     }
 

@@ -44,7 +44,6 @@ class RegisterService {
             return [success: false, message: "Register fail, please try again later."]
         }
 
-
         new MemberRole(role: role, member: registered).save(flush: true, failOnError: true)
 
         return [success: true]
