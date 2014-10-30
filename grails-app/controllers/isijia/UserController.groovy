@@ -46,7 +46,7 @@ class UserController {
 
         userService.updateInfo(user, email, password, name, phoneNumber, address, city, state, zipCode, params.profileImage)
 
-        render(template: '/template/personal_setting', model: [user: user])
+        redirect(action: "personalPage")
     }
 
 

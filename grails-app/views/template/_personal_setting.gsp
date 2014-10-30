@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="tab-content">
         <div class="">
-            <g:formRemote update="personalContent" name="updateForm" url="[controller: 'user', action: 'updateInfo']" method="post" enctype="multipart/form-data">
+            <g:form name="updateForm" controller="user" action="updateInfo" method="post" enctype="multipart/form-data">
                 <div class="form-group" style="margin-top: 20px;">
                     <input type="email" class="form-control" placeholder="邮箱" name="email" value="${user.email}">
                 </div>
@@ -87,7 +87,7 @@
 
                 <div class="form-group"><input type="submit" class="btn btn btn-success" value="更新"></div>
 
-            </g:formRemote>
+            </g:form>
         </div>
     </div>
 </div>
