@@ -215,7 +215,7 @@
         <div class="panel panel-warning" style="margin-top: 10px">
             <div class="panel-heading">
                 <p>
-                    ${dishDetail.description}
+                    ${raw(dishDetail.description)}
                 </p>
             </div>
         </div>

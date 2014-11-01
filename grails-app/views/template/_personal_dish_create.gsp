@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td align="center" width="10%">简述</td>
-                    <td><div class="form-group" style="width: 90%;margin: 5px"><textarea rows="3" name="shortDescription" class="form-control"></textarea></div></td>
+                    <td><div class="form-group" style="width: 90%;margin: 5px"><textarea rows="3" name="shortDescription" class="form-control" maxlength="200" placeholder="最多 150 個字"></textarea></div></td>
                 </tr>
                 <tr>
                     <td align="center" width="10%">图片</td>
