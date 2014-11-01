@@ -21,7 +21,7 @@
                         <div class="col-md-7">
                             <div class="thumbnail">
                                 <g:if test="${it.menu.images.size() > 0}">
-                                    <img src="${createLink(uri: "/") + it.menu.images.first().image}">
+                                    <img src="${createLink(uri: "/") + it.menu.images.first().image}" style="max-height: 200px; max-width: 130px;">
                                 </g:if>
                             </div>
                         </div>

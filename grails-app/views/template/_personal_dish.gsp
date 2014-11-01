@@ -31,8 +31,8 @@
 <div class="row">
     <div align="center">
         <ul class="pagination pagination-lg">
-            <g:if test="${data.pages > 1}">
-                <g:each in="${1..data.pages}" var="pageNumber" status="i">
+            <g:if test="${data.pages > 0}">
+                <g:each in="${0..data.pages}" var="pageNumber" status="i">
                     <li class="${params.offset == i*15 ? '.active' : ''}"><a href="${createLink(action: 'retrieveDishTemplate', controller: 'menu', params: [offset: i * 15])}">${i + 1}</a></li>
                 </g:each>
             </g:if>
