@@ -12,10 +12,10 @@
                             <tr>
                                 <td>
                                     <div class="thumbnail">
-                                        <img src="${createLink(uri: '/') + it.user.profile}" class="img-circle">
+                                        <img src="${createLink(uri: '/') + it.user.profile}" class="img-circle" style="max-width : 150px;">
                                     </div>
                                     <div style="text-align: center">
-                                        ${it.user.name}
+                                        <strong>${it.user.name}</strong>
                                     </div>
                                 </td>
                             </tr>

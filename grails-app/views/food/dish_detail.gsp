@@ -195,7 +195,7 @@
 <table>
     <tr>
         <g:if test="${dishDetail.chef.profile != null}">
-            <td><img src="${createLink(uri: '/') + dishDetail.chef.profile}" class="img-circle" style="margin: 5px; height: 100px; width: 100px;"></td>
+            <td><img src="${createLink(uri: '/') + dishDetail.chef.profile}" class="img-circle" style="margin: 5px; max-height: 100px;"></td>
         </g:if>
 
         <td>小厨<br><h4>${dishDetail.chef.name}</h4></td>
