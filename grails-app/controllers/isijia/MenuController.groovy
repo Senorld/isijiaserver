@@ -43,7 +43,7 @@ class MenuController {
         render(template: "/template/personal_dish_create", model: [user: user])
     }
 
-    def dishDetail(long dishId, int offset){
+    def dishDetail(long dishId, int offset = 0){
         def dish = Menu.get(dishId)
         def relatedDish = []
         if(dish){
