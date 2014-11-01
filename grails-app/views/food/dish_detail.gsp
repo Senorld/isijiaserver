@@ -170,7 +170,9 @@
         <div class="row">
             <table width="100%">
                 <tr>
-                    <td colspan="2" style="text-align: left;"><g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link></td>
+                    <td colspan="2" style="text-align: left; padding-left: 5px;">
+                        <g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link>
+                    </td>
                     <td style="text-align: right">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reviewBox">
