@@ -36,8 +36,8 @@
                                     <div class="col-md-6">
                                         <!-- Nav tabs -->
                                         <ul class="nav nav-tabs">
-                                            <li class="${!params.role || params?.role == 'ROLE_USER' ? 'active' : ''}"><a href="#user" data-toggle="tab">我是食客</a></li>
-                                            <li class="${params?.role == 'ROLE_CHEF' ? 'active' : ''}"><a href="#chef" data-toggle="tab">我是小厨</a></li>
+                                            <li class="${!params.role || params?.role == 'ROLE_USER' ? 'active' : ''}"><a href="#userRegister" data-toggle="tab">我是食客</a></li>
+                                            <li class="${params?.role == 'ROLE_CHEF' ? 'active' : ''}"><a href="#chefRegister" data-toggle="tab">我是小厨</a></li>
                                         </ul>
                                         <g:if test="${result?.success == false}">
                                             <div class="bg-danger" style="margin-top: 10px;">
@@ -47,7 +47,7 @@
 
                                         <!-- Tab panes -->
                                         <div class="tab-content">
-                                            <div class="tab-pane ${params?.role == 'ROLE_CHEF' ? 'active' : ''}" id="chef">
+                                            <div class="tab-pane ${params?.role == 'ROLE_CHEF' ? 'active' : ''}" id="chefRegister">
                                                 <g:form url="[action: 'member']" name="chefForm" method="post">
                                                     <input type="hidden" name="role" value="ROLE_CHEF"/>
                                                     <table style="margin: 20px" width="100%">
@@ -153,7 +153,7 @@
 
 
                                             </div>
-                                            <div class="tab-pane ${!params?.role || params?.role == 'ROLE_USER' ? 'active' : ''}" id="user">
+                                            <div class="tab-pane ${!params?.role || params?.role == 'ROLE_USER' ? 'active' : ''}" id="userRegister">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <g:form action="member" method="post">
