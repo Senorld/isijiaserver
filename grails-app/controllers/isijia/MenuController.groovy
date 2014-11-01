@@ -63,7 +63,7 @@ class MenuController {
         def dish = Menu.get(dishId)
         def review = DishReview.findAllByDish(dish, [sort: 'dateCreated', order: 'desc', max: 10 ?: -1, offset: offset ?: 0])
         def pages = DishReview.countByDish(dish)/10 as Integer
-        println pages
+        
         render(template: "/template/review_template", model: [dishDetail: dish, review: review, pages: pages, params: params])
     }
 

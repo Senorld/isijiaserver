@@ -10,8 +10,12 @@
                     <div class="col-md-3">
                         <table>
                             <tr>
-                                <td><img src="${createLink(uri: '/') + it.user.profile}" class="img-circle"
-                                         style="margin: 5px"></td>
+                                <td>
+                                    <div class="thumbnail">
+                                        <img src="${createLink(uri: '/') + it.user.profile}" class="img-circle" style="margin: 5px">
+                                    </div>
+
+                                </td>
                                 <td>小厨<br><h4>${it.user.name}</h4></td>
                             </tr>
                         </table>
