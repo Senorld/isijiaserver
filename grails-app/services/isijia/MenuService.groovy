@@ -22,14 +22,11 @@ class MenuService {
         if(userRoles.any{ it.authority != "ROLE_CHEF"}){
             return [success: false, message: "You don't have permission to create food."]
         }
-
-
-
         def chef = springSecurityService.currentUser
 
         MenuStatus menuStatus = MenuStatus.ACTIVE
-
-        Menu food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, dishFlavor: dishFlavor, highLight: highLight, chef: chef).save(flush: true, failOnError: true)
+        description = description.replaceAll("(\r\n|\n)", "<br />");
+        Menu food = new Menu(name: name, price: price, description: description, shortDescription: shortDescription, status: menuStatus, dishFlavor: dishFlavor, highLight: highLight, chef: chef)//.save(flush: true, failOnError: true)
 
         if(!food){
             return [success: false, message: "Something wrong when store food into database. Please try again later."]
@@ -37,13 +34,17 @@ class MenuService {
 
         if(imageFiles.size() > 0){
             imageFiles.each(){
-                def milSecond = System.currentTimeMillis()
-                def fileName = "dish_${milSecond}.png"
-                String filePath = "dish/${chef.id}"
-                ftpService.save(it.getBytes(), fileName, filePath)
-                fileName = "userUpload/$filePath/$fileName"
 
-                food.addToImages(image: fileName).save()
+                if (it.getBytes().length > 0) {
+                    def milSecond = System.currentTimeMillis()
+                    def fileName = "dish_${milSecond}.png"
+                    String filePath = "dish/${chef.id}"
+                    ftpService.save(it.getBytes(), fileName, filePath)
+                    fileName = "userUpload/$filePath/$fileName"
+
+                    food.addToImages(image: fileName).save()
+                }
+
             }
         }
 

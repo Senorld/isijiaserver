@@ -19,6 +19,7 @@ class MenuController {
         try {
             def imageFiles = []
             params.foodImage.each {
+                println it.value
                 imageFiles.add(it.value)
             }
 
@@ -30,7 +31,7 @@ class MenuController {
         }
 
         if(result.success){
-            dishDetail(result?.dish?.id)
+            dishDetail(result?.dish?.id, 0)
         }else{
             dishCreationPage()
         }
@@ -43,7 +44,7 @@ class MenuController {
         render(template: "/template/personal_dish_create", model: [user: user])
     }
 
-    def dishDetail(long dishId, int offset = 0){
+    def dishDetail(long dishId, int offset){
         def dish = Menu.get(dishId)
         def relatedDish = []
         if(dish){

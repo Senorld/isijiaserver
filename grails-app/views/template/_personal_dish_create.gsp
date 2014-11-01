@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td align="center" width="10%">简述</td>
-                    <td><div class="form-group" style="width: 90%;margin: 5px"><textarea style="width: 300px" rows="5" name="shortDescription"> </textarea></div></td>
+                    <td><div class="form-group" style="width: 90%;margin: 5px"><textarea rows="3" name="shortDescription" class="form-control"></textarea></div></td>
                 </tr>
                 <tr>
                     <td align="center" width="10%">图片</td>
@@ -51,8 +51,7 @@
                     <td align="center" width="10%">详细描述</td>
                     <td>
                         <div class="form-group" style="width: 90%;margin-left: 5px">
-                            <textarea  name="description" id="editor1" rows="10" cols="50">
-                            </textarea>
+                            <textarea  class="form-control"  name="description" rows="10" cols="50"></textarea>
                         </div>
                     </td>
                 </tr>
