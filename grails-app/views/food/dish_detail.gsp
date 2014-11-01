@@ -18,6 +18,30 @@
 <body>
 <g:render template="/template/nav_header"/>
 
+<!-- Modal -->
+<div class="modal fade" id="reviewBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="position: initial;">
+        <div class="modal-content">
+            <g:form controller="menu" action="postReview">
+                <input type="hidden" name="dishId" value="${dishDetail.id}"/>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">評論 ${dishDetail.name}</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea name="review" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="評論">
+                </div>
+            </g:form>
+
+        </div>
+
+    </div>
+</div>
+
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
@@ -129,7 +153,7 @@
                             </address>
                             <address>
                                 <strong>${dishDetail.chef.name}</strong><br>
-                                <a href="mailto:#">${dishDetail.chef.email}</a>
+                                <strong>${dishDetail.chef.email}</strong>
                             </address>
                         </div>
                     </div>
@@ -146,7 +170,15 @@
         <div class="row">
             <table width="100%">
                 <tr>
-                    <td colspan="2" style="text-align: right;"><g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link></td>
+                    <td colspan="2" style="text-align: left;"><g:link controller="memberOrder" action="checkoutPage" params="[dishId: dishDetail.id]" class="btn btn-danger btn-lg">点击购买</g:link></td>
+                    <td style="text-align: right">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reviewBox">
+                            評論
+                        </button>
+
+                    </td>
+
                 </tr>
             </table>
         </div>
@@ -170,14 +202,14 @@
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist" data-tabs="tabs">
-    <li class="active"><a href="#home" role="tab" data-toggle="tab">小菜介绍</a></li>
-    %{--<li><a href="#profile" role="tab" data-toggle="tab">评论留言</a></li>--}%
+    <li class="active"><a href="#description" role="tab" data-toggle="tab">小菜介绍</a></li>
+    <li><a href="#review" role="tab" data-toggle="tab">评论留言</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
     <!-- 小菜介绍-->
-    <div class="tab-pane active" id="home" align="left">
+    <div class="tab-pane active" id="description" align="left">
         <div class="panel panel-warning" style="margin-top: 10px">
             <div class="panel-heading">
                 <p>
@@ -188,116 +220,8 @@
     </div>
     <!-- END OF 小菜介绍-->
 
-    <div class="tab-pane" id="profile">
-        <div class="list-group" style="margin-top: 20px; background-color: #dff0d8" align="left">
-
-            <!--留言条目-->
-            <a href="" class="list-group-item">
-
-                <div class="row">
-                    <!--留言区头像-->
-                    <div class="col-md-3">
-                        <table>
-                            <tr>
-                                <td><img src="${createLink(uri: '/') + dishDetail.chef.profile}" class="img-circle" style="margin: 5px"></td>
-                                <td>小厨<br><h4>${dishDetail.chef.name}</h4></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!--END OF 留言区头像-->
-
-                    <!--留言内容-->
-                    <div class="col-md-9">
-                        <p>
-                            <span class="label label-info">我的标签</span>
-                            <span class="label label-warning">Warning</span>
-                            <span class="label label-danger">Danger</span>
-                        </p>
-                        <p>《雨巷》是戴望舒的成名作，约作于政治风云激荡的1927年夏天。《雨巷》中狭窄阴沉的雨巷，在雨巷中徘徊的独行者，以及那个像丁香一样结着愁怨的姑娘，都是象征性的意象。</p>
-                        <p align="right"><span class="label label-danger">2014年10月11日</span></p>
-                    </div>
-                    <!--END OF 留言内容-->
-                </div>
-            </a>
-            <!--END OF 留言条目-->
-
-            <!--留言条目-->
-            <a href="" class="list-group-item">
-
-                <div class="row">
-                    <!--留言区头像-->
-                    <div class="col-md-3">
-                        <table>
-                            <tr>
-                                <td><img src="holder.js/90x90" class="img-circle" style="margin: 5px"></td>
-                                <td>小厨<br><h4>逆风三米</h4></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!--END OF 留言区头像-->
-
-                    <!--留言内容-->
-                    <div class="col-md-9">
-                        <p>
-                            <span class="label label-info">我的标签</span>
-                            <span class="label label-warning">Warning</span>
-                            <span class="label label-danger">Danger</span>
-                        </p>
-                        <p>《雨巷》是戴望舒的成名作，约作于政治风云激荡的1927年夏天。《雨巷》中狭窄阴沉的雨巷，在雨巷中徘徊的独行者，以及那个像丁香一样结着愁怨的姑娘，都是象征性的意象。</p>
-                        <p align="right"><span class="label label-danger">2014年10月11日</span></p>
-                    </div>
-                    <!--END OF 留言内容-->
-                </div>
-            </a>
-            <!--END OF 留言条目-->
-
-            <!--留言条目-->
-            <a href="" class="list-group-item">
-
-                <div class="row">
-                    <!--留言区头像-->
-                    <div class="col-md-3">
-                        <table>
-                            <tr>
-                                <td><img src="holder.js/90x90" class="img-circle" style="margin: 5px"></td>
-                                <td>小厨<br><h4>逆风三米</h4></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!--END OF 留言区头像-->
-
-                    <!--留言内容-->
-                    <div class="col-md-9">
-                        <p>
-                            <span class="label label-info">我的标签</span>
-                            <span class="label label-warning">Warning</span>
-                            <span class="label label-danger">Danger</span>
-                        </p>
-                        <p>《雨巷》是戴望舒的成名作，约作于政治风云激荡的1927年夏天。《雨巷》中狭窄阴沉的雨巷，在雨巷中徘徊的独行者，以及那个像丁香一样结着愁怨的姑娘，都是象征性的意象。</p>
-                        <p align="right"><span class="label label-danger">2014年10月11日</span></p>
-                    </div>
-                    <!--END OF 留言内容-->
-                </div>
-            </a>
-            <!--END OF 留言条目-->
-
-        </div>
-        <!-- 留言分页 -->
-        <div class="row">
-            <div align="center">
-                <ul class="pagination">
-                    <li class=""><a href="#">上一页</a></li>
-                    <li class=""><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                    <li class=""><a href="#">2 <span class="sr-only">(current)</span></a></li>
-                    <li class=""><a href="#">3 <span class="sr-only">(current)</span></a></li>
-                    <li class=""><a href="#">4 <span class="sr-only">(current)</span></a></li>
-                    <li class=""><a href="#">5 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">下一页</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- END OF 留言分页 -->
-
+    <div class="tab-pane" id="review">
+        <g:render template="/template/review_template"/>
     </div>
 </div>
 </div>

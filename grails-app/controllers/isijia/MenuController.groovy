@@ -43,7 +43,7 @@ class MenuController {
         render(template: "/template/personal_dish_create", model: [user: user])
     }
 
-    def dishDetail(long dishId){
+    def dishDetail(long dishId, int offset){
         def dish = Menu.get(dishId)
         def relatedDish = []
         if(dish){
@@ -51,11 +51,23 @@ class MenuController {
             relatedDish = menuService.getRelatedDish(dish.chef, dish)
         }
         def user = springSecurityService.currentUser
-        render(view: "/food/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, user: user])
+
+        def review = DishReview.findAllByDish(dish, [sort: 'dateCreated', order: 'desc', max: 10 ?: -1, offset: offset ?: 0])
+        def pages = DishReview.countByDish(dish)/10 as Integer
+        println pages
+
+        render(view: "/food/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, review: review, pages: pages, user: user, params: params])
+    }
+
+    def dishReviewTemplate(long dishId, int offset){
+        def dish = Menu.get(dishId)
+        def review = DishReview.findAllByDish(dish, [sort: 'dateCreated', order: 'desc', max: 10 ?: -1, offset: offset ?: 0])
+        def pages = DishReview.countByDish(dish)/10 as Integer
+        println pages
+        render(template: "/template/review_template", model: [dishDetail: dish, review: review, pages: pages, params: params])
     }
 
     def foodSearch(String keyWord, int offset){
-        println "search food: $keyWord"
         def result = menuService.searchFood(keyWord, offset)
         def user = springSecurityService.currentUser
 
@@ -95,5 +107,12 @@ class MenuController {
         def pages = Menu.countByChefAndStatus(user, MenuStatus.ACTIVE)/15 as Integer
 
         render(template: '/template/personal_dish', model:[data: [dishList: disList, pages: pages], user: user])
+    }
+
+    @Secured(['ROLE_CHEF', 'ROLE_USER'])
+    def postReview(long dishId, String review){
+        def user = springSecurityService.currentUser as Member
+        def result = menuService.postReview(user, dishId, review)
+        redirect(action: 'dishDetail', params: [dishId: dishId])
     }
 }

@@ -53,7 +53,7 @@
                 <!--登陆模块-->
 
                 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" style="width: 15%">
+                    <div class="modal-dialog" style="width: 20%; position: initial;">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -80,7 +80,7 @@
 
                 <!-- 注册模块 Modal -->
                 <div class="modal fade" id="reg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" style="width: 20%">
+                    <div class="modal-dialog" style="width: 20%; position: initial;">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

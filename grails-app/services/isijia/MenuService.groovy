@@ -90,4 +90,15 @@ class MenuService {
 
         return result
     }
+
+    def postReview(def user, long dishId, String review){
+        def dish = Menu.get(dishId)
+        println dish
+        println review
+        review = review.replaceAll("(\r\n|\n)", "<br />");
+        println "---------------------"
+        println review
+        def saved = new DishReview(dish: dish, user: user, review: review).save(failOnError: true)
+        println saved
+    }
 }
