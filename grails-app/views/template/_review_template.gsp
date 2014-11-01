@@ -14,9 +14,10 @@
                                     <div class="thumbnail">
                                         <img src="${createLink(uri: '/') + it.user.profile}" class="img-circle" style="margin: 5px">
                                     </div>
-
+                                    <div style="text-align: center">
+                                        ${it.user.name}
+                                    </div>
                                 </td>
-                                <td>小厨<br><h4>${it.user.name}</h4></td>
                             </tr>
                         </table>
                     </div>
