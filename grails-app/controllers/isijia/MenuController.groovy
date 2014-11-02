@@ -46,18 +46,21 @@ class MenuController {
 
     def dishDetail(long dishId, int offset){
         def dish = Menu.get(dishId)
-        def relatedDish = []
         if(dish){
             dish.visit++
-            relatedDish = menuService.getRelatedDish(dish.chef, dish)
+            def relatedDish = menuService.getRelatedDish(dish.chef, dish)
+            def user = springSecurityService.currentUser
+
+            def review = DishReview.findAllByDish(dish, [sort: 'dateCreated', order: 'desc', max: 10 ?: -1, offset: offset ?: 0])
+            def pages = DishReview.countByDish(dish)/10 as Integer
+
+            render(view: "/food/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, review: review, pages: pages, user: user, params: params])
+
+        }else{
+            log.error("Dish detail is null. Dish Id: $dishId")
+            redirect(controller: "home", action: "index")
         }
-        def user = springSecurityService.currentUser
 
-        def review = DishReview.findAllByDish(dish, [sort: 'dateCreated', order: 'desc', max: 10 ?: -1, offset: offset ?: 0])
-        def pages = DishReview.countByDish(dish)/10 as Integer
-        println pages
-
-        render(view: "/food/dish_detail", model: [dishDetail: dish, relatedDish: relatedDish, review: review, pages: pages, user: user, params: params])
     }
 
     def dishReviewTemplate(long dishId, int offset){
