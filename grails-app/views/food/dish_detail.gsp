@@ -33,7 +33,7 @@
 <div class="modal fade" id="reviewBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="position: initial;">
         <div class="modal-content">
-            <g:form controller="menu" action="postReview">
+            <g:form id="postReviewForm" controller="menu" action="postReview">
                 <input type="hidden" name="dishId" value="${dishDetail.id}"/>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
