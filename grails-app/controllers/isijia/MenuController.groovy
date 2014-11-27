@@ -19,7 +19,6 @@ class MenuController {
         try {
             def imageFiles = []
             params.foodImage.each {
-                println it.value
                 imageFiles.add(it.value)
             }
 

@@ -9,7 +9,7 @@ class FtpService {
 
     def save(byte[] file, String fileName, String folder) {
         def folders = folder.split("/")
-println fileName
+
         new FTPClient().with {
             connect grailsApplication.config.ftp.server
             enterLocalPassiveMode()

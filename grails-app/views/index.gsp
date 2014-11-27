@@ -104,7 +104,7 @@
                 <g:link controller="menu" action="retrieveFoodListByChef" params="[chefId: it.id]">
                     <div class="col-md-2">
                         <div align="center">
-                            <img src="${createLink(uri: '/') + it.profile}" class="img-thumbnail user">
+                            <img src="${it.profile ? createLink(uri: '/') + it.profile : resource(dir: 'images', file: 'default_avatar.png')}" class="img-thumbnail user">
                             <div class="caption">
                                 <h5 align="center">${it.name}</h5>
                                 <p align="center">${it.likes}位食客</p>
