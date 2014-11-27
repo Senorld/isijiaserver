@@ -207,7 +207,7 @@
 
                         <div class="caption">
                             <h4><font color="#a52a2a">${it.name}</font></h4>
-                            <p>${it.shortDescription}</p>
+                            <p style="height: 82px; overflow: hidden">${it.shortDescription}</p>
                         </div>
                     </div>
                 </div>
@@ -322,58 +322,9 @@
 <div class="col-md-2"></div>
 <!-- 右侧列表区域 -->
 </div>
-<!-- FOOTER -->
-<div class="container-fluid">
-    <div class="row">
-        <hr style="border:5px solid #4cae4c;">
-        <div class="col-md-2" style="margin-top: -20px; background-color:#f7ecb5; height: 300px"></div>
-        <div class="col-md-4" style="margin-top: -20px; background-color:#f7ecb5; height: 300px"></div>
-        <div class="col-md-1" style="margin-top: -20px; background-color:#f7ecb5; height: 300px" align="center">
-            <!--
-                <ul class="nav nav-pills nav-stacked" role="tablist" style=" margin-top: 10px">
-                    <li role="presentation"><h4>获取更新</h4></li>
-                    <li role="presentation"><a href="#">邮件订阅</a></li>
-                    <li role="presentation"><a href="#">RSS 订阅</a></li>
-                    <li role="presentation"><a href="#">Sitemap</a></li>
-                </ul>
-                -->
-        </div>
-        <div class="col-md-1" style="margin-top: -20px; background-color:#f7ecb5; height: 300px" align="center">
-            <!--
-                <ul class="nav nav-pills nav-stacked" role="tablist" style=" margin-top: 10px">
-                    <li role="presentation"><h4>商务合作</h4></li>
-                    <li role="presentation"><a href="#">广告联系</a></li>
-                    <li role="presentation"><a href="#">我要开店</a></li>
-                    <li role="presentation"><a href="#">市场合作</a></li>
-                </ul>
-                -->
-        </div>
-        <div class="col-md-1" style="margin-top: -20px; background-color:#f7ecb5; height: 300px" align="center">
-            <!--
-                <ul class="nav nav-pills nav-stacked" role="tablist" style=" margin-top: 10px">
-                    <li role="presentation"><h4>公司信息</h4></li>
-                    <li role="presentation"><a href="#">关于私家</a></li>
-                    <li role="presentation"><a href="#">媒体报道</a></li>
-                    <li role="presentation"><a href="#">加入我们</a></li>
-                </ul>
-                -->
-        </div>
-        <div class="col-md-1" style="margin-top: -20px; background-color:#f7ecb5; height: 300px" align="center">
-            <!--
-                <ul class="nav nav-pills nav-stacked" role="tablist" style=" margin-top: 10px">
-                    <li role="presentation"><h4>用户指南</h4></li>
-                    <li role="presentation"><a href="#">新手指南</a></li>
-                    <li role="presentation"><a href="#">付款与保障</a></li>
-                    <li role="presentation"><a href="#">外卖服务</a></li>
-                </ul>
-                -->
-        </div>
-        <div class="col-md-2" style="margin-top: -20px; background-color:#f7ecb5; height: 300px"></div>
-    </div>
-</div>
 
+<g:render template="/template/foot_template"/>
 
-<!-- END OF FOOTER-->
 <asset:javascript src="application.js"/>
 </body>
 </html>

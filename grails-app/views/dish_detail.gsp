@@ -147,7 +147,7 @@
     </div>
 
 </div>
-<g:render template="/template/foot_template" />
+<g:render template="/template/foot_template"/>
 </body>
 
 

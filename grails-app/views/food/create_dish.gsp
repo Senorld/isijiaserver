@@ -58,7 +58,13 @@
                                     </tr>
                                     <tr>
                                         <td align="center" width="10%">简述</td>
-                                        <td><div class="form-group" style="width: 90%;margin: 5px"><textarea style="width: 300px" rows="5" name="shortDescription"> </textarea></div></td>
+                                        <td>
+                                            <div class="form-group" style="width: 90%;margin: 5px">
+                                                <textarea style="width: 300px" rows="5" name="shortDescription" id="shortDescription"></textarea>
+                                                <span id="shortText"></span>
+
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td align="center" width="10%">图片</td>
@@ -124,8 +130,22 @@
             </div>
         </div>
     </div>
-
+<g:render template="/template/foot_template"/>
 <asset:javascript src="application.js"/>
 <asset:javascript src="holder.js"/>
+
+<g:javascript>
+    $(document).ready(function() {
+        var text_max = 99;
+        $('#shortDescription').html(text_max + ' characters remaining');
+
+        $('#shortDescription').keyup(function() {
+            var text_length = $('#shortDescription').val().length;
+            var text_remaining = text_max - text_length;
+
+            $('#shortText').html(text_remaining + ' characters remaining');
+        });
+    });
+</g:javascript>
 </body>
 </html>

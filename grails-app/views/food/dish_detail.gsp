@@ -311,6 +311,7 @@
 <div class="col-md-2"></div>
 </div>
 </div>
+<g:render template="/template/foot_template"/>
 <asset:javascript src="application.js"/>
 <asset:javascript src="holder.js"/>
 <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>

@@ -142,7 +142,7 @@
             </g:form>
         </div>
 </div>
-<g:render template="/template/foot_template" />
+    <g:render template="/template/foot_template"/>
 </body>
 
 <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}"></script>

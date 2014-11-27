@@ -30,7 +30,7 @@ class RegisterService {
 
         def registered = new Member(email: email, password: password, name: name, phoneNumber: phoneNumber, zipCode: zipCode, address: address, city: city, state: state, birthday: date, gender: gender, description: description).save(flush: true, failOnError: true)
 
-        if (file) {
+        if (file.getBytes().length > 0) {
             String fileName = "profile_image.png"
             String filePath = "user/${registered.id}"
             ftpService.save(file.getBytes(), fileName, filePath)

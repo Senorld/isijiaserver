@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <div class="row">
                 <a href="${createLink(uri: "/")}" class="col-md-2" style="height: 80px; text-decoration: none;">
-                    <h1 style="margin-top: -5px; color: black;">私家<br><small>isijia.co</small></h1>
+                    <h1 style="margin-top: -5px; color: black;">私家<br><small>isijia.com</small></h1>
                 </a>
                 <div class="col-md-6">
                     <g:form controller="menu" action="foodSearch" method="get" accept-charset="UTF-8">
