@@ -12,7 +12,7 @@
                             <tr>
                                 <td>
                                     <div class="thumbnail">
-                                        <img src="${it.profile ? createLink(uri: '/') + it.profile : resource(dir: 'images', file: 'default_avatar.png')}" class="img-circle" style="max-width : 100px; max-height: 100px;">
+                                        <img src="${dishDetail.chef.profile ? createLink(uri: '/') + dishDetail.chef.profile : resource(dir: 'images', file: 'default_avatar.png')}" class="img-circle" style="max-width : 100px; max-height: 100px;">
                                     </div>
                                     <div style="text-align: center">
                                         <strong>${it.user.name}</strong>
