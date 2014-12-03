@@ -2,6 +2,9 @@ package isijia
 
 import grails.transaction.Transactional
 
+import javax.imageio.ImageIO
+import java.awt.image.BufferedImage
+
 @Transactional
 class MenuService {
     def springSecurityService
@@ -36,10 +39,15 @@ class MenuService {
             imageFiles.each(){
 
                 if (it.getBytes().length > 0) {
+                    BufferedImage image = ImageIO.read(it.getInputStream())
                     def milSecond = System.currentTimeMillis()
                     def fileName = "dish_${milSecond}.png"
                     String filePath = "dish/${chef.id}"
-                    ftpService.save(it.getBytes(), fileName, filePath)
+
+                    BufferedImage resizedImage = UtilService.adjustImageSize(image)
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream()
+                    ImageIO.write(resizedImage, "png", baos)
+                    ftpService.save(baos.toByteArray(), fileName, filePath)
                     fileName = "userUpload/$filePath/$fileName"
 
                     food.addToImages(image: fileName).save()
